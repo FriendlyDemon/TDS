@@ -15,5 +15,5 @@ tail -n100 ./pokemon.txt
 */
 
 // git clone [url]
-// git commit -m ""
 // git config [--global,--local] user.[email,name] "string"
+// status, add doc.js, commit -m "info", log, push
