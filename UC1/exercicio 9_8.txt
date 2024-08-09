@@ -1,33 +1,53 @@
-jogos:
-    nome
-    autor
-    tipo
-    preço
-    data lançamento
-    nota x/10
+requisitos funcionais:
 
-clientes:
-    login
-    nome
-    contato
-    lista de jogos:
-        quais jogos possui
-        tempo de jogo    
-        que nota da para o jogo
-    lista de amigos
-    avg dos tipos de jogos
-    grupos,chat:privado/grupo
+*   jogos:
+        nome
+        autor
+        tipo
+        preço
+        data lançamento
+        nota x/10
 
-busca de jogos por tipo,nota,quem comprou/jogou
+*   clientes:
+        login
+        nome
+        contato
+        lista de jogos:
+            quais jogos possui
+            tempo de jogo    
+            que nota da para o jogo
+        lista de amigos
+        avg dos tipos de jogos
+        grupos,chat:privado/grupo
 
-registro de vendas:
-    qual cliente comprou
-    qual jogo foi comprado
-    quanto pagou
-    quando foi comprado
+*    busca de jogos por tipo,nota,quem comprou/jogou
 
-como inserir, editar, e requisitar as informações
+*    registro de vendas:
+        qual cliente comprou
+        qual jogo foi comprado
+        quanto pagou
+        quando foi comprado
 
-como mostrar os jogos em orderm alfabética
+*   como inserir, editar, e requisitar as informações
+
+*   como mostrar os jogos em orderm alfabética
+
+requisitos não funcionais:
+
+*   criptografia de dados de clientes
+
+*   interface intuitiva
+
+*   suporte a múltiplos dispositivos
+
+*   qualidade de servidor/código para manter o máximo de uptime, limitar o número de pacotes enviados e calculos feitos serverside
+
+*   sistema de redundâncias, mantendo multiplas cópias de dados em servidores diferentes como forma de proteção contra ataques/acidentes
+
+*   facilidade de uso
+
+*   limitar envio de pacotes por minuto ao servidor pelo mesmo ip
+
+*   configurações do aplicativo clientside
 
 henrique e talita
