@@ -30,7 +30,7 @@ requisitos funcionais:
 
 *   como inserir, editar, e requisitar as informações
 
-*   como mostrar os jogos em orderm alfabética
+*   como mostrar os jogos em orderm alfabética, por tipo, preço, etc...
 
 requisitos não funcionais:
 
@@ -44,10 +44,10 @@ requisitos não funcionais:
 
 *   sistema de redundâncias, mantendo multiplas cópias de dados em servidores diferentes como forma de proteção contra ataques/acidentes
 
-*   facilidade de uso
-
 *   limitar envio de pacotes por minuto ao servidor pelo mesmo ip
 
 *   configurações do aplicativo clientside
+
+*   autenticação de dois fatores
 
 henrique e talita
