@@ -44,7 +44,7 @@ requisitos não funcionais:
 
 *   sistema de redundâncias, mantendo multiplas cópias de dados em servidores diferentes como forma de proteção contra ataques/acidentes
 
-*   limitar envio de pacotes por minuto ao servidor pelo mesmo ip
+*   limitar envio de requisições por minuto ao servidor pelo mesmo ip
 
 *   configurações do aplicativo clientside
 
