@@ -18,6 +18,6 @@ console.log(a2, b2, c2);    // imprime '10, 10, 10'
 
 //
 
-let horasDia = prompt("Quantas horas vocês trabalha por dia?")
-let pagamentoDia = prompt("Quanto você recebe por dia?")
+let horasDia = Number(prompt("Quantas horas vocês trabalha por dia?"))
+let pagamentoDia = Number(prompt("Quanto você recebe por dia?"))
 console.log("Você recebe",horasDia/pagamentoDia,"por hora")
