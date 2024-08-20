@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício aula 7</title>
+</head>
+<body>
+    <input type="text" id="nome" placeholder="Qual o seu nome?"></br>
+    <input type="number" id="idade" placeholder="Qual a sua idade?"></br>    
+    <button onclick="res.value=
+`Nome: ${nome.value}\nIdade: ${idade.value}\nMaior de idade: ${idade.value>=18}\nIdade em 2050: ${parseInt(idade.value)-new Date().getFullYear()+2050}`" style="width: 100px;">test</button></br>
+    <textarea name="resultado" id="res" style="height: 100px;"></textarea>
+</body>
+</html>
