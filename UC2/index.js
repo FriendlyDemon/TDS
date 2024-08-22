@@ -17,3 +17,4 @@ tail -n100 ./pokemon.txt
 // git clone [url]
 // git config [--global,--local] user.[email,name] "string"
 // status, add doc.js, commit -m "info", log, push
+// https://drive.google.com/drive/folders/1Se9ZzequL4rVpVrQy58_Sg3N9U6I1Qos?usp=sharing
