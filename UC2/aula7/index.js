@@ -12,10 +12,10 @@ r1=a&&b
 r2=b&&c
 r3=a&&c
 r4=a&&b&&c
-console.log(`${r1},${r2},${r3},${r4}`)
+console.log(r1,r2,r3,r4)
 
 r5=a||b
 r6=b||c
 r7=a||c
 r8=a||b||c
-console.log(`${r5},${r6},${r7},${r8}`)
+console.log(r5,r6,r7,r8)
