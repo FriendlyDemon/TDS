@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício aula 8</title>
 </head>
+
 <body>
-    <form oninput="lingua.value=frase.value.toUpperCase().replaceAll('O','I'),tamanho.value='nº de caracteres: '+frase.value.length">
+    <form
+        oninput="lingua.value=frase.value.toUpperCase().replaceAll('O','I'),
+        tamanho.value='nº de caracteres: '+frase.value.length">
         <textarea id="frase" style="width: 300px;height: 200px;"></textarea><br>
         <textarea id="lingua" style="width: 300px;height: 200px;"></textarea><br>
         <output id="tamanho">nº de caracteres: 0</output>
     </form>
 </body>
+
 </html>
