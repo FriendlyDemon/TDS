@@ -46,3 +46,8 @@ console.log(listaDeTarefas)
 listaDeTarefas.splice(Number(prompt('insira o indice da tarefa que já completou')),0)
 console.log(listaDeTarefas)
 */
+/* desafios
+let frase=prompt('escreva uma frase').split(' ')
+let frutas=['Banana','Morango','Abacaxi','Laranja','Ameixa']
+console.log(frutas.indexOf('Abacaxi'),frutas.length)
+*/
