@@ -18,3 +18,8 @@ frase=prompt('Digite uma frase')
 console.log(frase.toUpperCase().replace('A','I'), frase.length)
 // SUBI NUM ÔNIBUS EM MIRROCOS 27
 */
+/* exe3
+x=prompt('qual seu nome')
+y=prompt('qual seu e-mail')
+console.log(`o e-mail ${y} foi cadastrado com sucesso. Seja bem-vinda(o), ${x}!`)
+*/
