@@ -23,3 +23,16 @@ x=prompt('qual seu nome')
 y=prompt('qual seu e-mail')
 console.log(`o e-mail ${y} foi cadastrado com sucesso. Seja bem-vinda(o), ${x}!`)
 */
+/* exe4
+ar=['comida1','comida2','comida3','comida4','comida5']
+// a
+console.log(ar)
+//b
+console.log('Essas são as minhas comidas preferidas: ')
+for(x=0;x<ar.length;x++){
+    console.log(ar[x])
+}
+//c
+ar[1]=prompt('Qual a sua comida preferida?')
+console.log(...ar)
+*/
