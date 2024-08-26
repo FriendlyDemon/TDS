@@ -24,7 +24,7 @@ y=prompt('qual seu e-mail')
 console.log(`o e-mail ${y} foi cadastrado com sucesso. Seja bem-vinda(o), ${x}!`)
 */
 /* exe4
-ar=['comida1','comida2','comida3','comida4','comida5']
+let ar=['comida1','comida2','comida3','comida4','comida5']
 // a
 console.log(ar)
 //b
@@ -35,4 +35,14 @@ for(x=0;x<ar.length;x++){
 //c
 ar[1]=prompt('Qual a sua comida preferida?')
 console.log(...ar)
+*/
+/* exe5
+let listaDeTarefas=[]
+listaDeTarefas[0]=prompt('insira a primeira tarefa')
+listaDeTarefas[1]=prompt('insira a segunda tarefa')
+listaDeTarefas[2]=prompt('insira a terceira tarefa')
+console.log(listaDeTarefas)
+
+listaDeTarefas.splice(Number(prompt('insira o indice da tarefa que já completou')),0)
+console.log(listaDeTarefas)
 */
