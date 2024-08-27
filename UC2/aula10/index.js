@@ -49,3 +49,27 @@ if (alunos.includes(aluno)) {
 } else {
     console.log('erro')
 }
+//
+let con1 = true, con2 = false
+if (con1 && con2) {
+    console.log('ambas as condições são verdadeiras')
+} else if (con1 || con2) {
+    console.log('alguma das condições é verdadeira')
+} else {
+    console.log('nenhuma das condições são verdadeiras')
+}
+if (!con1) {
+    console.log('a condição 1 é falsa')
+} else {
+    console.log('a condição 1 é verdadeira')
+}
+//
+medio=true
+idade=20
+cursando=false
+
+if(idade>=18&&medio&&!cursando){
+    console.log('pode cursar')
+} else {
+    console.log('não pode cursar')
+}
