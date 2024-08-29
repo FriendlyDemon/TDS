@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    sf=[1320,880,550,220]
+    dt=[660,440,330,170]
+    fi=[1980,1320,880,330]
+    dolar=5.65
+    </script>
+</head>
+<body>
+    <label>Qual o seu nome?<br><input type="text"></label><br><br>
+    <form name="tipo">
+    Qual o tipo de partida?<br>
+    <label><input name="tipo" type="radio" value=dolar checked> Internacional</label><br>
+    <label><input name="tipo" type="radio" value=1> Domestico</label></form><br>
+    <form name="etapa">
+    Qual etapa do jogo?<br>
+    <label><input name="etapa" type="radio" value=sf checked> Semi-Final</label><br>
+    <label><input name="etapa" type="radio" value=dt> Decisão de terceiro lugar</label><br>
+    <label><input name="etapa" type="radio" value=fi> Final</label></form><br>
+    <form name="cat">
+    Qual categoria?<br>
+    <label><input name="categoria" type="radio" value=0 checked> 1</label>
+    <label><input name="categoria" type="radio" value=1> 2</label>
+    <label><input name="categoria" type="radio" value=2> 3</label>
+    <label><input name="categoria" type="radio" value=3> 4</label></form><br>
+    Quantos ingressos?<br>
+    <input id="ingressos" min="1" type="number" step="1" value="1" oninput="this.value = Math.round(this.value);"><br><br>
+    <button onclick="total.value=parseInt(eval(etapa.etapa.value)[cat.categoria.value]*ingressos.value*eval(tipo.tipo.value))">comprar</button><br><br>
+    Valor total<br>
+    <textarea name="total" id="total" readonly></textarea>
+</body>
+</html>
