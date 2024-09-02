@@ -33,3 +33,12 @@ for(let numero of numeros){
 let frase = ['Oi', 'sumido','tudo','bem?','Saudades']
 console.log(frase.join(' '))
 */
+/* 5
+let numeros=[11,15,18,14,12,13],soma=0;
+for (let num of numeros){
+    if (num%2==0){
+        soma+=num
+    }
+}
+console.log(soma)
+*/
