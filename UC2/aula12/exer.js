@@ -24,3 +24,11 @@ if (num%2==0){calc+=num}
 }
 console.log(calc)
 */
+/*
+const numeros=[14,67,89,15,23]
+for(let numero of numeros){
+    console.log(numero)
+}
+*/
+let frase = ['Oi', 'sumido','tudo','bem?','Saudades']
+console.log(frase.join(' '))
