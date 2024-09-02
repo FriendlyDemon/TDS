@@ -42,3 +42,14 @@ for (let num of numeros){
 }
 console.log(soma)
 */
+let frase=['banana','abacaxi','laranja','melancia','uva','abcdefgh','aabbcc','aabbccdd'],va2='',va3=[];
+for (const va1 of frase) {
+    if(va1.length>va2.length){
+        va2=va1
+    }else if (va1.length==va2.length){
+        va3.push(va1)}
+
+    if (va3[1]>=va2){va4=va3}
+    else {va4=va2}
+}
+console.log(va4)
