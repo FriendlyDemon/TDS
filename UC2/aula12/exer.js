@@ -42,14 +42,11 @@ for (let num of numeros){
 }
 console.log(soma)
 */
-let frase=['banana','abacaxi','laranja','melancia','uva','abcdefgh','aabbcc','aabbccdd'],va2='',va3=[];
+let frase=['banana','abacaxi','laranja','melancia','uva'],va2=[' '];
 for (const va1 of frase) {
-    if(va1.length>va2.length){
-        va2=va1
-    }else if (va1.length==va2.length){
-        va3.push(va1)}
-
-    if (va3[1]>=va2){va4=va3}
-    else {va4=va2}
+    if(va1.length>va2[0].length){
+        va2=[va1]
+    }else if (va1.length==va2[0].length){
+        va2.push(va1)}
 }
-console.log(va4)
+console.log(va2)
