@@ -16,14 +16,14 @@ let exerc2c = (a) => a % 2 == 0
 // 2d
 let exerc2d = (a) => [a.length, a.toUpperCase()]
 // 3
-/*
+
 let exerc3a=(a,b)=>a+b
 let exerc3b=(a,b)=>a-b
 let exerc3c=(a,b)=>a*b
 let exerc3d=(a,b)=>a/b
 const per1=rl.questionInt('insira o primeiro numero: '), per2=rl.questionInt('insira o segundo numero: ')
 console.log(exerc3a(per1,per2),exerc3b(per1,per2),exerc3c(per1,per2),exerc3d(per1,per2))
-*/
+
 // desafio 1
 // a
 let des1a = (a) => { console.log(a) }
@@ -31,7 +31,6 @@ let des1a = (a) => { console.log(a) }
 let des1b = (a, b) => a + b
 des1a(des1b(1, 2))
 // desafio 2
-
 function add(inv, iten) {
     if (inv.length >= 5) {
         console.log('erro: inventário cheio')
