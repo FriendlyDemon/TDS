@@ -28,7 +28,9 @@ function imp(obj, comidas, aNome, aIdade) {
 
 //
 personagens = [{ nome: 'naruto', idade: '10', estilo: 'ninjutsu', jutsus: ['clone', 'rasengan'] }, { nome: 'sasuke', idade: '10', estilo: 'ninjutsu', jutsus: ['sharingan', 'bola de fogo'] }, { nome: 'rock lee', idade: '10', estilo: 'taijutsu', jutsus: ['chute', 'soco'] }]
-function adicionarPersonagem(per) { personagens.push(per) }
+function adicionarPersonagem(per) {
+    personagens.push(per)
+}
 function buscarPersonagem(n0me) {
     a = false
     for (i = 0; i < personagens.length; i++) {
@@ -38,4 +40,6 @@ function buscarPersonagem(n0me) {
     }
     return a
 }
-function listarPersonagens() { console.log(personagens) }
+function listarPersonagens() {
+    console.log(personagens)
+}
