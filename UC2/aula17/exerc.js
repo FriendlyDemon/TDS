@@ -6,6 +6,7 @@ const pessoa = { nome: 'longo', idade: 'muitos', 'genero musical': 'ouvir músic
 const gato = { nome: 'Ulisses', idade: 4, genero: 'macho' }, henrique = { nome: 'Henrique Michel', idade: 30, genero: 'masculino', gato }
 // console.log(henrique.gato)
 filme1.personagens=[['personagem1','personagem2'],['personagem3'],['personagem4'],false]
+/*
 for(i=0;i<filme1.elenco.length;i++){
     if(filme1.personagens[i]){
     console.log(filme1.elenco[i],...filme1.personagens[i])
@@ -13,3 +14,6 @@ for(i=0;i<filme1.elenco.length;i++){
 }
 filme1.elenco[0]='xuxa'
 console.log(filme1)
+*/
+const filme2=(({diretor,...filme})=>filme)(filme1)
+console.log(filme2)
