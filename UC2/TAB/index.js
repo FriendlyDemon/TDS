@@ -40,11 +40,19 @@ function habilidade(usuario, habilidade, alvo) {
 }
 // seleciona o personagem que vai usar a habilidade, qual habilidade usar e qual o alvo
 function busca(nome) {
-    (fs.readdirSync('./personagens')).includes(nome + '.json')
+    if((fs.readdirSync('./personagens')).includes(nome + '.json')){
+        console.log('o personagem existe')
+    } else {
+        console.log('o personagem não existe')
+    }
 }
 // busca um arquivo com o nome do personagem inserido na pasta 'personagens'
 function excluir(per) {
-    fs.unlinkSync(`./personagem/${per}.json`)
+    if((fs.readdirSync('./personagens')).includes(nome + '.json')){
+        fs.unlinkSync(`./personagem/${per}.json`)
+    } else {
+        console.log('o personagem não existe')
+    }
 }
 // exclui um arquivo da pasta 'personagens' com o nome do personagem
 function listar() {
@@ -54,7 +62,12 @@ function listar() {
 }
 // lista todos os arquivos da pasta 'personagens' sem mostrar a extenção
 function status(per) {
-    console.log(req(per).vida)
+    if((fs.readdirSync('./personagens')).includes(per + '.json')){
+        console.log(req(per).vida)
+    } else {
+        console.log('o personagem não existe')
+    }
+    
 }
 // mostra a vida do personagem inserido
 for (x = 0; x < 1;) {
