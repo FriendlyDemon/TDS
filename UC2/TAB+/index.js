@@ -95,7 +95,7 @@ function listar() {
 // lista todos os arquivos da pasta 'personagens' sem mostrar a extenção
 function status(per) {
     if (busca(per)) {
-        return req(per).vida
+        return `${req(per).vida} pontos de vida\nnivel ${req(per).nivel}, ${req(per).pontos} pontos`
     } else {
         return 'o personagem não existe'
     }
