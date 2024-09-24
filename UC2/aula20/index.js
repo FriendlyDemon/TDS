@@ -12,10 +12,10 @@ matriz3[1] = [4, 5, 6]
 matriz3[2] = [7, 8, 9]
 // console.log(matriz3[1][1]) // 5
 // exer:
-let velha=[
-    ['0','0','0'],
-    ['0','0','0'],
-    ['0','0','0']
+let velha = [
+    ['0', '0', '0'],
+    ['0', '0', '0'],
+    ['0', '0', '0']
 ]
-velha[1][2]=1
-console.log(velha[0]+'\n'+velha[1]+'\n'+velha[2])
+velha[1][2] = 1
+console.log(velha[0] + '\n' + velha[1] + '\n' + velha[2])
