@@ -1,4 +1,4 @@
-const fs = require('node:fs')
+const fs = require('node:fs'),rl=require('readline-sync')
 class Personagem {
     constructor(nome, classe, vida, ataque, defesa, habilidades) {
         this.nome = nome
@@ -57,8 +57,13 @@ function busca(nome) {
 }
 // facilitam a escrita do código
 function addPersonagem(n, c, hp, at, de, h) {
-    const char = new Personagem(n, c, hp, at, de, h)
-    fs.writeFileSync(`./personagens/${n}.json`, JSON.stringify(char))
+    if (busca(n)) {
+        return `personagem ${n} já existe`
+    } else {
+        const char = new Personagem(n, c, hp, at, de, h)
+        fs.writeFileSync(`./personagens/${n}.json`, JSON.stringify(char))
+        return `personagem ${n} criado`
+    }
 }
 // cria um personagem a partir da classe 'Personagem'
 function atacar(alvo) {
