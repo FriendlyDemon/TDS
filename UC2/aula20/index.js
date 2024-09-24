@@ -49,6 +49,6 @@ function sum(mat) {
             soma += mat[i][j]
         }
     }
-    console.log(soma)
+    return soma
 }
-sum(exer)
+console.log(sum(exer))
