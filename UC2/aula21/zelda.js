@@ -1,59 +1,64 @@
-var Personagem = /** @class */ (function () {
-    function Personagem(nome, vida, dano, defesa) {
-        this.nome = nome;
-        this.vida = vida;
-        this.dano = dano;
-        this.defesa = defesa;
+class Personagem {
+    constructor(nome, vida, dano, defesa) {
+        this.nome = nome
+        this.vida = vida
+        this.dano = dano
+        this.defesa = defesa
     }
-    return Personagem;
-}());
-var Arma = /** @class */ (function () {
-    function Arma(nome, tipo, dano, alcance) {
-        this.nome = nome;
-        this.tipo = tipo;
-        this.dano = dano;
-        this.alcance = alcance;
+}
+class Arma {
+    constructor(nome, tipo, dano, alcance) {
+        this.nome = nome
+        this.tipo = tipo
+        this.dano = dano
+        this.alcance = alcance
     }
-    return Arma;
-}());
-var Item = /** @class */ (function () {
-    function Item(nome, efeito) {
-        this.nome = nome;
-        this.efeito = efeito;
+}
+class Item {
+    constructor(nome, efeito) {
+        this.nome = nome
+        this.efeito = efeito
     }
-    return Item;
-}());
-var personagens = [
-    new Personagem("Link", 3, 2, 2),
-    new Personagem("Zelda", 2, 0, 0),
-    new Personagem("Ganondorf", 5, 5, 3),
-];
-var armas = [
-    new Arma("Master Sword", "sword", 3, 1),
-    new Arma("Arco", "bow", 2, 10),
-    new Arma("Lança", "spear", 2, 3),
-];
-var itens = [
-    new Item("Bomba", "explode paredes e causa dano"),
-    new Item("Poção", "recupera 5 corações"),
-    new Item("Flechas", "munição para o arco"),
-];
+}
+let personagens = []
+let armas = []
+let itens = []
+let tipos = ['espada', 'arco', 'lanca', 'machado', 'martelo']
 function per(nome, vida, dano, defesa) {
-    if (vida > 0 && vida <= 20) {
-        personagens.push(new Personagem(nome, vida, dano, defesa));
-    }
-    else {
-        console.log("Erro: vida deve estar entre 1 e 20");
+    if (typeof nome != string) {
+        console.log(`Erro: nome deve ser to tipo 'string'`)
+    } else if (personagens.map(({ nome }) => nome).includes(nome)) {
+        console.log(`Erro: nome inválido, já existe um personagem com esse nome`)
+    } else if (vida <= 0 || vida > 20) {
+        console.log(`Erro: vida deve estar entre 1 e 20`)
+    } else {
+        personagens.push(new Personagem(nome, Number(vida), Number(dano), Number(defesa)))        
+        console.log(`personagem criado com sucesso`)
     }
 }
 function arm(nome, tipo, dano, alcance) {
-    if (dano > 0) {
-        armas.push(new Arma(nome, tipo, dano, alcance));
-    }
-    else {
-        console.log("Erro: dano precisa ser maior que 0");
+    if (typeof nome != string) {
+        console.log(`Erro: nome deve ser to tipo 'string'`)
+    } else if (armas.map(({ nome }) => nome).includes(nome)) {
+        console.log(`Erro: nome inválido, já existe uma arma com esse nome`)
+    } else if (tipos.includes(tipo)) {
+        console.log(`Erro: tipo inválido`)
+    } else if (dano <= 0) {
+        console.log(`Erro: dano precisa ser maior que 0`)
+    } else if (alcance <= 0) {
+        console.log(`Erro: alcance precisa ser maior que 0`)
+    } else {
+        armas.push(new Arma(nome, tipo, Number(dano), Number(alcance)))
+        console.log(`arma criada com sucesso`)
     }
 }
 function ite(nome, efeito) {
-    itens.push(new Item(nome, efeito));
+    if (typeof nome != string) {
+        console.log(`Erro: nome deve ser to tipo 'string'`)
+    } else if (personagens.map(({ nome }) => nome).includes(nome)) {
+        console.log(`Erro: nome inválido, já existe um item com esse nome`)
+    } else {
+        itens.push(new Item(nome, efeito))
+        console.log(`item criado com sucesso`)
+    }
 }

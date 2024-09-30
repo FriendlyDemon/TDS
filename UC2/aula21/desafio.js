@@ -10,18 +10,33 @@ for (x = 0; x < 10; x++) {
 
 console.log(ilha.join('\n'))
 
-function move(dir) {
+function move(x,y,dir) {
     switch (dir) {
-        case 'cima':
+        case 'cima':if(y!=0){
+            ilha[x-1][y]=ilha[x][y]
+            ilha[x][y]=0
+        }else{
+                console.log('ERRO: Não pode mover para cima')}
             break;
-        case 'baixo':
+        case 'baixo':if(y!=9){
+            ilha[x+1][y]=ilha[x][y]
+            ilha[x][y]=0
+        }else{
+                console.log('ERRO: Não pode mover para baixo')}
             break;
-        case 'esquerda':
+        case 'esquerda':if(x!=0){
+            ilha[x][y-1]=ilha[x][y]
+            ilha[x][y]=0
+        }else{
+                console.log('ERRO: Não pode mover para esquerda')}
             break;
-        case 'direita':
+        case 'direita':if(x!=9){
+            ilha[x][y+1]=ilha[x][y]
+            ilha[x][y]=0
+        }else{
+                console.log('ERRO: Não pode mover para direita')}
             break;
-        default:
+        default:console.log('ERRO: direção inválida')
             break;
     }
-
 }
