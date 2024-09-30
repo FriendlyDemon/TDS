@@ -16,12 +16,12 @@ function move(dir) {
             break;
         case 'baixo':
             break;
-        case 'direita':
-            break;
         case 'esquerda':
+            break;
+        case 'direita':
             break;
         default:
             break;
     }
-    
+
 }
