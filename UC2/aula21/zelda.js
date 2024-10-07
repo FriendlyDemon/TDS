@@ -20,29 +20,29 @@ class Item {
         this.efeito = efeito
     }
 }
-let personagens = []
-let armas = []
-let itens = []
+let personagens = [{ nome: 'Link', vida: 5, dano: 3, defesa: 5 }]
+let armas = [{ nome: 'Master Sword', tipo: 'espada', dano: 5, alcance: 1 }]
+let itens = [{ nome: 'Ocarina', efeito: 'deixa tocar melodias' }]
 let tipos = ['espada', 'arco', 'lanca', 'machado', 'martelo']
 function per(nome, vida, dano, defesa) {
-    if (typeof nome != string) {
+    if (typeof nome != 'string') {
         console.log(`Erro: nome deve ser to tipo 'string'`)
-    } else if (personagens.map(({ nome }) => nome).includes(nome)) {
+    } else if (personagens.map(({ nome }) => nome.toUpperCase()).includes(nome.toUpperCase())) {
         console.log(`Erro: nome inválido, já existe um personagem com esse nome`)
     } else if (vida <= 0 || vida > 20) {
         console.log(`Erro: vida deve estar entre 1 e 20`)
     } else {
-        personagens.push(new Personagem(nome, Number(vida), Number(dano), Number(defesa)))        
+        personagens.push(new Personagem(nome, Number(vida), Number(dano), Number(defesa)))
         console.log(`personagem criado com sucesso`)
     }
 }
 function arm(nome, tipo, dano, alcance) {
-    if (typeof nome != string) {
+    if (typeof nome != 'string') {
         console.log(`Erro: nome deve ser to tipo 'string'`)
-    } else if (armas.map(({ nome }) => nome).includes(nome)) {
+    } else if (armas.map(({ nome }) => nome.toUpperCase()).includes(nome.toUpperCase())) {
         console.log(`Erro: nome inválido, já existe uma arma com esse nome`)
-    } else if (tipos.includes(tipo)) {
-        console.log(`Erro: tipo inválido`)
+    } else if (!tipos.includes(tipo)) {
+        console.log(`Erro: tipo inválido. Tipos válidos:\n`,...tipos)
     } else if (dano <= 0) {
         console.log(`Erro: dano precisa ser maior que 0`)
     } else if (alcance <= 0) {
@@ -53,12 +53,25 @@ function arm(nome, tipo, dano, alcance) {
     }
 }
 function ite(nome, efeito) {
-    if (typeof nome != string) {
+    if (typeof nome != 'string') {
         console.log(`Erro: nome deve ser to tipo 'string'`)
-    } else if (personagens.map(({ nome }) => nome).includes(nome)) {
+    } else if (itens.map(({ nome }) => nome.toUpperCase()).includes(nome.toUpperCase())) {
         console.log(`Erro: nome inválido, já existe um item com esse nome`)
     } else {
         itens.push(new Item(nome, efeito))
         console.log(`item criado com sucesso`)
     }
 }
+per('Zelda',3,5,2)
+per('Wario',0,10,5)
+per(['Ganon'],10,10,10)
+per('Midna',3,-1,-1)
+
+arm('Arco','arco',4,10)
+arm('Bumerangue','bum',5,5)
+arm('Yari','lanca',-1,3)
+
+ite('Bomba','causa dano e abre caminhos')
+ite('ocarina','test')
+
+console.log(personagens,'\n',armas,'\n',itens)
