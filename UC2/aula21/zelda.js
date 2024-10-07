@@ -64,7 +64,7 @@ function ite(nome, efeito) {
 }
 
 per('Zelda',3,5,2)
-per('Wario',0,10,5) // vida=0
+per('Goron',0,10,5) // vida=0
 per(['Ganon'],10,10,10) // nome = array
 per('Midna',3,-1,-1) // dano||alcance negativo
 
