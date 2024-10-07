@@ -62,16 +62,17 @@ function ite(nome, efeito) {
         console.log(`item criado com sucesso`)
     }
 }
+
 per('Zelda',3,5,2)
-per('Wario',0,10,5)
-per(['Ganon'],10,10,10)
-per('Midna',3,-1,-1)
+per('Wario',0,10,5) // vida=0
+per(['Ganon'],10,10,10) // nome = array
+per('Midna',3,-1,-1) // dano||alcance negativo
 
 arm('Arco','arco',4,10)
-arm('Bumerangue','bum',5,5)
-arm('Yari','lanca',-1,3)
+arm('Bumerangue','bum',5,5) // tipo invalido
+arm('Yari','lanca',-1,3) // dano negativo
 
 ite('Bomba','causa dano e abre caminhos')
-ite('ocarina','test')
+ite('ocarina','test') // nome já existe
 
 console.log(personagens,'\n',armas,'\n',itens)
