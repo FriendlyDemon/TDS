@@ -30,6 +30,9 @@ class Peca {
 }
 
 class Cliente {
+  nome: string;
+  
+  constructor(){}
   comprar = function () {};
   historico = function () {};
   atDados = function () {};
