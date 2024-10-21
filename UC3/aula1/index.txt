@@ -2,5 +2,5 @@
 ted codd
 banco armazena, gerenciador le e escreve, sistema apresenta
 armazenar dados de forma organizada e de facil acesso
-um banco de dados tem abstração alta por usar SQL
+conceitual, lógico e físico
 organização para altas quantidades de dados
