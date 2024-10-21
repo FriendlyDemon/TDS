@@ -15,7 +15,7 @@ create table
 
 create table
     pedidos (
-        id int auto_increment primary key,
+        id int unique primary key,
         id_cliente int,
         id_sorvete int,
         quantidade float,
@@ -25,26 +25,44 @@ create table
     );
 --
 insert into
-    sorvetes (sabor, tipo)
+    sorvetes (id, sabor, tipo)
 values
-    ('morango', 'casquinha'),
-    ('chocolate', 'cascao'),
-    ('napolitano', '1L');
+    (101,'baunilha','casquinha'),
+    (102,'baunilha','cascao'),
+    (103,'baunilha','1L'),
+    (104,'baunilha','sunday'),
+    (201,'morango', 'casquinha'),
+    (203,'morango','cascao'),
+    (203,'morango','1L'),
+    (204,'morango','sunday'),
+    (301,'chocolate','casquinha'),
+    (302,'chocolate', 'cascao'),
+    (303,'chocolate','1L'),
+    (304,'chocolate','sunday'),
+    (403,'napolitano', '1L'),
+    (503,'torta alemã','1L'),
+    (603,'brigadeiro','1L'),
+    (703,'flocos','1L'),
+    (803,'')
 
 insert into
     clientes (nome, e_mail, telefone)
 values
     ('Pedro', 'pedro@para.com', '51999999999'),
     ('João', 'joao@joestar.com', '55987987987'),
-    ('Guilherme', 'guigui@tel.com', '55963963963');
+    ('Guilherme', 'guigui@tel.com', '55963963963'),
+    ('Fabio','fa_bio@bile.com','55654654654'),
+    ('Eduardo','dudu@edu.com','60321321321'),
+    ('Robute','rowboat@giddyman.com','61513153486'),
+    ('Lucius','lulu@eternal.com','75646446643');
 
 insert into
     pedidos (id_cliente, id_sorvete, quantidade, datadopedido)
 values
-    (1, 1, 1, '2024-07-05'),
-    (2, 2, 1, '2024-07-06'),
-    (1, 2, 1, '2024-07-12'),
-    (3, 3, 1, '2024-07-14');
+    (1, 101, 1, '2024-07-05'),
+    (2, 202, 1, '2024-07-06'),
+    (1, 301, 1, '2024-07-12'),
+    (3, 603, 1, '2024-07-14');
 --
 SELECT
     count(*)
@@ -58,5 +76,5 @@ SELECT
 FROM
     pedidos
 WHERE
-    id_sorvete = 2;
--- 2
+    id_sorvete = 300?;
+-- 
