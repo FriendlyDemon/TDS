@@ -40,10 +40,14 @@ values
     (303,'chocolate','1L'),
     (304,'chocolate','sunday'),
     (403,'napolitano', '1L'),
-    (503,'torta alemã','1L'),
+    (503,'torta alema','1L'),
     (603,'brigadeiro','1L'),
     (703,'flocos','1L'),
-    (803,'')
+    (803,'melancia','1L'),
+    (901,'baunilha-chocolate','casquinha'),
+    (902,'baunilha-chocolate','cascao'),
+    (904,'baunilha-chocolate','sunday'),
+    (1003,'pistache','1L');
 
 insert into
     clientes (nome, e_mail, telefone)
