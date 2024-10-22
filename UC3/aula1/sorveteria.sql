@@ -68,17 +68,17 @@ values
     (1, 301, 1, '2024-07-12'),
     (3, 603, 1, '2024-07-14');
 --
-SELECT
+select
     count(*)
-FROM
+from
     pedidos
-WHERE
+where
     id_cliente = 2;
 -- 
-SELECT
+select
     count(*)
-FROM
+from
     pedidos
-WHERE
+having
     400 < id_sorvete > 300;
 -- 
