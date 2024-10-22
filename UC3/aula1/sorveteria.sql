@@ -4,7 +4,7 @@ create table
         sabor varchar(20) not null,
         tipo varchar(20)
     );
-
+--
 create table
     clientes (
         id int auto_increment primary key,
@@ -12,7 +12,7 @@ create table
         e_mail varchar(50),
         telefone int
     );
-
+--
 create table
     pedidos (
         id int unique primary key,
@@ -48,7 +48,7 @@ values
     (902,'baunilha-chocolate','cascao'),
     (904,'baunilha-chocolate','sunday'),
     (1003,'pistache','1L');
-
+--
 insert into
     clientes (nome, e_mail, telefone)
 values
@@ -59,7 +59,7 @@ values
     ('Eduardo','dudu@edu.com','60321321321'),
     ('Robute','rowboat@giddyman.com','61513153486'),
     ('Lucius','lulu@eternal.com','75646446643');
-
+--
 insert into
     pedidos (id_cliente, id_sorvete, quantidade, datadopedido)
 values
@@ -74,11 +74,11 @@ FROM
     pedidos
 WHERE
     id_cliente = 2;
--- 1
+-- 
 SELECT
     count(*)
 FROM
     pedidos
 WHERE
-    id_sorvete = 300?;
+    400 < id_sorvete > 300;
 -- 
