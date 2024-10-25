@@ -74,9 +74,10 @@ class Opinioao {
   estado: string;
 }
 class controle_financeiro {
-  pagar: Array<string>;
-  receber: Array<string>;
-  gastos: Array<string>;
+  pagar: Array<[Manutencao | Funcionario, number, Date]>;
+  receber: Array<[Inquilino, number, Date]>;
+  gastos: Array<[Manutencao | Funcionario, number, Date]>;
+  recebimentos: Array<[Inquilino, number, Date]>;
   boleto() {}
   relatorio(inicio: Date, fim: Date) {}
 }
