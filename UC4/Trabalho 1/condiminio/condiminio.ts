@@ -48,7 +48,7 @@ class Funcionario {
   contatoEmergencia: string | number;
   historicoPagamento: Array<string>;
 }
-class Servicos {
+class Servico {
   empresa: string;
   servico: Funcoes;
   contato: Array<string | number>;
@@ -68,7 +68,7 @@ class Manutencao {
   responsavel: Funcionario;
   custo: number;
 }
-class Opinioes {
+class Opinioao {
   quem: Inquilino | Funcionario;
   oque: string;
   estado: string;
@@ -78,7 +78,7 @@ class controle_financeiro {
   receber: Array<string>;
   gastos: Array<string>;
   boleto() {}
-  relatorio() {}
+  relatorio(inicio: Date, fim: Date) {}
 }
 enum Funcoes {
   "porteiro",

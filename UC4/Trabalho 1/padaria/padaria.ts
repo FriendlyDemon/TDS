@@ -1,9 +1,28 @@
 class ClientePa {
   nome: string;
+  email: string;
+  telefone: number;
   compras: number = 0;
   carrinho = {};
+  historico: Array<object> = [];
   addCarrihno(produto: Produto, quantia: number) {
     this.carrinho[produto.nome] = quantia;
+  }
+  pagar() {
+    this.carrinho["data"] = new Date();
+    this.historico.push(this.carrinho);
+    if (this.compras < 9) {
+      this.compras++;
+    } else {
+      this.compras = 0;
+      this.carrinho;
+    }
+    this.carrinho = {};
+  }
+  constructor(nome: string, email: string, telefone: number) {
+    this.nome = nome;
+    this.email = email;
+    this.telefone = telefone;
   }
 }
 class Produto {
