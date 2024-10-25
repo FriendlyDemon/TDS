@@ -1,4 +1,4 @@
-class Cliente {
+class ClientePa {
   nome: string;
   compras: number = 0;
   carrinho = {};
