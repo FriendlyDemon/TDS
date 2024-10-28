@@ -11,3 +11,7 @@ https://dev.mysql.com/doc/refman/8.4/en/mysql-command-options.html
 
 
 https://dev.mysql.com/doc/mysql-getting-started/en/
+
+cuto entre R$12000~ e R$120000~ por servidor/ano
+
+--https://www.mysql.com/tcosavings/
