@@ -1,0 +1,13 @@
+MySQL AB, founded by David Axmark, Allan Larsson and Michael "Monty" Widenius
+
+--https://web.archive.org/web/20090313160628/http://www.opensourcereleasefeed.com/interview/show/five-questions-with-michael-widenius-founder-and-original-developer-of-mysql
+
+mySQL funciona apenas em inglês, é puramente relacional, oferece uma licença gratuita apenas para uso não comercial
+
+--https://www.portofacil.net/banco-de-dados-mariadb-e-mysql.html
+
+
+https://dev.mysql.com/doc/refman/8.4/en/mysql-command-options.html
+
+
+https://dev.mysql.com/doc/mysql-getting-started/en/
