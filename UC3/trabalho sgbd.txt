@@ -1,0 +1,58 @@
+Para utilizar o MySQL, é necessário instalar um servidor e uma aplicação cliente. O servidor é o responsável por armazenar os dados, responder às requisições, controlar a consistência dos dados, bem como a execução de transações concomitantes entre outras. O cliente se comunica com o servidor através da SQL.
+Comandos Básicos:
+
+https://www.techtudo.com.br/noticias/2012/04/o-que-e-e-como-usar-o-mysql.ghtml
+
+No editor genérico de consultas, ilustrado na imagem abaixo, o administrador pode executar consultas para buscar informações especificas ou testes. Basta inserir a consulta SQL, na parte superior da janela, e os resultados são exibidos na guia “Output” da metade inferior da janela. Na guia “Overview”, o administrador pode obter os nomes das tabelas, visões e rotinas de cada base de dados criada no sistema. 
+
+https://www.techtudo.com.br/noticias/2012/04/o-que-e-e-como-usar-o-mysql.ghtml
+
+
+O MYSQL é de código aberto
+
+Código aberto significa que é possível que qualquer pessoa use e modifique o software. Qualquer pessoa pode baixar o software MySQL na internet e usá-lo sem pagar por isso. Você também pode alterar seu código de origem para atender às suas necessidades. O software MySQL usa a Licença Pública Geral GNU (GPL) para definir o que você pode e não pode fazer com o software em diferentes situações.
+
+Se você se sentir desconfortável com a GNU GPL ou precisar incorporar o código MySQL em uma aplicação comercial, poderá comprar uma versão comercialmente licenciada da Oracle. Consulte a seção Informações sobre Licenças do MySQL para mais informações.
+
+https://www.oracle.com/br/mysql/what-is-mysql/
+
+--------------------------------------------------------------------------
+
+MySQL AB, founded by David Axmark, Allan Larsson and Michael "Monty" Widenius
+
+--https://web.archive.org/web/20090313160628/http://www.opensourcereleasefeed.com/interview/show/five-questions-with-michael-widenius-founder-and-original-developer-of-mysql
+
+mySQL funciona apenas em inglês, é puramente relacional, oferece uma licença gratuita apenas para uso não comercial
+
+--https://www.portofacil.net/banco-de-dados-mariadb-e-mysql.html
+
+
+https://dev.mysql.com/doc/refman/8.4/en/mysql-command-options.html
+
+
+https://dev.mysql.com/doc/mysql-getting-started/en/
+
+cuto entre R$12000~ e R$120000~ por servidor/ano
+
+--https://www.mysql.com/tcosavings/
+
+//
+O MySQL oferece conformidade com ACID somente quando você o usa com mecanismos de armazenamento ou módulos de software InnoDB e NDB Cluster. O PostgreSQL é totalmente compatível com ACID em todas as configurações.
+
+MySQL não oferecem MVCC, mas o PostgreSQL oferece
+
+MySQL oferece suporte à indexação B-tree e R-tree
+
+PostgreSQL inclue árvores, índices de expressão, índices parciais e índices de hash
+
+MySQL é um banco de dados puramente relacional, PostgreSQL, por outro lado, é um banco de dados de objeto/relacional
+
+Embora o MySQL ofereça suporte a exibições, o PostgreSQL oferece opções de exibições avançadas
+
+Embora o MySQL e o PostgreSQL ofereçam suporte a procedimentos armazenados, o PostgreSQL permite que você chame procedimentos armazenados escritos em linguagens diferentes do SQL
+
+Em MySQL, você apenas pode usar gatilhos AFTER e BEFORE para instruções SQL INSERT, UPDATE e DELETE. Por outro lado, o PostgreSQL oferece suporte ao gatilho INSTEAD OF, para que você possa executar instruções SQL complexas usando funções.
+
+https://aws.amazon.com/pt/compare/the-difference-between-mysql-vs-postgresql/
+
+https://www.canva.com/design/DAGU4e9yDKk/tGDF9H5S_WOuxBoYSz-Xdg/edit?utm_content=DAGU4e9yDKk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
