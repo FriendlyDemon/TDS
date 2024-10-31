@@ -10,13 +10,13 @@ class ClientePa {
   }
   pagar() {
     this.carrinho["data"] = new Date();
-    this.historico.push(this.carrinho);
     if (this.compras < 9) {
       this.compras++;
     } else {
       this.compras = 0;
-      this.carrinho;
+      this.carrinho['brinde']=1;
     }
+    this.historico.push(this.carrinho);
     this.carrinho = {};
   }
   constructor(nome: string, email: string, telefone: number) {
