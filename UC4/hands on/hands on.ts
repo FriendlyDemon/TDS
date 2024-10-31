@@ -13,18 +13,34 @@ class Base {
       }
     }
   }
-  constructor (id:number,nome:string){
-    this.id=id
-    this.nome=nome
+  constructor(id: number, nome: string) {
+    this.id = id;
+    this.nome = nome;
   }
 }
 class Filha extends Base {
   propriedade: number;
-  função(): void {
-    console.log(this.id);
+  constructor(id: number, nome: string, propriedade: number) {
+    super(id, nome);
+    this.propriedade = propriedade;
   }
-  constructor(id:number,nome:string,propriedade:number){
-    super(id,nome)
-    this.propriedade=propriedade
+}
+class Neta extends Filha {
+  cachorro: boolean;
+  função() {
+    if (this.cachorro) {
+      console.log("au au");
+    } else {
+      console.log("miau");
+    }
+  }
+  constructor(
+    id: number,
+    nome: string,
+    propriedade: number,
+    cachorro: boolean
+  ) {
+    super(id, nome, propriedade);
+    this.cachorro = cachorro;
   }
 }
