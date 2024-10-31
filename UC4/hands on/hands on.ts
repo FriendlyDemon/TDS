@@ -13,10 +13,18 @@ class Base {
       }
     }
   }
+  constructor (id:number,nome:string){
+    this.id=id
+    this.nome=nome
+  }
 }
 class Filha extends Base {
   propriedade: number;
   função(): void {
     console.log(this.id);
+  }
+  constructor(id:number,nome:string,propriedade:number){
+    super(id,nome)
+    this.propriedade=propriedade
   }
 }
