@@ -28,6 +28,7 @@ class Inquilino {
     this.contatos = contatos;
   }
 }
+
 class Domicilio {
   numero: number;
   tamanho: number;
@@ -40,6 +41,7 @@ class Domicilio {
     this.preco = preco;
   }
 }
+
 class Funcionario {
   nome: string;
   funcao: Array<Funcoes>;
@@ -48,6 +50,7 @@ class Funcionario {
   contatoEmergencia: string | number;
   historicoPagamento: Array<string>;
 }
+
 class Servico {
   empresa: string;
   servico: Funcoes;
@@ -55,12 +58,14 @@ class Servico {
   contrato: string;
   historicoPagamento: Array<string>;
 }
+
 class AreaComum {
   nome: string;
   responsavel: Funcionario;
   historicoUso: Array<string>;
   agendamentos: Array<string>;
 }
+
 class Manutencao {
   descricao: string;
   tipo: Funcoes;
@@ -68,19 +73,35 @@ class Manutencao {
   responsavel: Funcionario;
   custo: number;
 }
-class Opinioao {
+
+class Opiniao {
   quem: Inquilino | Funcionario;
   oque: string;
   estado: string;
 }
+
 class controle_financeiro {
   pagar: Array<[Manutencao | Funcionario, number, Date]>;
   receber: Array<[Inquilino, number, Date]>;
   gastos: Array<[Manutencao | Funcionario, number, Date]>;
   recebimentos: Array<[Inquilino, number, Date]>;
   boleto() {}
-  relatorio(inicio: Date, fim: Date) {}
+  relatorio(inicio: Date, fim: Date) {
+    let relatorio:Array<[object,number,Date]> =[]
+    for (let gasto of this.gastos) {
+      if (gasto[2] < inicio && gasto[2] < fim) {
+        relatorio.push(gasto)
+      }
+    }
+    for (let gasto of this.recebimentos) {
+      if (gasto[2] < inicio && gasto[2] < fim) {
+        relatorio.push(gasto)
+      }
+    }
+    return relatorio
+  }
 }
+
 enum Funcoes {
   "porteiro",
   "jardineiro",

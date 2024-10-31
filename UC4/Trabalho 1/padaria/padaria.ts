@@ -14,7 +14,7 @@ class ClientePa {
       this.compras++;
     } else {
       this.compras = 0;
-      this.carrinho['brinde']=1;
+      this.carrinho["brinde"] = 1;
     }
     this.historico.push(this.carrinho);
     this.carrinho = {};
