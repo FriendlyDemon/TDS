@@ -10,3 +10,6 @@ e(recuperação) 3/2
 // https://drive.google.com/drive/folders/1JvxMo0FNwKd3DfXHz-hu1_MP4lEKr767
 
 // https://www.sqlitetutorial.net/
+
+// classe = n de conecções
+// grau = > (n,n)
