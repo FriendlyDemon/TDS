@@ -13,3 +13,5 @@ e(recuperação) 3/2
 
 // classe = n de conecções
 // grau = > (n,n)
+
+//dbeaver
