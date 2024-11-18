@@ -5,6 +5,16 @@ if (dakka > 0) {
 } else { console.log('não') }
 */
 /* how to know if an obj has a property
-let hue = {a:'a',b:'b',c:'c'}
+let hue = {a:1,b:2,c:3}
 console.log(Object.keys(hue).includes('a'))
+*/
+/* how to use 'readFile'
+const fs = require("node:fs");
+fs.readFile("./file.txt", function (erro, texto) {
+  if (erro) {
+    console.log(erro);
+  } else {
+    console.log(texto.toString());
+  }
+});
 */
