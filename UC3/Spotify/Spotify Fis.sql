@@ -13,7 +13,8 @@ CREATE TABLE Pasta (
     Genero VARCHAR(50),
     Data_Album DATE,
     Pasta_TIPO INT,
-    Pasta_ID_Artista INT
+    Pasta_ID_Artista INT,
+    Pasta_Tipo VARCHAR(20)
 );
 
 CREATE TABLE Artista (
@@ -28,7 +29,8 @@ CREATE TABLE Conteudo (
     Duracao TIME,
     Data_Episodio DATE,
     Conteudo_TIPO INT,
-    Conteudo_ID_Pasta INT
+    Conteudo_ID_Pasta INT,
+    Conteudo_Tipo VARCHAR(20)
 );
 
 CREATE TABLE Playlist (
