@@ -18,3 +18,4 @@ fs.readFile("./file.txt", function (erro, texto) {
   }
 });
 */
+// typescript constructor generator
