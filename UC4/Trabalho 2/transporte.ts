@@ -419,7 +419,7 @@ class Rota {
     this.tempoEstimado = tempoEstimado;
   }
   showRota(){
-    return this
+    return [this.origem,this.destino,this.distancia,this.tempoEstimado,this.listaVeiculos]
   }
 }
 
@@ -446,7 +446,7 @@ class NotaFiscal {
     this.formaPagamento = formaDePagamento;
   }
   showNota(){
-    return this
+    return [this.numero,this.dataEmissao,this.cliente,this.itens,this.valorTotal,this.formaPagamento]
   }
 }
 
