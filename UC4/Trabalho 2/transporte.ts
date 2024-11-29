@@ -1,14 +1,30 @@
 class Cliente {
-  nome: string;
-  CNPJ: string;
-  endereco: Endereco;
-  listaContratos: Array<NotaFiscal>;
-  constructor(nome: string, cnpj: string, endereco: Endereco) {
-    this.nome = nome;
-    this.CNPJ = cnpj;
-    this.endereco = endereco;
+  private nome: string;
+  getnome() {
+    return this.nome;
   }
-  adicionarNota(
+  setnome(valor: string) {
+    this.nome = valor;
+  }
+  private CNPJ: string;
+  getCNPJ() {
+    return this.CNPJ;
+  }
+  setCNPJ(valor: string) {
+    this.CNPJ = valor;
+  }
+  private endereco: Endereco;
+  getendereco() {
+    return this.endereco;
+  }
+  setendereco(valor: Endereco) {
+    this.endereco = valor;
+  }
+  protected listaContratos: Array<NotaFiscal>;
+  getcontratos() {
+    return this.listaContratos;
+  }
+  addnota(
     numero: number,
     data: Date,
     itens: [Carga],
@@ -19,10 +35,21 @@ class Cliente {
       new NotaFiscal(numero, data, this, itens, valor, formaDePagamento)
     );
   }
+  constructor(nome: string, cnpj: string, endereco: Endereco) {
+    this.nome = nome;
+    this.CNPJ = cnpj;
+    this.endereco = endereco;
+  }
 }
 
 class ClienteContratante extends Cliente {
-  desconto: number;
+  private desconto: number;
+  getdesconto() {
+    return this.desconto;
+  }
+  setdesconto(valor: number) {
+    this.desconto = valor;
+  }
   constructor(
     nome: string,
     cnpj: string,
@@ -35,8 +62,11 @@ class ClienteContratante extends Cliente {
 }
 
 class ClienteEsporadico extends Cliente {
-  dataUltimoContrato: Date;
-  adicionarNota(
+  private dataUltimoContrato: Date;
+  getdataUltimoContrato() {
+    return this.dataUltimoContrato;
+  }
+  addnota(
     numero: number,
     data: Date,
     itens: [Carga],
@@ -60,11 +90,41 @@ class ClienteEsporadico extends Cliente {
 }
 
 class Veiculo {
-  placa: string;
-  modelo: string;
-  capCarga: string;
-  tipoCarga: TipoCarga;
-  status: StatusVeiculo;
+  private placa: string;
+  getplaca() {
+    return this.placa;
+  }
+  setplaca(valor: string) {
+    this.placa = valor;
+  }
+  private modelo: string;
+  getmodelo() {
+    return this.modelo;
+  }
+  setmodelo(valor: string) {
+    this.modelo = valor;
+  }
+  private capCarga: string;
+  getcapCarga() {
+    return this.capCarga;
+  }
+  setcapCarga(valor: string) {
+    this.capCarga = valor;
+  }
+  private tipoCarga: TipoCarga;
+  gettipoCarga() {
+    return this.tipoCarga;
+  }
+  settipoCarga(valor: TipoCarga) {
+    this.tipoCarga = valor;
+  }
+  private status: StatusVeiculo;
+  getstatus() {
+    return this.status;
+  }
+  setstatus(valor: StatusVeiculo) {
+    this.status = valor;
+  }
   constructor(
     placa: string,
     modelo: string,
@@ -79,14 +139,62 @@ class Veiculo {
 }
 
 class Entrega {
-  data: Date;
-  hora: Date;
-  cliente: Cliente;
-  carga: Carga;
-  veiculo: Veiculo;
-  motorista: Motorista;
-  status: StatusEntrega;
-  obs: string;
+  private data: Date;
+  getdata() {
+    return this.data;
+  }
+  setdata(valor: Date) {
+    this.data = valor;
+  }
+  private hora: Date;
+  gethora() {
+    return this.hora;
+  }
+  sethora(valor: Date) {
+    this.hora = valor;
+  }
+  private cliente: Cliente;
+  getcliente() {
+    return this.cliente;
+  }
+  setcliente(valor: Cliente) {
+    this.cliente = valor;
+  }
+  private carga: Carga;
+  getcarga() {
+    return this.carga;
+  }
+  setcarga(valor: Carga) {
+    this.carga = valor;
+  }
+  private veiculo: Veiculo;
+  getveiculo() {
+    return this.veiculo;
+  }
+  setveiculo(valor: Veiculo) {
+    this.veiculo = valor;
+  }
+  private motorista: Motorista;
+  getmotorista() {
+    return this.motorista;
+  }
+  setmotorista(valor: Motorista) {
+    this.motorista = valor;
+  }
+  private status: StatusEntrega;
+  getstatus() {
+    return this.status;
+  }
+  setstatus(valor: StatusEntrega) {
+    this.status = valor;
+  }
+  private obs: string;
+  getobs() {
+    return this.obs;
+  }
+  setobs(valor: string) {
+    this.obs = valor;
+  }
   constructor(
     data: Date,
     hora: Date,
@@ -105,13 +213,55 @@ class Entrega {
 }
 
 class Carga {
-  peso: number;
-  volume: number;
-  tipo: TipoCarga;
-  origem: Endereco;
-  destino: Endereco;
-  dataEmbarque: Date;
-  dataEntrega: Date;
+  private peso: number;
+  getpeso() {
+    return this.peso;
+  }
+  setpeso(valor: number) {
+    this.peso = valor;
+  }
+  private volume: number;
+  getvolume() {
+    return this.volume;
+  }
+  setvolume(valor: number) {
+    this.volume = valor;
+  }
+  private tipo: TipoCarga;
+  gettipo() {
+    return this.tipo;
+  }
+  settipo(valor: TipoCarga) {
+    this.tipo = valor;
+  }
+  private origem: Endereco;
+  getorigem() {
+    return this.origem;
+  }
+  setorigem(valor: Endereco) {
+    this.origem = valor;
+  }
+  private destino: Endereco;
+  getdestino() {
+    return this.destino;
+  }
+  setdestino(valor: Endereco) {
+    this.destino = valor;
+  }
+  private dataEmbarque: Date;
+  getdataEmbarque() {
+    return this.dataEmbarque;
+  }
+  setdataEmbarque(valor: Date) {
+    this.dataEmbarque = valor;
+  }
+  private dataEntrega: Date;
+  getdataEntrega() {
+    return this.dataEntrega;
+  }
+  setdataEntrega(valor: Date) {
+    this.dataEntrega = valor;
+  }
   constructor(
     peso: number,
     volume: number,
@@ -132,13 +282,55 @@ class Carga {
 }
 
 class Endereco {
-  pais: string;
-  estado: string;
-  cidade: string;
-  bairro: string;
-  rua: string;
-  numero: number;
-  CEP: number;
+  private pais: string;
+  getpais() {
+    return this.pais;
+  }
+  setpais(valor: string) {
+    this.pais = valor;
+  }
+  private estado: string;
+  getestado() {
+    return this.estado;
+  }
+  setestado(valor: string) {
+    this.estado = valor;
+  }
+  private cidade: string;
+  getcidade() {
+    return this.cidade;
+  }
+  setcidade(valor: string) {
+    this.cidade = valor;
+  }
+  private bairro: string;
+  getbairro() {
+    return this.bairro;
+  }
+  setbairro(valor: string) {
+    this.bairro = valor;
+  }
+  private rua: string;
+  getrua() {
+    return this.rua;
+  }
+  setrua(valor: string) {
+    this.rua = valor;
+  }
+  private numero: number;
+  getnumero() {
+    return this.numero;
+  }
+  setnumero(valor: number) {
+    this.numero = valor;
+  }
+  private CEP: number;
+  getCEP() {
+    return this.CEP;
+  }
+  setCEP(valor: number) {
+    this.CEP = valor;
+  }
   constructor(
     pais: string,
     estado: string,
@@ -159,11 +351,41 @@ class Endereco {
 }
 
 class Motorista {
-  nome: string;
-  CNH: string;
-  categoria: string;
-  experiencia: string;
-  veiculoAtribuido: Veiculo;
+  private nome: string;
+  getnome() {
+    return this.nome;
+  }
+  setnome(valor: string) {
+    this.nome = valor;
+  }
+  private CNH: string;
+  getCNH() {
+    return this.CNH;
+  }
+  setCNH(valor: string) {
+    this.CNH = valor;
+  }
+  private categoria: string;
+  getcategoria() {
+    return this.categoria;
+  }
+  setcategoria(valor: string) {
+    this.categoria = valor;
+  }
+  private experiencia: string;
+  getexperiencia() {
+    return this.experiencia;
+  }
+  setexperiencia(valor: string) {
+    this.experiencia = valor;
+  }
+  private veiculoAtribuido: Veiculo;
+  getveiculoAtribuido() {
+    return this.veiculoAtribuido;
+  }
+  setveiculoAtribuido(valor: Veiculo) {
+    this.veiculoAtribuido = valor;
+  }
   constructor(
     nome: string,
     cnh: string,
@@ -180,11 +402,11 @@ class Motorista {
 }
 
 class Rota {
-  origem: Endereco;
-  destino: Endereco;
-  distancia: number;
-  tempoEstimado: Date;
-  listaVeiculos: Array<Veiculo>;
+  private origem: Endereco;
+  private destino: Endereco;
+  private distancia: number;
+  private tempoEstimado: Date;
+  private listaVeiculos: Array<Veiculo>;
   constructor(
     origem: Endereco,
     destino: Endereco,
@@ -196,15 +418,18 @@ class Rota {
     this.distancia = distancia;
     this.tempoEstimado = tempoEstimado;
   }
+  showRota(){
+    return this
+  }
 }
 
 class NotaFiscal {
-  numero: number;
-  dataEmissao: Date;
-  cliente: Cliente;
-  itens: Array<Carga>;
-  valorTotal: number;
-  formaPagamento: string;
+  private numero: number;
+  private dataEmissao: Date;
+  private cliente: Cliente;
+  private itens: Array<Carga>;
+  private valorTotal: number;
+  private formaPagamento: string;
   constructor(
     numero: number,
     data: Date,
@@ -219,6 +444,9 @@ class NotaFiscal {
     this.itens = itens;
     this.valorTotal = valor;
     this.formaPagamento = formaDePagamento;
+  }
+  showNota(){
+    return this
   }
 }
 
