@@ -22,3 +22,21 @@ call criar_pedido(12,12,1);
 call criar_pedido(2,6,1);
 call criar_pedido(13,14,1);
 call criar_pedido(9,9,1);
+
+delete from pedido where id_pedido =1;
+delete from pedido where id_pedido =3;
+--
+update cliente set genero = 'masculino',salario=2000,cpf=11111111111 where id =1;
+update cliente set genero = 'masculino',salario=2200,cpf=11111111112 where id =2;
+update cliente set genero = 'feminino',salario=1800,cpf=11111111113 where id =3;
+update cliente set genero = 'masculino',salario=1750,cpf=11111111114 where id =4;
+update cliente set genero = 'masculino',salario=2500,cpf=11111111115 where id =5;
+update cliente set genero = 'masculino',salario=2549,cpf=11111111116 where id =6;
+update cliente set genero = 'feminino',salario=3200,cpf=11111111117 where id =7;
+update cliente set genero = 'masculino',salario=3500,cpf=11111111118 where id =8;
+update cliente set genero = 'masculino',salario=2000,cpf=11111111119 where id =9;
+update cliente set genero = 'masculino',salario=2100,cpf=11111111120 where id =10;
+update cliente set genero = 'masculino',salario=2100,cpf=11111111121 where id =11;
+update cliente set genero = 'masculino',salario=2350,cpf=11111111122 where id =12;
+update cliente set genero = 'masculino',salario=2875,cpf=11111111123 where id =13;
+update cliente set genero = 'feminino',salario=4000,cpf=11111111124 where id =14;
