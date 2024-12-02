@@ -9,7 +9,9 @@ BEGIN ATOMIC
  INSERT INTO pedido (fk_cliente, fk_produto, quantidade)
    VALUES (criar_pedido.id_cliente, criar_pedido.id_produto, criar_pedido.quantidade_produto);
 END;
+
 --
+
 call criar_pedido(10,14,2);
 call criar_pedido(11,12,1);
 call criar_pedido(1,1,1);
@@ -25,7 +27,9 @@ call criar_pedido(9,9,1);
 
 delete from pedido where id_pedido =1;
 delete from pedido where id_pedido =3;
+
 --
+
 update cliente set genero = 'masculino',salario=2000,cpf=11111111111 where id =1;
 update cliente set genero = 'masculino',salario=2200,cpf=11111111112 where id =2;
 update cliente set genero = 'feminino',salario=1800,cpf=11111111113 where id =3;
