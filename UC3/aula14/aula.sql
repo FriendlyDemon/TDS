@@ -15,3 +15,11 @@ select avg(quantidade) from pedido;
 select avg(count) from (select count (fk_cliente) from pedido group by fk_cliente) as clientes;
 
 select avg(salario::numeric)::money from cliente;
+
+--
+
+select genero, avg(salario::numeric)::money from cliente group by genero;
+
+select genero, count(*) from cliente group by genero;
+
+select sum(preco*0.9) from produto;
