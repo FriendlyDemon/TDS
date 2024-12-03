@@ -15,3 +15,5 @@ e(recuperação) 3/2
 // grau = > (n,n)
 
 //dbeaver
+
+// '::' para retipar um valor em sql ex: select salario::numeric from cliente;
