@@ -29,4 +29,4 @@ insert into cenario(nome) values ('Floresta de Lothlórien'),('Montanhas de Mori
 
 insert into item(nome, tipo) values ('Espada Elfica','espada'),('Arco Longo','arco'),('Machado de Batalha','machado'),('Varinha Mágica','focus'),('Anduril','espada'),('Lamina Morgul','faca'),('Ferroada','espada'),('O Anél','anél');
 
-insert into coletado(fk_personagem,fk_item,fk_cenario) values (1,1,1),(2,2,2),(3,3,3),(4,4,1),(1,3,3),(2,1,1),(5,8,3),(7,7,5),(6,1,1);
+insert into coletado(fk_personagem,fk_item,fk_cenario) values (22,17,22),(23,18,23),(24,19,24),(25,20,22),(22,19,24),(23,17,22),(26,24,24),(28,23,26),(27,17,22);
