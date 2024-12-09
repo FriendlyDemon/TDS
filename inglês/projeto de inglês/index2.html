@@ -16,18 +16,22 @@
       <div class="row">
         <div class="column">
           <div class="card">
-            <form name="cloth">
+            <form name="cloth" onchange="img1.src=cloth.value">
               Pick a cloth<br />
               <label>
                 <input
                   name="cloth"
                   type="radio"
-                  value="cotton"
+                  value="cotton.jpg"
                   checked
                 />cotton </label
               ><br />
               <label>
-                <input name="cloth" type="radio" value="Felt" />felt </label
+                <input
+                  name="cloth"
+                  type="radio"
+                  value="colored_felt_cloth.jpg"
+                />felt </label
               ><br />
               <label>
                 <input type="radio" name="cloth" value="polyester" />polyester
@@ -38,7 +42,7 @@
         </div>
         <div class="column">
           <div class="card">
-            <form name="filling">
+            <form name="filling" onchange="img2.src=filing.value">
               Pick a filling<br />
               <label>
                 <input
@@ -58,16 +62,22 @@
           <div class="card">
             Pick some accessories
             <form name="accessories">
-              <label
-                ><input
-                  type="checkbox"
-                  name="accessories"
-                  value="bow"
-                />bow</label
+              <label><input type="checkbox" name="bow" value="bow" />bow</label
               ><br />
-              <label> <input type="checkbox" name="accessories" value="hat" />hat </label
+              <label>
+                <input type="checkbox" name="hat" value="hat" />hat </label
               ><br />
             </form>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="pic">
+              <img id="img1" src="cotton.jpg" />
+              <img id="img2" src="" />
+              <img id="img3" src="" />
+              <img id="img4" src="" />
+            </div>
           </div>
         </div>
       </div>
