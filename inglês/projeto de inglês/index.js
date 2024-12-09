@@ -1,6 +1,6 @@
 function hat(){
-if(element.cheked){
-        img4.src=element.value
+if(this.cheked){
+        img4.src=this.value
     } else {
         img4.src=''
     }
