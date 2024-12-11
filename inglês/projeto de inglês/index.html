@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
   </head>
   <body>
     <header>
@@ -12,51 +13,77 @@
       <h2>Where we make friends</h2>
     </header>
     <div class="content">
-      <h1>Make your own plushy</h1>
+      <h1>Make your own plush</h1>
       <div class="row">
-        <h2>Cloths</h2>
         <div class="column">
           <div class="card">
-            <div class="pic">
-              <img src="cotton.jpg" />
-            </div>
-            <p>Cotton</p>
+            <form name="cloth" onchange="img1.src=cloth.value">
+              Pick a cloth<br />
+              <label>
+                <input
+                  name="cloth"
+                  type="radio"
+                  value="urso1.png"
+                  checked
+                />cotton </label
+              ><br />
+              <label>
+                <input
+                  name="cloth"
+                  type="radio"
+                  value="urso2.png"
+                />felt </label
+              ><br />
+              <label>
+                <input type="radio" name="cloth" value="urso3.png" />polyester
+              </label>
+            </form>
+          </div>
+          <br />
+        </div>
+        <div class="column">
+          <div class="card">
+            <form name="filling" onchange="img2.src=filing.value">
+              Pick a filling<br />
+              <label>
+                <input
+                  type="radio"
+                  name="filling"
+                  value="foam"
+                  checked
+                />foam </label
+              ><br />
+              <label>
+                <input type="radio" name="filling" value="cotton" />cotton
+              </label>
+            </form>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card">
+            Pick some accessories
+            <form name="accessories">
+              <label><input type="checkbox" name="bow" value="bow" onchange="linkimagem3(this)"/>bow</label
+              ><br />
+              <label>
+                <input
+                  type="checkbox"
+                  name="hat"
+                  value="seasonal-holidays-2024-6753651837110333.4-s.png"
+                  onchange="linkimagem4(this)"
+                />hat </label
+              ><br />
+            </form>
           </div>
         </div>
         <div class="column">
           <div class="card">
             <div class="pic">
-              <img src="Colored_felt_cloth.jpg" />
+              <img id="img1" src="urso1.png" />
+              <img id="img2" src="" />
+              <img id="img3" src="" />
+              <img id="img4" src="" />
             </div>
-            <p>Felt</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="pic">
-              <img src="polyester.webp" />
-            </div>
-            <p>Polyester</p>
-          </div>
-        </div>
-      </div>
-      <br /><br />
-      <div class="row">
-        <h2>Filling</h2>
-        <div class="column">
-          <div class="card">
-            <div class="pic">
-              <img src="raw-cotton.jpg" />
-            </div>
-            <p>Cotton</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="pic">
-              <img src="Shredded-Foam.jpg" />
-            </div>
-            <p>Foam</p>
           </div>
         </div>
       </div>
