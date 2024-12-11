@@ -23,7 +23,7 @@
                 <input
                   name="cloth"
                   type="radio"
-                  value="cotton.jpg"
+                  value="urso1.png"
                   checked
                 />cotton </label
               ><br />
@@ -31,11 +31,11 @@
                 <input
                   name="cloth"
                   type="radio"
-                  value="colored_felt_cloth.jpg"
+                  value="urso2.png"
                 />felt </label
               ><br />
               <label>
-                <input type="radio" name="cloth" value="polyester.webp" />polyester
+                <input type="radio" name="cloth" value="urso3.png" />polyester
               </label>
             </form>
           </div>
@@ -63,14 +63,14 @@
           <div class="card">
             Pick some accessories
             <form name="accessories">
-              <label><input type="checkbox" name="bow" value="bow" />bow</label
+              <label><input type="checkbox" name="bow" value="bow" onchange="linkimagem3(this)"/>bow</label
               ><br />
               <label>
                 <input
                   type="checkbox"
                   name="hat"
                   value="seasonal-holidays-2024-6753651837110333.4-s.png"
-                  onchange="linkimagem(this)"
+                  onchange="linkimagem4(this)"
                 />hat </label
               ><br />
             </form>
@@ -79,7 +79,7 @@
         <div class="column">
           <div class="card">
             <div class="pic">
-              <img id="img1" src="cotton.jpg" />
+              <img id="img1" src="urso1.png" />
               <img id="img2" src="" />
               <img id="img3" src="" />
               <img id="img4" src="" />
