@@ -1,4 +1,4 @@
-class Cliente {
+abstract class Cliente {
   private nome: string;
   getnome() {
     return this.nome;

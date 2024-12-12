@@ -1,4 +1,4 @@
-class Funcionario {
+abstract class Funcionario {
   private nome: string;
   getnome() {
     return this.nome;
@@ -113,7 +113,7 @@ class Comissionado extends Funcionario {
   }
 }
 
-class Ativo {
+abstract class Ativo {
   private nome: string;
   getnome() {
     return this.nome;
