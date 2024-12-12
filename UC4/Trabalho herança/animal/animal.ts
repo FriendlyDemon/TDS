@@ -1,4 +1,4 @@
-class Animal {
+abstract class Animal {
   nome: string;
   idade: number;
   especie: string;

@@ -1,7 +1,7 @@
-class Forma {
+abstract class Forma {
   nome: string;
   cor: string;
-  calcularArea() {}
+  abstract calcularArea():number
   constructor(nome: string, cor: string) {
     this.nome = nome;
     this.cor = cor;

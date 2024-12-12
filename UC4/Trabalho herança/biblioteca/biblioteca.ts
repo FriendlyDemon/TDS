@@ -10,7 +10,7 @@ let Biblioteca: {
   usuarios: [],
   emprestimos: [],
 };
-class ItensBiblioteca {
+abstract class ItensBiblioteca {
   titulo: string;
   dataPublicacao: Date;
   constructor(titulo: string, dataPublicacao: Date) {

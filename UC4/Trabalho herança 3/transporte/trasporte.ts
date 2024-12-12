@@ -1,4 +1,4 @@
-class Transporte{
+abstract class Transporte{
     capacidade:number
     velocidade:number
     rotas:Array<Rota>
