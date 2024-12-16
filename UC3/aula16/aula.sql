@@ -29,3 +29,6 @@ select produto.nome from produto
 cross join categoria
 where categoria.nome='brinquedos'
 
+select pedido.id as pedido,categoria.nome as categoria from pedido
+left join produto on pedido.fk_produto=produto.id
+left join categoria on produto.categoria=categoria.id
