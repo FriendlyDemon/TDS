@@ -17,3 +17,19 @@ e(recuperação) 3/2
 //dbeaver
 
 // '::' para retipar um valor em sql ex: select salario::numeric from cliente;
+
+/* create view
+create or replace view produtos_comprados as
+select PE.id as pedido, CL.nome as cliente, PR.nome as produto, PE.quantidade as quantidade, PE.quantidade*preco as fatura
+from pedido PE
+join produto PR on PE.fk_produto=PR.id
+join cliente CL on CL.id=PE.fk_cliente
+*/
+
+/* call view
+select * from produtos_comprados
+*/
+
+/* create index
+create index on tabela (coluna)
+*/
