@@ -33,3 +33,12 @@ select * from produtos_comprados
 /* create index
 create index on tabela (coluna)
 */
+
+/*
+select * from crime_scene_report
+where type='murder' and date=20180115
+
+https://mystery.knightlab.com/
+
+'Security footage shows that there were 2 witnesses. The first witness lives at the last house on "Northwestern Dr". The second witness, named Annabel, lives somewhere on "Franklin Ave".'
+*/
