@@ -34,11 +34,4 @@ select * from produtos_comprados
 create index on tabela (coluna)
 */
 
-/*
-select * from crime_scene_report
-where type='murder' and date=20180115
-
-https://mystery.knightlab.com/
-
-Miranda Priestly and Jeremy Bowers
-*/
+//https://mystery.knightlab.com/
