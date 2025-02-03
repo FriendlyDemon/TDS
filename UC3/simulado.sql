@@ -88,3 +88,7 @@ values
     ("Wingardium Leviosa", 2),
     ("Expeliarmus", 2);
 
+----------
+
+select student.name,house.name from student
+join house on student.house_id=house.id
