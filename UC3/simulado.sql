@@ -135,4 +135,4 @@ from
     student
     join house on student.house_id = house.id
 where
-    house.name = 'griffindor'
+    house.name = 'griffindor';
