@@ -22,6 +22,7 @@ fs.readFile("./file.txt", function (erro, texto) {
 */
 
 // npm install --save-dev @types/node -- to use node modules in ts
+// tsx -- run from ts file
 
 // typescript constructor generator
 
