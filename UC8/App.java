@@ -14,14 +14,14 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello World");
         Scanner sc = new Scanner(System.in);
-
+        /*
         int idade = 31;
         double altura = 1.76;
         String nome = "Henrique";
         char inicial = 'H';
         boolean souEstudante = true;
-
-        /*
+         */
+ /*
         int numero = 0;
         
         if (numero > 0) {
@@ -94,11 +94,20 @@ public class App {
         App meuApp = new App();
         meuApp.promocao(meuProd);
          */
+ /*
         int numero1, numero2;
         System.out.println("digite um numero");
         numero1 = sc.nextInt();
         System.out.println("digite outro numero");
         numero2 = sc.nextInt();
-        System.out.println("resultado" + numero1 + numero2);
+        System.out.println("resultado " + (numero1 + numero2));
+        sc.close();
+         */
+        String nome, sobrenome;
+        System.out.println("qual o seu nome?");
+        nome = sc.nextLine();
+        System.out.println("qual o seu sobrenome?");
+        sobrenome = sc.nextLine();
+        System.out.println("ola " + nome + ' ' + sobrenome + '!');
     }
 }
