@@ -108,6 +108,7 @@ public class App {
         
         System.out.println("qual o sua idade?");
         idade = sc.nextInt();
+        sc.nextLine();
         
         System.out.println("qual o seu sobrenome?");
         sobrenome = sc.nextLine();
