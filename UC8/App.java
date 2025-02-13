@@ -101,13 +101,18 @@ public class App {
         System.out.println("digite outro numero");
         numero2 = sc.nextInt();
         System.out.println("resultado " + (numero1 + numero2));
-        sc.close();
          */
-        String nome, sobrenome;
+        String nome, sobrenome;int idade;
         System.out.println("qual o seu nome?");
         nome = sc.nextLine();
+        
+        System.out.println("qual o sua idade?");
+        idade = sc.nextInt();
+        
         System.out.println("qual o seu sobrenome?");
         sobrenome = sc.nextLine();
-        System.out.println("ola " + nome + ' ' + sobrenome + '!');
+        System.out.println("ola " + nome + ' ' + sobrenome + "! voce tem "+idade+" anos.");
+
+        sc.close();
     }
 }
