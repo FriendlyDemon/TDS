@@ -12,6 +12,7 @@ public class App {
         String nome = "Henrique";
         char inicial = 'H';
         boolean souEstudante = true;
+
         /*
         int numero = 0;
         
@@ -58,7 +59,6 @@ public class App {
         String resultado = (numero2 % 2 == 0) ? "Par" : "Ímpar";
         System.out.println("o número é " + resultado);
          */
- 
  /*
         int voltas = 0;
         while (voltas < 10) {
@@ -66,13 +66,11 @@ public class App {
             voltas++;
         }
         System.out.println("você chegou no final");
-*/
- 
+         */
  /*
- for (int i = 0;i<10;i++){System.out.println(i);}
- */
- 
- 
-
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+         */
     }
 }
