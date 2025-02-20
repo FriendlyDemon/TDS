@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.guessing_game;
 
-/**
- *
- * @author Aluno
- */
 public class GuessValidator {
 
     public boolean validateGuess(int guess, int numberToGuess) {
