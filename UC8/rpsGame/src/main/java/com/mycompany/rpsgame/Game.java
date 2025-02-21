@@ -32,7 +32,7 @@ public class Game {
                     empate++;
             }
 
-            System.out.println("você: " + jogador + " computador: " + computador + " empates:" + empate);
+            System.out.println("você: " + jogador + " computador: " + computador + " empates: " + empate);
 
             if (jogador == 2 || (jogador + empate >= 3) && jogador > computador) {
                 System.out.print("Você Ganhou!");
