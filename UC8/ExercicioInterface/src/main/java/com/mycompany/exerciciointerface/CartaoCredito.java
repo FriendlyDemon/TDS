@@ -4,6 +4,8 @@
  */
 package com.mycompany.exerciciointerface;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Aluno
@@ -11,10 +13,11 @@ package com.mycompany.exerciciointerface;
 public class CartaoCredito implements Pagamento {
 
     String numeroCartao;
+    DecimalFormat df = new DecimalFormat("#0.00");
 
     @Override
     public void processarPagamento(double valor) {
-        System.out.println("Pagamento de R$" + valor + " processado via Cartão de Crédito");
+        System.out.println("Pagamento de R$" + df.format(valor) + " processado via Cartão de Crédito");
     }
 
     @Override
