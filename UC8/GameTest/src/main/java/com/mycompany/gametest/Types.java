@@ -27,6 +27,19 @@ public class Types {
     }
 
     enum WeaponTags {
+        slashing,
+        piercing,
+        bludgeoning,
+        fire,
+        cold,
+        lightning,
+        thunder,
+        acid,
+        poison,
+        psychic,
+        radiant,
+        necrotic,
+        force,
         ammunition,
         finesse,
         reach,
@@ -67,6 +80,19 @@ public class Types {
     }
 
     enum SpellTags {
+        slashing,
+        piercing,
+        bludgeoning,
+        fire,
+        cold,
+        lightning,
+        thunder,
+        acid,
+        poison,
+        psychic,
+        radiant,
+        necrotic,
+        force,
         DamageTypes,
         buff,
         save,
