@@ -26,7 +26,7 @@ public class Types {
         force;
     }
 
-    enum WeaponTags{
+    enum WeaponTags {
         slashing,
         piercing,
         bludgeoning,
