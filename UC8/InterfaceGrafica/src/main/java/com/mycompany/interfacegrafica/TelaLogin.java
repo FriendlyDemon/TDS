@@ -38,6 +38,10 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +79,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 campoEmailFocusLost(evt);
             }
         });
+        campoEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoEmailActionPerformed(evt);
+            }
+        });
 
         tituloSenha.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         tituloSenha.setForeground(new java.awt.Color(0, 0, 0));
@@ -104,6 +113,11 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnEntrarMouseClicked(evt);
+            }
+        });
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
             }
         });
 
@@ -156,8 +170,20 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("File");
+
+        jMenuItem1.setText("jMenuItem1");
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,6 +241,14 @@ public class TelaLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_campoSenhaFocusLost
 
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void campoEmailActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -255,6 +289,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField campoNome;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel painel;
     private javax.swing.JLabel tituloEmail1;
     private javax.swing.JLabel tituloNome;
