@@ -23,10 +23,10 @@ public class Types {
         psychic,
         radiant,
         necrotic,
-        force
+        force;
     }
 
-    enum WeaponTags {
+    enum WeaponTags{
         slashing,
         piercing,
         bludgeoning,
@@ -54,7 +54,7 @@ public class Types {
         arcane_focus,
         heavy,
         light,
-        special
+        special;
     }
 
     enum ArmorType {
@@ -93,7 +93,6 @@ public class Types {
         radiant,
         necrotic,
         force,
-        DamageTypes,
         buff,
         save,
         attack,
@@ -102,7 +101,7 @@ public class Types {
         object,
         terrain,
         target,
-        damage
+        damage;
     }
 
     enum Actions {
@@ -125,7 +124,7 @@ public class Types {
 
     enum Range {
         self,
-        touch
+        touch;
     }
 
     enum CreatureType {
