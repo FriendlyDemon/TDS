@@ -53,11 +53,27 @@ public class TelaLogin extends javax.swing.JFrame {
         campoNome.setForeground(new java.awt.Color(0, 0, 0));
         campoNome.setText("Insira seu nome"); // NOI18N
         campoNome.setToolTipText("");
+        campoNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoNomeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoNomeFocusLost(evt);
+            }
+        });
 
         campoEmail.setBackground(new java.awt.Color(255, 255, 255));
         campoEmail.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         campoEmail.setForeground(new java.awt.Color(0, 0, 0));
         campoEmail.setText("Insira seu E-mail");
+        campoEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoEmailFocusLost(evt);
+            }
+        });
         campoEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoEmailActionPerformed(evt);
@@ -76,7 +92,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         campoSenha.setBackground(new java.awt.Color(255, 255, 255));
         campoSenha.setForeground(new java.awt.Color(0, 0, 0));
-        campoSenha.setText("jPasswordField1");
+        campoSenha.setText("123456789");
 
         btnEntrar.setBackground(new java.awt.Color(102, 255, 153));
         btnEntrar.setForeground(new java.awt.Color(0, 0, 0));
@@ -84,6 +100,11 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnEntrarMouseClicked(evt);
+            }
+        });
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
             }
         });
 
@@ -129,18 +150,18 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 844, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 880, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -154,6 +175,34 @@ public class TelaLogin extends javax.swing.JFrame {
         System.out.println("seja bem vindo " + campoNome.getText());
         JOptionPane.showMessageDialog(this, "seja bem vindo " + campoNome.getText());
     }//GEN-LAST:event_btnEntrarMouseClicked
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void campoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoNomeFocusGained
+        if ("Insira seu nome".equals(campoNome.getText())) {
+            campoNome.setText("");
+        }
+    }//GEN-LAST:event_campoNomeFocusGained
+
+    private void campoNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoNomeFocusLost
+        if ("".equals(campoNome.getText())) {
+            campoNome.setText("Insira seu nome");
+        }
+    }//GEN-LAST:event_campoNomeFocusLost
+
+    private void campoEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoEmailFocusGained
+        if ("Insira seu E-mail".equals(campoEmail.getText())) {
+            campoEmail.setText("");
+        }
+    }//GEN-LAST:event_campoEmailFocusGained
+
+    private void campoEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoEmailFocusLost
+        if ("".equals(campoEmail.getText())) {
+            campoEmail.setText("Insira seu E-mail");
+        }
+    }//GEN-LAST:event_campoEmailFocusLost
 
     /**
      * @param args the command line arguments
