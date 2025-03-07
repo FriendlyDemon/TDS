@@ -74,11 +74,6 @@ public class TelaLogin extends javax.swing.JFrame {
                 campoEmailFocusLost(evt);
             }
         });
-        campoEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEmailActionPerformed(evt);
-            }
-        });
 
         tituloSenha.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         tituloSenha.setForeground(new java.awt.Color(0, 0, 0));
@@ -108,11 +103,6 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnEntrarMouseClicked(evt);
-            }
-        });
-        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrarActionPerformed(evt);
             }
         });
 
@@ -175,18 +165,11 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoEmailActionPerformed
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
         System.out.println("seja bem vindo " + campoNome.getText());
         JOptionPane.showMessageDialog(this, "seja bem vindo " + campoNome.getText());
     }//GEN-LAST:event_btnEntrarMouseClicked
-
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void campoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoNomeFocusGained
         if ("Insira seu nome".equals(campoNome.getText())) {
