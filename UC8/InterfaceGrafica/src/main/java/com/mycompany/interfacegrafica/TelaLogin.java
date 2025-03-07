@@ -78,11 +78,6 @@ public class TelaLogin extends javax.swing.JFrame {
                 campoEmailFocusLost(evt);
             }
         });
-        campoEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEmailActionPerformed(evt);
-            }
-        });
 
         tituloSenha.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
         tituloSenha.setForeground(new java.awt.Color(0, 0, 0));
@@ -112,11 +107,6 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnEntrarMouseClicked(evt);
-            }
-        });
-        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrarActionPerformed(evt);
             }
         });
 
@@ -246,14 +236,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void campoEmailActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
 
     /**
      * @param args the command line arguments
