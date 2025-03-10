@@ -119,16 +119,16 @@ public class foobar extends javax.swing.JFrame {
         if (check1.isSelected()) {
             texto.append(check1.getText());
         }
-        if (!"The Sports you like are ".equals(texto.getText()) && check2.isSelected()) {
-            texto.append(", ");
-            texto.append(check2.getText());
-        } else if (check2.isSelected()) {
+        if (check2.isSelected()) {
+            if (!"The Sports you like are ".equals(texto.getText())) {
+                texto.append(", ");
+            }
             texto.append(check2.getText());
         }
-        if (!"The Sports you like are ".equals(texto.getText()) && check3.isSelected()) {
-            texto.append(", ");
-            texto.append(check3.getText());
-        } else if (check3.isSelected()) {
+        if (check3.isSelected()) {
+            if (!"The Sports you like are ".equals(texto.getText())) {
+                texto.append(", ");
+            }
             texto.append(check3.getText());
         }
         if (check1.isSelected() || check2.isSelected() || check3.isSelected()) {
