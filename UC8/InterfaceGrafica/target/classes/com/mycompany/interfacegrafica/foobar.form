@@ -38,27 +38,30 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="85" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="botao" min="-2" max="-2" attributes="0"/>
                       <Component id="check3" min="-2" max="-2" attributes="0"/>
                       <Component id="check2" min="-2" max="-2" attributes="0"/>
                       <Component id="check1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="85" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="check1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="check2" min="-2" max="-2" attributes="0"/>
@@ -76,22 +79,22 @@
       <SubComponents>
         <Component class="javax.swing.JCheckBox" name="check1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="foo"/>
+            <Property name="text" type="java.lang.String" value="Football"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="check2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="bar"/>
+            <Property name="text" type="java.lang.String" value="Basketball"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="check3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="foobar"/>
+            <Property name="text" type="java.lang.String" value="Volleyball"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="botao">
           <Properties>
-            <Property name="text" type="java.lang.String" value="botao"/>
+            <Property name="text" type="java.lang.String" value="Button"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoActionPerformed"/>
@@ -112,6 +115,11 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Wich sports do you like?"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
