@@ -32,6 +32,7 @@ public class Table extends javax.swing.JFrame {
         modelo.addColumn("Email");
 
         jTable1.setModel(modelo);
+        setResizable(false);
     }
 
     /**

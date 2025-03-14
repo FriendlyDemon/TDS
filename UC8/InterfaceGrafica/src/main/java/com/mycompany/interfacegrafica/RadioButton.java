@@ -152,7 +152,6 @@ public class RadioButton extends javax.swing.JFrame {
             arg = "nenhum";
         }
         texto.setText(arg);
-
     }
 
     /**
