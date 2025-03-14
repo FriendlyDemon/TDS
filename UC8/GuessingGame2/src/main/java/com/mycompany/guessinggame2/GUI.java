@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.guesinggame2;
+package com.mycompany.guessinggame2;
 
 import javax.swing.JOptionPane;
 
@@ -125,25 +125,27 @@ public class GUI extends javax.swing.JFrame {
             if (win) {
                 JOptionPane.showMessageDialog(this, "the game is over");
             } else if ((int) GuessN.getValue() > numberToGuess) {
-                History.append(GuessN.getValue() + ": too high\n");
+                History.append(GuessN.getValue() + ": too high. "+Integer.toString(10-tries)+" attempts left.\n");
                 tries++;
             } else if ((int) GuessN.getValue() < numberToGuess) {
-                History.append(GuessN.getValue() + ": too low\n");
+                History.append(GuessN.getValue() + ": too low. "+Integer.toString(10-tries)+" attempts left.\n");
                 tries++;
             } else {
-                History.append(numberToGuess + "! you got it!!");
+                History.append(numberToGuess + "! you got it!!\n");
                 this.win = true;
                 player.addVictorie();
+                History.append("Victories: "+Integer.toString(player.getVictories())+" Failures: "+Integer.toString(player.getFailures()));
             }
         } else {
-            History.append("You loose");
+            History.append("You loose.\n");
             player.addFailure();
+            History.append("Victories: "+Integer.toString(player.getVictories())+" Failures: "+Integer.toString(player.getFailures()));
         }
     }//GEN-LAST:event_SendActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         this.numberToGuess = (int) (Math.random() * 100) + 1;
-        History.setText("Hello " + player.getName() + "Pick a number between 1 and 100:\n");
+        History.setText("Hello " + player.getName() +".\n"+ "Pick a number between 1 and 100:\n");
         win = false;
         GuessN.setValue(0);
         tries = 0;
