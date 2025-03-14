@@ -24,7 +24,9 @@ public class Table extends javax.swing.JFrame {
 
     public Table() {
         initComponents();
+
         jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
         modelo.addColumn("Name");
         modelo.addColumn("Phone");
         modelo.addColumn("Email");
