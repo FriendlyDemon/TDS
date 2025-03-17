@@ -19,5 +19,7 @@ public class ArrayLista {
         numeros.add(315);
         numeros.remove(1);
         System.out.println(numeros);
+        System.out.println(numeros.get(0));
+        
     }
 }
