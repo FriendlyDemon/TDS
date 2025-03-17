@@ -4,21 +4,19 @@
 package com.mycompany.filetest;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 /**
  *
  * @author henri
  */
 public class FileTest {
+
     public static void main(String[] args) {
-    /*
-        WriteObject.writeToFile(new File("save1.save"),new Character("James",5));
+
+        WriteObject.writeToFile(new File("save1.save"), new Character("Jessie", 12));
+        Character readObject = WriteObject.readFromFile(new File("save1.save"));
+
+        System.out.println(readObject.getName());
+
     }
-    */
-    Object readObject = WriteObject.readFromFile(new File("save1.save"));
-    
 }

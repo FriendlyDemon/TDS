@@ -10,40 +10,163 @@ package com.mycompany.gametest;
  */
 public class Items {
 
-    public class Damage {
+    class Damage {
 
-        int DiceNumber;
+        private int diceNumber;
 
-        int DiceValue;
+        private int diceValue;
 
-        int DiceValueVersatile;
-        // number? ;
-        Types.DamageTypes DamageType;
-        // DamageTypes ;
+        private int diceValueVersatile;
+
+        private Types.DamageTypes damageType;
+
+        public int getDiceNumber() {
+            return this.diceNumber;
+        }
 
         public Damage(
                 int DiceNumber, int DiceValue, Types.DamageTypes DamageType, int DiceValueVersatile) {
-            this.DiceNumber = DiceNumber;
-            this.DiceValue = DiceValue;
-            this.DiceValueVersatile = DiceValueVersatile;
-            this.DamageType = DamageType;
+            diceNumber = DiceNumber;
+            diceValue = DiceValue;
+            diceValueVersatile = DiceValueVersatile;
+            damageType = DamageType;
         }
     }
 
-    public class Item {
+    abstract class Item {
 
-        String name;
-        String[] tags;
-        int cost;
-        int weight;
-        String description;
+        private String name;
+        private String[] tags;
+        private int cost;
+        private int weight;
+        private String description;
+
+        Item(String Name, String[] Tags, int Cost, int Weight, String Description) {
+
+            name = Name;
+            tags = Tags;
+            cost = Cost;
+            weight = Weight;
+            description = Description;
+        }
     }
 
-    public class Equipment extends Item {
+    abstract class Equipment extends Item {
+
+        Equipment(String Name, String[] Tags, int Cost, int Weight, String Description) {
+            super(Name, Tags, Cost, Weight, Description);
+        }
     }
 
-    public class Weapon extends Equipment {
+    class Weapon extends Equipment {
 
-        int[] Dakka;
+        private Damage damage;
+        private int range;
+
+        public Weapon(String Name, String[] Tags, int Cost, int Weight, String Description, Damage Damage, int Range) {
+            super(Name, Tags, Cost, Weight, Description);
+            damage = Damage;
+            range = Range;
+        }
+    }
+
+    class Armor extends Equipment {
+
+        private int ac;
+        private int dexLimit;
+        private Types.ArmorType armorType;
+
+        Armor(String Name, String[] Tags, int Cost, int Weight, String Description, int Ac, int DexLimit, Types.ArmorType ArmorType) {
+            super(Name, Tags, Cost, Weight, Description);
+            ac = Ac;
+            dexLimit = DexLimit;
+            armorType = ArmorType;
+        }
+    }
+
+    class Accessory extends Equipment {
+
+        private Types.EquipSlot slot;
+
+        Accessory(String Name, String[] Tags, int Cost, int Weight, String Description, Types.EquipSlot Slot) {
+            super(Name, Tags, Cost, Weight, Description);
+            slot = Slot;
+        }
+    }
+
+    class Material extends Item {
+
+        Material(String Name, String[] Tags, int Cost, int Weight, String Description) {
+            super(Name, Tags, Cost, Weight, Description);
+        }
+    }
+
+    class Usable extends Item {
+
+        private boolean consumed;
+        private Types.Actions useTime;
+
+        Usable(String Name, String[] Tags, int Cost, int Weight, String Description, boolean Consumed, Types.Actions UseTime) {
+            super(Name, Tags, Cost, Weight, Description);
+            consumed = Consumed;
+            useTime = UseTime;
+        }
+    }
+
+    class Wand extends Usable {
+
+        private Spells.Spell spell;
+        private int[] charges;
+
+        public Spells.Spell getSpell() {
+            return this.spell;
+        }
+
+        public int[] getCharges() {
+            return this.charges;
+        }
+
+        public void changeCharges(int change) {
+            this.charges[0] += change;
+        }
+
+        Wand(String Name, String[] Tags, int Cost, int Weight, String Description, boolean Consumed, Types.Actions UseTime, Spells.Spell Spell, int CurrentCharges, int MaxCharges) {
+            super(Name, Tags, Cost, Weight, Description, Consumed, UseTime);
+            spell = Spell;
+            charges = new int[]{CurrentCharges, MaxCharges};
+
+        }
+    }
+
+    class Scroll extends Usable {
+
+        private Spells.Spell spell;
+
+        public Spells.Spell getSpell() {
+            return this.spell;
+        }
+
+        Scroll(String Name, String[] Tags, int Cost, int Weight, String Description, Types.Actions UseTime, Spells.Spell Spell) {
+            super(Name, Tags, Cost, Weight, Description, true, Types.Actions.action);
+            spell = Spell;
+        }
+    }
+
+    class Ammunition extends Item {
+
+        private int ammount;
+
+        public int getAmmount() {
+            return this.ammount;
+        }
+
+        public void changeAmmount(int change) {
+            this.ammount += change;
+        }
+
+        Ammunition(String Name, String[] Tags, int Cost, int Weight, String Description, int Ammount) {
+            super(Name, Tags, Cost, Weight, Description);
+            ammount = Ammount;
+        }
     }
 }

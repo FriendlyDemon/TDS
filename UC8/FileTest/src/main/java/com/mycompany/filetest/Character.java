@@ -4,15 +4,29 @@
  */
 package com.mycompany.filetest;
 
+import java.io.Serializable;
+
 /**
  *
  * @author henri
  */
-public class Character {
+public class Character implements Serializable{
 
-    String name;
-    int level;
-    boolean alive;
+    private String name;
+    private int level;
+    private boolean alive;
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getLevel() {
+        return this.level;
+    }
+
+    public boolean isAlive() {
+        return this.alive;
+    }
 
     Character(String Name, int Level) {
         name = Name;

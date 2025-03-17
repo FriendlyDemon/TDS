@@ -27,3 +27,5 @@ fs.readFile("./file.txt", function (erro, texto) {
 // typescript constructor generator
 
 // https://code.visualstudio.com/api/get-started/your-first-extension
+
+// https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html
