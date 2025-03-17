@@ -20,8 +20,10 @@ import java.io.ObjectOutputStream;
 public class WriteObject {
 
     public static void writeToFile(File path, Character data) {
-        try (ObjectOutputStream write = new ObjectOutputStream(new FileOutputStream(path))) {
+        try (var write = new ObjectOutputStream(new FileOutputStream(path))) {
             write.writeObject(data);
+            System.out.println("Saved!");
+            write.close();
         } catch (NotSerializableException nse) {
             System.out.println(nse);
         } catch (IOException eio) {
@@ -29,12 +31,11 @@ public class WriteObject {
         }
     }
 
-    public static Object readFromFile(File path) {
-        Object data = null;
+    public static Character readFromFile(File path) {
+        Character data = null;
 
         try (ObjectInputStream inFile = new ObjectInputStream(new FileInputStream(path))) {
-            data = inFile.readObject();
-            return data;
+            data = (Character) inFile.readObject();
         } catch (ClassNotFoundException cnfe) {
             System.out.println(cnfe);
         } catch (FileNotFoundException fnfe) {
