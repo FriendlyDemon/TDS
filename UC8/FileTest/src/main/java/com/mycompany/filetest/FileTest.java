@@ -16,9 +16,9 @@ import java.io.ObjectOutputStream;
 public class FileTest {
     public static void main(String[] args) {
     /*
-        WriteObject.writeToFile(new File("save.json"),new Character("James",5));
+        WriteObject.writeToFile(new File("save1.save"),new Character("James",5));
     }
     */
-    Object readObject = WriteObject.readFromFile(new File("save.json"));
+    Object readObject = WriteObject.readFromFile(new File("save1.save"));
     
 }
