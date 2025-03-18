@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.gametest;
 
-/**
- *
- * @author Aluno
- */
 public class Types {
 
-    enum DamageTypes {
+    static enum DamageTypes {
         slashing,
         piercing,
         bludgeoning,
@@ -26,7 +18,7 @@ public class Types {
         force;
     }
 
-    enum WeaponTags {
+    static enum WeaponTags {
         slashing,
         piercing,
         bludgeoning,
@@ -57,14 +49,14 @@ public class Types {
         special;
     }
 
-    enum ArmorType {
+    static enum ArmorType {
         light,
         medium,
         heavy,
         shield;
     }
 
-    enum EquipSlot {
+    static enum EquipSlot {
         head,
         neck,
         torso,
@@ -79,7 +71,7 @@ public class Types {
         off_hand;
     }
 
-    enum SpellTags {
+    static enum SpellTags {
         slashing,
         piercing,
         bludgeoning,
@@ -104,14 +96,14 @@ public class Types {
         damage;
     }
 
-    enum Actions {
+    static enum Actions {
         action,
         bonus_action,
         reaction,
         movement;
     }
 
-    enum MagicSchool {
+    static enum MagicSchool {
         abjuration,
         conjuration,
         divination,
@@ -122,12 +114,12 @@ public class Types {
         transmutation;
     }
 
-    enum Range {
+    static enum Range {
         self,
         touch;
     }
 
-    enum CreatureType {
+    static enum CreatureType {
         aberration,
         beast,
         celestial,
