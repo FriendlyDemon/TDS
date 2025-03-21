@@ -14,6 +14,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
         this.data = new ArrayList<>();
         initComponents();
         Display.setModel(modelo);
+        this.setLocationRelativeTo(null);
     }
 
     /**
