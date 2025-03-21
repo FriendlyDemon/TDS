@@ -17,7 +17,8 @@ public class InterfaceContatos extends javax.swing.JFrame {
     /**
      * Creates new form InterfaceContatos
      */
-    DefaultListModel<String> modelo = new DefaultListModel<String>();
+    private ArrayList<Contato> data = new ArrayList<>();
+    DefaultListModel<String> modelo = new DefaultListModel<>();
 
     public InterfaceContatos() {
         initComponents();
@@ -89,12 +90,12 @@ public class InterfaceContatos extends javax.swing.JFrame {
                     .addComponent(NumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Editbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                         .addComponent(Removebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(NameField)
                     .addComponent(NumberField)
                     .addComponent(Addbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -116,7 +117,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Removebtn)
                     .addComponent(Editbtn))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -133,6 +134,19 @@ public class InterfaceContatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void clear() {
+        NameField.setText("");
+        NumberField.setText("");
+    }
+
+    public void update() {
+        modelo.removeAllElements();
+        for (int i = 0; i < data.size(); i++) {
+            modelo.addElement(data.get(i).getContato());
+        }
+
+    }
+
     private void AddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbtnActionPerformed
         if ("".equals(NameField.getText()) && "".equals(NumberField.getText())) {
             JOptionPane.showMessageDialog(this, "Name and number fields empty");
@@ -141,11 +155,11 @@ public class InterfaceContatos extends javax.swing.JFrame {
         } else if ("".equals(NumberField.getText())) {
             JOptionPane.showMessageDialog(this, "Number field Empty");
         } else {
-            Contato addContato = new Contato(NameField.getText(), NumberField.getText());
-            modelo.addElement(addContato.getContato());
-            NameField.setText("");
-            NumberField.setText("");
+            data.add(new Contato(NameField.getText(), NumberField.getText()));
+            clear();
+            update();
         }
+
     }//GEN-LAST:event_AddbtnActionPerformed
 
     private void EditbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditbtnActionPerformed
@@ -161,22 +175,21 @@ public class InterfaceContatos extends javax.swing.JFrame {
         } else if (Display.getSelectedIndices().length != 1) {
             JOptionPane.showMessageDialog(this, "Multiple contacts selected");
         } else {
-            Contato editContato = new Contato(NameField.getText(), NumberField.getText());
-            {
-                modelo.set(selectedIndex, editContato.getContato());
-                NameField.setText("");
-                NumberField.setText("");
-            }
+            data.set(selectedIndex, new Contato(NameField.getText(), NumberField.getText()));
+            clear();
+            update();
         }
     }//GEN-LAST:event_EditbtnActionPerformed
 
     private void RemovebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovebtnActionPerformed
         int[] selectedIndices = Display.getSelectedIndices();
-
-        if (selectedIndices.length > 0) {
+        if (Display.getSelectedIndices().length == 0) {
+            JOptionPane.showMessageDialog(this, "No contacts selected");
+        } else if (selectedIndices.length > 0) {
             for (int i = selectedIndices.length - 1; i >= 0; i--) {
-                modelo.remove(selectedIndices[i]);
+                data.remove(selectedIndices[i]);
             }
+            update();
         }
     }//GEN-LAST:event_RemovebtnActionPerformed
 
