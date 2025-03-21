@@ -14,13 +14,12 @@ import javax.swing.JOptionPane;
  */
 public class InterfaceContatos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InterfaceContatos
-     */
-    private ArrayList<Contato> data = new ArrayList<>();
-    DefaultListModel<String> modelo = new DefaultListModel<>();
+    private final ArrayList<Contato> data;
+    private final DefaultListModel<String> modelo;
 
     public InterfaceContatos() {
+        this.modelo = new DefaultListModel<>();
+        this.data = new ArrayList<>();
         initComponents();
         Display.setModel(modelo);
     }
@@ -222,6 +221,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new InterfaceContatos().setVisible(true);
             }
