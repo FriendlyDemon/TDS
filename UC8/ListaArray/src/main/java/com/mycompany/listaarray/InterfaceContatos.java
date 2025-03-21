@@ -149,6 +149,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
             data.add(new Contato(NameField.getText(), NumberField.getText()));
             clear();
             update();
+            System.out.println(evt.toString());
         }
 
     }//GEN-LAST:event_AddbtnActionPerformed
@@ -169,6 +170,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
             data.set(selectedIndex, new Contato(NameField.getText(), NumberField.getText()));
             clear();
             update();
+            System.out.println(evt.toString());
         }
     }//GEN-LAST:event_EditbtnActionPerformed
 
@@ -181,6 +183,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
                 data.remove(selectedIndices[i]);
             }
             update();
+            System.out.println(evt.toString());
         }
     }//GEN-LAST:event_RemovebtnActionPerformed
 
