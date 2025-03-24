@@ -135,7 +135,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
     }//GEN-LAST:event_EditbtnActionPerformed
 
     private void RemovebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovebtnActionPerformed
-        remove();
+        remove(); 
     }//GEN-LAST:event_RemovebtnActionPerformed
 
     /**
