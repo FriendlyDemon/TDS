@@ -171,7 +171,7 @@ public class InterfaceContatos extends javax.swing.JFrame {
     }
 
     public void update() {
-        modelo.removeAllElements();
+        modelo.clear();
         for (int i = 0; i < data.size(); i++) {
             modelo.addElement(data.get(i).getContato());
         }
