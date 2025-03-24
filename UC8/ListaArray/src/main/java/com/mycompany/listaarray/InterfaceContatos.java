@@ -126,18 +126,6 @@ public class InterfaceContatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void clear() {
-        NameField.setText("");
-        NumberField.setText("");
-    }
-
-    public void update() {
-        modelo.removeAllElements();
-        for (int i = 0; i < data.size(); i++) {
-            modelo.addElement(data.get(i).getContato());
-        }
-    }
-
     private void AddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbtnActionPerformed
         add();
     }//GEN-LAST:event_AddbtnActionPerformed
@@ -175,6 +163,18 @@ public class InterfaceContatos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new InterfaceContatos().setVisible(true);
         });
+    }
+
+    public void clear() {
+        NameField.setText("");
+        NumberField.setText("");
+    }
+
+    public void update() {
+        modelo.removeAllElements();
+        for (int i = 0; i < data.size(); i++) {
+            modelo.addElement(data.get(i).getContato());
+        }
     }
 
     public void add() {
