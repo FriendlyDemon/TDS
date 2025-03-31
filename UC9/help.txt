@@ -16,3 +16,5 @@ Project versioning explained:
     For example, if the SQLite version is 3.39.2, the project version will be 3.39.2.x, where x starts at 0, and increments with every release that is not changing the SQLite version.
 
     If the SQLite version is updated to 3.40.0, the project version will be updated to 3.40.0.0.
+
+alt + insert = generate stuff in netbeans
