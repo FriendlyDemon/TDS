@@ -4,6 +4,7 @@
 package com.mycompany.bancodedados;
 
 import java.sql.Connection;
+import java.sql.Statement;
 
 /**
  *
@@ -13,5 +14,6 @@ public class BancoDeDados {
 
     public static void main(String[] args) {
         Connection conexao = ConexaoSQLite.conectar();
+        CriarTabela.criarTabelaUsuarios(conexao);
     }
 }
