@@ -7,6 +7,7 @@ package com.mycompany.bancodedados;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,6 +29,7 @@ public class InserirUsuario {
             pstmt.executeUpdate();
 
             System.out.println("Usuário inserido com sucesso!");
+            JOptionPane.showMessageDialog(null, "Usuário inserido com sucesso!");
 
             // O bloco catch captura qualquer exceção que ocorra durante a execução do código dentro do try.
             // Se algo der errado (por exemplo, erro de conexão ou comando SQL inválido), a mensagem de erro será exibida.
