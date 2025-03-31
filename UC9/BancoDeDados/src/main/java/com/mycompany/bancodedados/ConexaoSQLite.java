@@ -27,7 +27,7 @@ public class ConexaoSQLite {
         return conexao;
     }
 
-    public static void descpmectar(Connection conexao) {
+    public static void desconectar(Connection conexao) {
         try {
             if (conexao != null) {
                 conexao.close();

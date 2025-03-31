@@ -1,0 +1,18 @@
+pom.xml
+<dependencies>
+    <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>3.36.0.3</version>
+    </dependency>
+</dependencies>
+
+https://github.com/xerial/sqlite-jdbc
+
+Project versioning explained:
+
+    The project’s version follows the version of the SQLite library that is bundled in the jar, with an extra digit to denote the project’s increment.
+
+    For example, if the SQLite version is 3.39.2, the project version will be 3.39.2.x, where x starts at 0, and increments with every release that is not changing the SQLite version.
+
+    If the SQLite version is updated to 3.40.0, the project version will be updated to 3.40.0.0.
