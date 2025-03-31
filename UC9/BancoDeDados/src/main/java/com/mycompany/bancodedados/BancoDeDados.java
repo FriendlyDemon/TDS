@@ -3,6 +3,8 @@
  */
 package com.mycompany.bancodedados;
 
+import java.sql.Connection;
+
 /**
  *
  * @author HENRIQUEMICHEL
@@ -10,6 +12,6 @@ package com.mycompany.bancodedados;
 public class BancoDeDados {
 
     public static void main(String[] args) {
-        ConexaoSQLite.conectar();
+        Connection conexao = ConexaoSQLite.conectar();
     }
 }
