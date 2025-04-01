@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.bancodedados;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-/**
- *
- * @author HENRIQUEMICHEL
- */
 public class DeletarUsuario {
     // Método para deletar um usuário do banco de dados com base no ID fornecido
 

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.bancodedados;
 
 import java.sql.Connection;
@@ -120,7 +116,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         String rSenha = new String(senha.getPassword());
         String rEmail = email.getText();
-        String rNome = ListarUsuarios.buscarUsuario(conexao, rEmail,rSenha);
+        String rNome = ListarUsuarios.buscarUsuario(conexao, rEmail, rSenha);
         if (rNome != null) {
             new Test(rNome).setVisible(true);
             this.dispose();

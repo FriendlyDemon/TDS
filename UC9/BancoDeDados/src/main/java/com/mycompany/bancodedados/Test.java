@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.bancodedados;
 
 public class Test extends javax.swing.JFrame {
@@ -9,7 +5,7 @@ public class Test extends javax.swing.JFrame {
     public Test(String nome) {
         initComponents();
         setLocationRelativeTo(null);
-        bemVindo.setText("Bem Vindo(a) "+nome);
+        bemVindo.setText("Seja bem vindo(a) " + nome + "!");
     }
 
     @SuppressWarnings("unchecked")
@@ -25,23 +21,24 @@ public class Test extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(100, 100));
         jPanel1.setPreferredSize(new java.awt.Dimension(546, 460));
 
-        bemVindo.setText("Bem Vindo(a) Anon");
+        bemVindo.setText("Seja bem vindo(a) Anon!");
+        bemVindo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(bemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(169, 169, 169)
+                .addComponent(bemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addGap(186, 186, 186))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addComponent(bemVindo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addGap(158, 158, 158)
+                .addComponent(bemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addGap(283, 283, 283))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
