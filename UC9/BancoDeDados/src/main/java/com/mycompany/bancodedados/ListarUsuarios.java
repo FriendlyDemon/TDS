@@ -5,8 +5,11 @@
 package com.mycompany.bancodedados;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,5 +49,26 @@ public class ListarUsuarios {
 
         // Retorna o texto com os dados dos usuários
         return textoUsuarios;
+    }
+
+    public static String buscarUsuario(Connection conexao, String email, String senha) {
+        String nome = null;
+        String sql = "SELECT nome FROM usuarios WHERE email = ? AND senha = ?";
+        try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+            pstmt.setString(1, email);
+            pstmt.setString(2, senha);
+
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                nome = rs.getString("nome");
+                System.out.println("Usuario encontrado");
+            } else {
+                System.out.println("Usuario nao encontrado");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+        return nome;
     }
 }

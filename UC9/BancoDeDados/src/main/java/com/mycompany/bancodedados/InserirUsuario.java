@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class InserirUsuario {
 
-    public static void inserirUsuario(Connection conexao, String nome, String email) {
+    public static void inserirUsuario(Connection conexao, String nome, String email, String senha) {
 
-        String sql = "INSERT INTO usuarios (nome, email) VALUES (?, ?)";
+        String sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
 
         try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
@@ -25,6 +25,7 @@ public class InserirUsuario {
             // O primeiro parâmetro é a posição do "?", e o segundo é o valor a ser atribuído.
             pstmt.setString(1, nome);
             pstmt.setString(2, email);
+            pstmt.setString(3, senha);
 
             pstmt.executeUpdate();
 

@@ -23,93 +23,110 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="lNome" max="32767" attributes="0"/>
-                  <Component id="lEmail" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lSenha" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="entrar" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="registrar" min="-2" pref="110" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="nome" alignment="0" max="32767" attributes="0"/>
-                  <Component id="email" alignment="0" max="32767" attributes="0"/>
-                  <Component id="senha" min="-2" pref="285" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
-          </Group>
+          <Component id="login" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="nome" max="32767" attributes="0"/>
-                  <Component id="lNome" min="-2" pref="32" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="email" max="32767" attributes="0"/>
-                  <Component id="lEmail" min="-2" pref="32" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="senha" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="lSenha" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="entrar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="registrar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-          </Group>
+          <Component id="login" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="nome">
-    </Component>
-    <Component class="javax.swing.JTextField" name="email">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="senha">
-    </Component>
-    <Component class="javax.swing.JButton" name="entrar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Entrar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entrarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="registrar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lNome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nome"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lEmail">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="E-mail"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lSenha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Senha"/>
-      </Properties>
-    </Component>
+    <Container class="javax.swing.JPanel" name="login">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="lSenha" max="32767" attributes="0"/>
+                      <Component id="lEmail" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lNome" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="nome" alignment="0" max="32767" attributes="0"/>
+                      <Component id="email" alignment="0" max="32767" attributes="0"/>
+                      <Component id="senha" min="-2" pref="285" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="entrar" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="registrar" min="-2" pref="110" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="121" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="170" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="nome" max="32767" attributes="0"/>
+                      <Component id="lNome" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="email" max="32767" attributes="0"/>
+                      <Component id="lEmail" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="senha" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="lSenha" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="entrar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="registrar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lNome">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="nome">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lEmail">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="E-mail"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="email">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lSenha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Senha"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="senha">
+        </Component>
+        <Component class="javax.swing.JButton" name="entrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Entrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="entrarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="registrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
