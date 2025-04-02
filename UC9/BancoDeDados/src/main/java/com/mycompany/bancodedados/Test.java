@@ -137,8 +137,8 @@ public class Test extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(atualizar)
                     .addComponent(deletar))
-                .addGap(128, 128, 128)
-                .addComponent(log))
+                .addGap(109, 109, 109)
+                .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

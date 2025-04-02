@@ -56,6 +56,23 @@ public class ListarUsuarios {
         return new Usuario(id, nome, email);
     }
 
+    public static String buscarUsuarioEmail(Connection conexao, String email) {
+        String nome = null;
+        String sql = "SELECT nome FROM usuarios WHERE email = ?";
+        try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+            pstmt.setString(1, email);
+
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                nome = rs.getString("nome");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            
+        }
+        return nome;
+    }
+
     public static Usuario buscarUsuarioId(Connection conexao, int id) {
         String nome = null;
         String email = null;

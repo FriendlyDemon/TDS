@@ -7,27 +7,27 @@ import javax.swing.JOptionPane;
 
 public class InserirUsuario {
 
-    public static void inserirUsuario(Connection conexao, String nome, String email, String senha) {
+    public static String inserirUsuario(Connection conexao, String nome, String email, String senha) {
 
         String sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
 
-        try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+        if (ListarUsuarios.buscarUsuarioEmail(conexao, email) == null) {
+            try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
 
-            // O método setString substitui os "?" no comando SQL pelos valores passados como parâmetros para o método.
-            // O primeiro parâmetro é a posição do "?", e o segundo é o valor a ser atribuído.
-            pstmt.setString(1, nome);
-            pstmt.setString(2, email);
-            pstmt.setString(3, senha);
+                pstmt.setString(1, nome);
+                pstmt.setString(2, email);
+                pstmt.setString(3, senha);
 
-            pstmt.executeUpdate();
+                pstmt.executeUpdate();
 
-            System.out.println("Usuário inserido com sucesso!");
-            JOptionPane.showMessageDialog(null, "Usuário inserido com sucesso!");
-
-            // O bloco catch captura qualquer exceção que ocorra durante a execução do código dentro do try.
-            // Se algo der errado (por exemplo, erro de conexão ou comando SQL inválido), a mensagem de erro será exibida.
-        } catch (SQLException e) {
-            System.out.println("Erro ao inserir usuário: " + e.getMessage());  // Exibe a mensagem de erro.
+                JOptionPane.showMessageDialog(null, "Usuário inserido com sucesso!");
+                return "Usuário inserido com sucesso!";
+            } catch (SQLException e) {
+                System.out.println("Erro ao inserir usuário: " + e.getMessage());
+                return e.getMessage();
+            }
+        } else {
+            return "Email já está em uso";
         }
     }
 }
