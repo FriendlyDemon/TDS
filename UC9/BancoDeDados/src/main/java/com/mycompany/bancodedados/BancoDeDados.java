@@ -11,6 +11,6 @@ public class BancoDeDados {
         //AtualizarUsuario.atualizarUsuario(conexao, 1, "Cleiton", "cleitin@gmail.com");
         //DeletarUsuario.deletarUsuario(conexao, 2);
         //System.out.println(ListarUsuarios.listarUsuarios(conexao));
-        new TelaLogin(conexao).setVisible(true);
+        new TelaLogin(conexao, new Usuario(-1, null, null)).setVisible(true);
     }
 }

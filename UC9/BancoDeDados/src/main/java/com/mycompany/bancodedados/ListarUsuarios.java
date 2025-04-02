@@ -11,41 +11,32 @@ public class ListarUsuarios {
 
     public static String listarUsuarios(Connection conexao) {
 
-        // Criação de uma String para armazenar os resultados
         String textoUsuarios = "";
 
-        // SQL para selecionar todos os registros
         String sql = "SELECT * FROM usuarios";
 
-        // Tentando executar a consulta SQL
         try (Statement stmt = conexao.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
-            // Cabeçalho da tabela
             textoUsuarios += "ID | Nome | Email\n";
             textoUsuarios += "----------------------\n";
 
-            // Loop para percorrer todos os registros retornados
             while (rs.next()) {
-                // Pega os dados de cada usuário do banco
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
-
-                // Concatena os dados na String
                 textoUsuarios += id + " | " + nome + " | " + email + "\n";
             }
         } catch (Exception e) {
-            // Caso ocorra algum erro, adiciona a mensagem de erro na String
             textoUsuarios += "Erro ao listar usuários: " + e.getMessage();
         }
 
-        // Retorna o texto com os dados dos usuários
         return textoUsuarios;
     }
 
-    public static String buscarUsuario(Connection conexao, String email, String senha) {
+    public static Usuario buscarUsuario(Connection conexao, String email, String senha) {
         String nome = null;
-        String sql = "SELECT nome FROM usuarios WHERE email = ? AND senha = ?";
+        int id = 0;
+        String sql = "SELECT nome,id FROM usuarios WHERE email = ? AND senha = ?";
         try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
             pstmt.setString(1, email);
             pstmt.setString(2, senha);
@@ -53,6 +44,7 @@ public class ListarUsuarios {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 nome = rs.getString("nome");
+                id = rs.getInt("id");
                 System.out.println("Usuario encontrado");
             } else {
                 System.out.println("Usuario nao encontrado");
@@ -61,6 +53,28 @@ public class ListarUsuarios {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
 
-        return nome;
+        return new Usuario(id, nome, email);
+    }
+
+    public static Usuario buscarUsuarioId(Connection conexao, int id) {
+        String nome = null;
+        String email = null;
+        String sql = "SELECT nome,email FROM usuarios WHERE id = ?";
+        try (PreparedStatement pstmt = conexao.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                nome = rs.getString("nome");
+                email = rs.getString("email");
+                System.out.println("Usuario encontrado");
+            } else {
+                System.out.println("Usuario nao encontrado");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+        return new Usuario(id, nome, email);
     }
 }

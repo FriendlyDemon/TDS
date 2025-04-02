@@ -6,11 +6,13 @@ public class TelaLogin extends javax.swing.JFrame {
 
     Connection conexao;
 
-    public TelaLogin(Connection conexao) {
+    public TelaLogin(Connection conexao, Usuario usuario) {
         this.conexao = conexao;
         initComponents();
         setLocationRelativeTo(null);
         senha.setEchoChar('?');
+        nome.setText(usuario.getNome());
+        email.setText(usuario.getEmail());
     }
 
     @SuppressWarnings("unchecked")
@@ -116,9 +118,9 @@ public class TelaLogin extends javax.swing.JFrame {
 
         String rSenha = new String(senha.getPassword());
         String rEmail = email.getText();
-        String rNome = ListarUsuarios.buscarUsuario(conexao, rEmail, rSenha);
-        if (rNome != null) {
-            new Test(rNome).setVisible(true);
+        Usuario usuario = ListarUsuarios.buscarUsuario(conexao, rEmail, rSenha);
+        if (usuario.getNome() != null) {
+            new Test(conexao, usuario).setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_entrarActionPerformed
