@@ -10,10 +10,19 @@ package com.mycompany.bibliomvc.model;
  */
 public class Book {
 
+    private int id;
     private String title;
     private String author;
     private double price;
     private int year;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

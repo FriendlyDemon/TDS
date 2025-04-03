@@ -16,10 +16,10 @@ public class CreateTables {
 
     public static void createTables(Connection connection) {
         String sql = "CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(255) NOT NULL, author VARCHAR(255) NOT NULL, price REAL NOT NULL, year INTEGER NOT NULL)";
-        try (Statement dakka = connection.createStatement()){
+        try (Statement dakka = connection.createStatement()) {
             dakka.execute(sql);
         } catch (SQLException e) {
-            
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -3,8 +3,9 @@
  */
 package com.mycompany.bibliomvc;
 
+import com.mycompany.bibliomvc.dao.BooksDAO;
 import com.mycompany.bibliomvc.model.Book;
-import com.mycompany.bibliomvc.database.Connect;
+import com.mycompany.bibliomvc.database.*;
 import java.sql.Connection;
 
 /**
@@ -14,7 +15,9 @@ import java.sql.Connection;
 public class BiblioMVC {
 
     public static void main(String[] args) {
-        //Book newBook = new Book("Book 1", "new Writer", 100.00, 1999);
+        Book newBook = new Book("Book 1", "new Writer", 100.00, 1999);
         Connection connection = Connect.connect();
+        CreateTables.createTables(connection);
+        BooksDAO.addBook(connection, newBook);
     }
 }
