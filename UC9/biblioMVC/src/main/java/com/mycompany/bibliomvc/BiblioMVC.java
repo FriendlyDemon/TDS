@@ -19,5 +19,6 @@ public class BiblioMVC {
         Connection connection = Connect.connect();
         CreateTables.createTables(connection);
         BooksDAO.addBook(connection, newBook);
+        BooksDAO.updateBook(connection, 1, "dakka", "thraka", 49.99, 50);
     }
 }
