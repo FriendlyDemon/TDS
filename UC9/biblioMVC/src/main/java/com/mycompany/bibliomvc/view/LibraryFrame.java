@@ -69,14 +69,15 @@ public class LibraryFrame extends javax.swing.JFrame {
         priceField = new javax.swing.JTextField();
         yearField = new javax.swing.JTextField();
         addBtn = new javax.swing.JButton();
-        searchBtn = new javax.swing.JButton();
         removeBtn = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
         titleLabel = new javax.swing.JLabel();
         authorLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         yearLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         libraryTable = new javax.swing.JTable();
+        resetBtn = new javax.swing.JButton();
 
         jTextField2.setText("jTextField2");
 
@@ -105,21 +106,21 @@ public class LibraryFrame extends javax.swing.JFrame {
             }
         });
 
-        searchBtn.setBackground(new java.awt.Color(153, 255, 255));
-        searchBtn.setForeground(new java.awt.Color(0, 0, 0));
-        searchBtn.setText("Search");
-        searchBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchBtnActionPerformed(evt);
-            }
-        });
-
         removeBtn.setBackground(new java.awt.Color(255, 153, 153));
         removeBtn.setForeground(new java.awt.Color(0, 0, 0));
         removeBtn.setText("Remove");
         removeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeBtnActionPerformed(evt);
+            }
+        });
+
+        searchBtn.setBackground(new java.awt.Color(153, 255, 255));
+        searchBtn.setForeground(new java.awt.Color(0, 0, 0));
+        searchBtn.setText("Search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
             }
         });
 
@@ -162,40 +163,55 @@ public class LibraryFrame extends javax.swing.JFrame {
             libraryTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        resetBtn.setBackground(new java.awt.Color(255, 255, 255));
+        resetBtn.setForeground(new java.awt.Color(0, 0, 0));
+        resetBtn.setText("Reset");
+        resetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removeBtn)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(authorLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(priceLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(yearLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(addBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                                .addComponent(searchBtn))
-                            .addComponent(titleField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(authorField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(priceField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(yearField, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addContainerGap(89, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(removeBtn)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(titleLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(authorLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(priceLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(yearLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(addBtn)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                        .addComponent(searchBtn))
+                                    .addComponent(titleField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(authorField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(priceField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(yearField, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(resetBtn))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(119, 119, 119)
+                .addComponent(resetBtn)
+                .addGap(96, 96, 96)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titleLabel))
@@ -242,7 +258,7 @@ public class LibraryFrame extends javax.swing.JFrame {
     }
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         try {
-            BooksDAO.addBook(connection, titleField.getText(), authorField.getText(), Float.parseFloat(priceField.getText()), Integer.parseInt(yearField.getText()));
+            BooksDAO.addBook(connection, titleField.getText().trim(), authorField.getText().trim(), Float.parseFloat(priceField.getText().trim()), Integer.parseInt(yearField.getText().trim()));
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
@@ -268,41 +284,46 @@ public class LibraryFrame extends javax.swing.JFrame {
         if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
             JOptionPane.showMessageDialog(this, "Search query empty");
         } else if ("".equals(authorField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "title = " + titleField.getText();
+            search = "title = '" + titleField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "author = " + authorField.getText();
+            search = "author = '" + authorField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(yearField.getText())) {
-            search = "price = " + priceField.getText();
+            search = "price = '" + priceField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(priceField.getText())) {
-            search = "year = " + yearField.getText();
+            search = "year = '" + yearField.getText().trim();
         } else if ("".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "title = " + titleField.getText() + " AND author = " + authorField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND author = '" + authorField.getText().trim();
         } else if ("".equals(authorField.getText()) && "".equals(yearField.getText())) {
-            search = "title = " + titleField.getText() + " AND price = " + priceField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND price = '" + priceField.getText().trim();
         } else if ("".equals(authorField.getText()) && "".equals(priceField.getText())) {
-            search = "title = " + titleField.getText() + " AND year = " + yearField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(yearField.getText())) {
-            search = "author = " + authorField.getText() + " AND price = " + priceField.getText();
+            search = "author = '" + authorField.getText().trim() + "' AND price = '" + priceField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(priceField.getText())) {
-            search = "author = " + authorField.getText() + " AND year = " + yearField.getText();
+            search = "author = '" + authorField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else if ("".equals(titleField.getText()) && "".equals(authorField.getText())) {
-            search = "price = " + priceField.getText() + " AND year = " + yearField.getText();
+            search = "price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else if ("".equals(yearField.getText())) {
-            search = "title = " + titleField.getText() + " AND author = " + authorField.getText() + " AND price = " + priceField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND author = '" + authorField.getText().trim() + "' AND price = '" + priceField.getText().trim();
         } else if ("".equals(priceField.getText())) {
-            search = "title = " + titleField.getText() + " AND author = " + authorField.getText() + " AND year = " + yearField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND author = '" + authorField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else if ("".equals(authorField.getText())) {
-            search = "title = " + titleField.getText() + " AND price = " + priceField.getText() + " AND year = " + yearField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else if ("".equals(titleField.getText())) {
-            search = "author = " + authorField.getText() + " AND price = " + priceField.getText() + " AND year = " + yearField.getText();
+            search = "author = '" + authorField.getText().trim() + "' AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         } else {
-            search = "author = " + authorField.getText() + " AND author = " + authorField.getText() + " AND price = " + priceField.getText() + " AND year = " + yearField.getText();
+            search = "title = '" + titleField.getText().trim() + "' AND author = '" + authorField.getText().trim() + "' AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim();
         }
 
         if (search != null) {
+            search += "'";
             BooksDAO.searchBooks(connection, search, modelo);
         }
     }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
+        update();
+    }//GEN-LAST:event_resetBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
@@ -315,6 +336,7 @@ public class LibraryFrame extends javax.swing.JFrame {
     private javax.swing.JTextField priceField;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JButton removeBtn;
+    private javax.swing.JButton resetBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField titleField;
     private javax.swing.JLabel titleLabel;
