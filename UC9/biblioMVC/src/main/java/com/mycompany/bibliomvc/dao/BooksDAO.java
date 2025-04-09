@@ -91,19 +91,29 @@ public class BooksDAO {
     }
 
     public static void searchBooks(Connection connection, String search, DefaultTableModel model) {
-        String sql = "SELECT * FROM books WHERE ?";
-        try //(PreparedStatement dakka = connection.prepareStatement(sql);) 
-        {
+        String sql = "SELECT * FROM books WHERE ";
+        try {
             Statement dakka = connection.createStatement();
-            //dakka.setString(1, search);
-            ResultSet rs = dakka.executeQuery("SELECT * FROM books WHERE " + search);
-            model.setRowCount(0);
+            ResultSet rs = dakka.executeQuery(sql + search);
             while (rs.next()) {
                 model.addRow(new Object[]{rs.getString("title"), rs.getString("author"), rs.getDouble("price"), rs.getInt("year"), rs.getInt("id")});
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    public static Book searchBook(Connection connection, int search) {
+        String sql = "SELECT * FROM books WHERE id = ?";
+        try {
+            PreparedStatement dakka = connection.prepareStatement(sql);
+
+            dakka.setInt(1, search);
+            ResultSet rs = dakka.executeQuery();
+            return new Book(rs.getString("title"), rs.getString("author"), rs.getDouble("price"), rs.getInt("year"), rs.getInt("id"));
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 }

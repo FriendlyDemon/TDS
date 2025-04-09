@@ -56,6 +56,14 @@ public class Book {
         this.year = year;
     }
 
+    public Book(String title, String author, double price, int year, int id) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.year = year;
+    }
+
     public Book(String title, String author, double price, int year) {
         this.title = title;
         this.author = author;
