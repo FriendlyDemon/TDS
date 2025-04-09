@@ -270,7 +270,7 @@ public class LibraryFrame extends javax.swing.JFrame {
 
     public void addBook() {
         try {
-            BooksDAO.addBook(connection, titleField.getText().trim(), authorField.getText().trim(), Float.parseFloat(priceField.getText().trim()), Integer.parseInt(yearField.getText().trim()));
+            BooksDAO.addBook(connection, titleField.getText().trim(), authorField.getText().trim(), Double.parseDouble(priceField.getText().trim()), Integer.parseInt(yearField.getText().trim()));
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
@@ -297,7 +297,7 @@ public class LibraryFrame extends javax.swing.JFrame {
         } else if ("".equals(authorField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
             search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%')";
         } else if ("".equals(titleField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(author) = UPPER('%" + authorField.getText().trim() + "%')";
+            search = "UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%')";
         } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(yearField.getText())) {
             search = "price = '" + priceField.getText().trim() + "'";
         } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(priceField.getText())) {
