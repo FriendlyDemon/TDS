@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -53,14 +54,14 @@ public class BooksDAO {
         }
     }
 
-    public static void updateBook(Connection connection, int id, String title, String author, double price, int year) {
+    public static void updateBook(Connection connection, Book book) {
         String sql = "UPDATE books SET title=?, author=?, price=?, year=? WHERE id=?";
         try (PreparedStatement dakka = connection.prepareStatement(sql)) {
-            dakka.setString(1, title);
-            dakka.setString(2, author);
-            dakka.setDouble(3, price);
-            dakka.setInt(4, year);
-            dakka.setInt(5, id);
+            dakka.setString(1, book.getTitle());
+            dakka.setString(2, book.getAuthor());
+            dakka.setDouble(3, book.getPrice());
+            dakka.setInt(4, book.getYear());
+            dakka.setInt(5, book.getId());
 
             dakka.executeUpdate();
 
@@ -80,10 +81,11 @@ public class BooksDAO {
     }
 
     public static void listBooks(Connection connection, DefaultTableModel model) {
+        DecimalFormat dF = new DecimalFormat("#.00");
         String sql = "SELECT * FROM books";
         try (Statement dakka = connection.createStatement(); ResultSet rs = dakka.executeQuery(sql)) {
             while (rs.next()) {
-                model.addRow(new Object[]{rs.getString("title"), rs.getString("author"), rs.getDouble("price"), rs.getInt("year"), rs.getInt("id")});
+                model.addRow(new Object[]{rs.getString("title"), rs.getString("author"), dF.format(rs.getDouble("price")), rs.getInt("year"), rs.getInt("id")});
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -91,24 +93,24 @@ public class BooksDAO {
     }
 
     public static void searchBooks(Connection connection, String search, DefaultTableModel model) {
-        String sql = "SELECT * FROM books WHERE ";
+        DecimalFormat dF = new DecimalFormat("#.00");
         try {
             Statement dakka = connection.createStatement();
-            ResultSet rs = dakka.executeQuery(sql + search);
+            ResultSet rs = dakka.executeQuery(search);
             while (rs.next()) {
-                model.addRow(new Object[]{rs.getString("title"), rs.getString("author"), rs.getDouble("price"), rs.getInt("year"), rs.getInt("id")});
+                model.addRow(new Object[]{rs.getString("title"), rs.getString("author"), dF.format(rs.getDouble("price")), rs.getInt("year"), rs.getInt("id")});
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static Book searchBook(Connection connection, int search) {
+    public static Book searchBook(Connection connection, int id) {
         String sql = "SELECT * FROM books WHERE id = ?";
         try {
             PreparedStatement dakka = connection.prepareStatement(sql);
 
-            dakka.setInt(1, search);
+            dakka.setInt(1, id);
             ResultSet rs = dakka.executeQuery();
             return new Book(rs.getString("title"), rs.getString("author"), rs.getDouble("price"), rs.getInt("year"), rs.getInt("id"));
         } catch (SQLException e) {

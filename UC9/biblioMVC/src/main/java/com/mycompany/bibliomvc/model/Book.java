@@ -4,6 +4,8 @@
  */
 package com.mycompany.bibliomvc.model;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HENRIQUEMICHEL
@@ -70,5 +72,4 @@ public class Book {
         this.price = price;
         this.year = year;
     }
-
 }

@@ -3,9 +3,7 @@
  */
 package com.mycompany.bibliomvc;
 
-import com.mycompany.bibliomvc.database.*;
 import com.mycompany.bibliomvc.view.LibraryFrame;
-import java.sql.Connection;
 
 /**
  *
@@ -15,8 +13,6 @@ public class BiblioMVC {
 
     public static void main(String[] args) {
 
-        Connection connection = Connect.connect();
-        CreateTables.createTables(connection);
-        new LibraryFrame(connection).setVisible(true);
+        new LibraryFrame().setVisible(true);
     }
 }

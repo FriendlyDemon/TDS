@@ -4,9 +4,7 @@
  */
 package com.mycompany.bibliomvc.view;
 
-import com.mycompany.bibliomvc.dao.BooksDAO;
-import com.mycompany.bibliomvc.model.Book;
-import java.sql.Connection;
+import com.mycompany.bibliomvc.controller.BookController;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,7 +17,6 @@ public class LibraryFrame extends javax.swing.JFrame {
     /**
      * Creates new form LibraryFrame
      */
-    Connection connection = null;
     private final DefaultTableModel modelo = new DefaultTableModel() {
         @Override
         public boolean isCellEditable(int row, int column) {
@@ -28,7 +25,7 @@ public class LibraryFrame extends javax.swing.JFrame {
     };
     String search = null;
 
-    private void startTable(Connection connection) {
+    private void startTable() {
 
         modelo.addColumn("Title");
         modelo.addColumn("Author");
@@ -36,7 +33,7 @@ public class LibraryFrame extends javax.swing.JFrame {
         modelo.addColumn("Year");
         modelo.addColumn("Id");
 
-        BooksDAO.listBooks(connection, modelo);
+        BookController.list(modelo);
         libraryTable.setModel(modelo);
         libraryTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         libraryTable.removeColumn(libraryTable.getColumn("Id"));
@@ -47,12 +44,11 @@ public class LibraryFrame extends javax.swing.JFrame {
         libraryTable.getColumn("Year").setPreferredWidth(50);
     }
 
-    public LibraryFrame(Connection connection) {
+    public LibraryFrame() {
         initComponents();
-        startTable(connection);
+        startTable();
         setLocationRelativeTo(null);
         setResizable(false);
-        this.connection = connection;
     }
 
     /**
@@ -262,29 +258,46 @@ public class LibraryFrame extends javax.swing.JFrame {
     public void update() {
         modelo.setRowCount(0);
         if (search == null) {
-            BooksDAO.listBooks(connection, modelo);
+            BookController.list(modelo);
         } else {
-            BooksDAO.searchBooks(connection, search, modelo);
-        }
-    }
-
-    public void addBook() {
-        try {
-            BooksDAO.addBook(connection, titleField.getText().trim(), authorField.getText().trim(), Double.parseDouble(priceField.getText().trim()), Integer.parseInt(yearField.getText().trim()));
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            BookController.search(search, modelo);
         }
         titleField.setText(null);
         authorField.setText(null);
         priceField.setText(null);
         yearField.setText(null);
-        update();
+    }
+
+    public void addBook() {
+        String message = "";
+        if ("".equals(titleField.getText())) {
+            message += "\ntitle";
+        }
+        if ("".equals(authorField.getText())) {
+            message += "\nauthor";
+        }
+        if ("".equals(priceField.getText())) {
+            message += "\nprice";
+        }
+        if ("".equals(yearField.getText())) {
+            message += "\nyear";
+        }
+        if ("".equals(message)) {
+            BookController.add(titleField.getText(), authorField.getText(), priceField.getText(), yearField.getText());
+            titleField.setText(null);
+            authorField.setText(null);
+            priceField.setText(null);
+            yearField.setText(null);
+            update();
+        } else {
+            JOptionPane.showMessageDialog(this, "Fields empty:" + message);
+        }
     }
 
     public void removeBook() {
         int row = libraryTable.getSelectedRow();
         if (row != -1) {
-            BooksDAO.deleteBook(connection, (int) modelo.getValueAt(row, 4));
+            BookController.delete((int) modelo.getValueAt(row, 4));
             update();
         } else {
             JOptionPane.showMessageDialog(this, "Must have a book selected");
@@ -292,71 +305,13 @@ public class LibraryFrame extends javax.swing.JFrame {
     }
 
     public void searchBook() {
-        if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = null;
-        } else if ("".equals(authorField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%')";
-        } else if ("".equals(titleField.getText()) && "".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%')";
-        } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(yearField.getText())) {
-            search = "price = '" + priceField.getText().trim() + "'";
-        } else if ("".equals(titleField.getText()) && "".equals(authorField.getText()) && "".equals(priceField.getText())) {
-            search = "year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(priceField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%')";
-        } else if ("".equals(authorField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(title) LIKE UPPER(%'" + titleField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "'";
-        } else if ("".equals(authorField.getText()) && "".equals(priceField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(titleField.getText()) && "".equals(yearField.getText())) {
-            search = "UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "'";
-        } else if ("".equals(titleField.getText()) && "".equals(priceField.getText())) {
-            search = "UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(titleField.getText()) && "".equals(authorField.getText())) {
-            search = "price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(yearField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "'";
-        } else if ("".equals(priceField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(authorField.getText())) {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim() + "'";
-        } else if ("".equals(titleField.getText())) {
-            search = "UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim() + "'";
-        } else {
-            search = "UPPER(title) LIKE UPPER('%" + titleField.getText().trim() + "%') AND UPPER(author) LIKE UPPER('%" + authorField.getText().trim() + "%') AND price = '" + priceField.getText().trim() + "' AND year = '" + yearField.getText().trim() + "'";
-        }
-
+        search = BookController.search(titleField.getText(), authorField.getText(), priceField.getText(), yearField.getText(), modelo);
         update();
     }
 
     public void editBook() {
-        String title = titleField.getText();
-        String author = authorField.getText();
-        String price = priceField.getText();
-        double priceDouble;
-        String year = yearField.getText();
-        int yearInt;
-
-        int row = (int) modelo.getValueAt(libraryTable.getSelectedRow(), 4);
-        Book book = BooksDAO.searchBook(connection, row);
-        if ("".equals(title)) {
-            title = book.getTitle();
-        }
-        if ("".equals(author)) {
-            author = book.getAuthor();
-        }
-        if ("".equals(price)) {
-            priceDouble = book.getPrice();
-        } else {
-            priceDouble = Double.parseDouble(priceField.getText());
-        }
-        if ("".equals(year)) {
-            yearInt = book.getYear();
-        } else {
-            yearInt = Integer.parseInt(yearField.getText());
-        }
-
-        BooksDAO.updateBook(connection, row, title, author, priceDouble, yearInt);
+        int row = libraryTable.getSelectedRow();
+        BookController.update(titleField.getText(), authorField.getText(), priceField.getText(), yearField.getText(), (int) modelo.getValueAt(row, 4));
         update();
     }
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
