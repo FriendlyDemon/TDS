@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.loginhash;
 
 import com.mycompany.loginhash.database.ConnectionSQL;
