@@ -3,7 +3,9 @@
  */
 package com.mycompany.loginhash;
 
-import com.mycompany.loginhash.database.ConnectionSQL;
+import com.mycompany.loginhash.dao.UsuarioDAO;
+import com.mycompany.loginhash.database.ConexaoSQL;
+import com.mycompany.loginhash.model.Usuario;
 
 /**
  *
@@ -12,6 +14,13 @@ import com.mycompany.loginhash.database.ConnectionSQL;
 public class LoginHash {
 
     public static void main(String[] args) {
-        ConnectionSQL.conectar();
+        ConexaoSQL.conectar();
+        Usuario meuUsuario = new Usuario("usuario@email.com", "112234");
+//        if (UsuarioDAO.registrarUsuario(meuUsuario)) {
+//            System.out.println("usuario registrado com sucesso");
+//        }
+        if (UsuarioDAO.validarLogin(meuUsuario)) {
+            System.out.println("senha correta");
+        }
     }
 }

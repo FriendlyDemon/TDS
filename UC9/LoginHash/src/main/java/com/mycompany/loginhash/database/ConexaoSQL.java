@@ -14,7 +14,7 @@ import java.sql.Statement;
  *
  * @author HENRIQUEMICHEL
  */
-public class ConnectionSQL {
+public class ConexaoSQL {
 
     // Carrega as variáveis do arquivo .env
     private static final Dotenv dotenv = Dotenv.load();
@@ -38,7 +38,6 @@ public class ConnectionSQL {
         } catch (SQLException error) {
             throw new RuntimeException("Erro na conexão com o banco de dados", error);
         }
-
         return connection;
     }
 
