@@ -11,6 +11,7 @@ package com.mycompany.loginhash.model;
 public class Usuario {
 
     private int id;
+    private String nome;
     private String email;
     private String senha;
 
@@ -23,6 +24,14 @@ public class Usuario {
         this.id = id;
         this.email = email;
         this.senha = senha;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setId(int id) {

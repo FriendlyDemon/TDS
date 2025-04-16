@@ -33,7 +33,6 @@ public class ConexaoSQL {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(URL, DB_USER, DB_PASSWORD);
                 criarTabela();
-                System.out.println("Conectado ao banco.");
             }
         } catch (SQLException error) {
             throw new RuntimeException("Erro na conexão com o banco de dados", error);

@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import org.mindrot.jbcrypt.BCrypt;
@@ -60,7 +61,7 @@ public class UsuarioDAO {
         return false;
     }
 
-    public Usuario buscarUsuarioPorEmail(String email) {
+    public static Usuario buscarUsuarioPorEmail(String email) {
         String sql = "SELECT * FROM usuarios WHERE usuario = ?";
 
         try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -69,7 +70,7 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                Usuario usuario = new Usuario(rs.getString("usuario"), rs.getString("senha"));
+                Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("usuario"), rs.getString("senha"));
                 return usuario;
             }
         } catch (SQLException e) {
@@ -78,7 +79,7 @@ public class UsuarioDAO {
         return null;
     }
 
-    public boolean atualizarSenha(String email, String novaSenha) {
+    public static boolean atualizarSenha(String email, String novaSenha) {
         String sql = "UPDATE usuarios SET senha = ? WHERE usuario = ?";
         String senhaHash = BCrypt.hashpw(novaSenha, BCrypt.gensalt());
 
@@ -93,13 +94,13 @@ public class UsuarioDAO {
         }
     }
 
-    public List<Usuario> listarUsuarios() {
+    public static List<Usuario> listarUsuarios() {
         List<Usuario> usuarios = new ArrayList<>();
         String sql = "SELECT usuario, id FROM usuarios";
 
-        try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = ConexaoSQL.conectar(); Statement stmt = conn.createStatement()) {
 
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("usuario"), "");
                 usuarios.add(usuario);
@@ -108,5 +109,19 @@ public class UsuarioDAO {
             System.out.println(e.getMessage());
         }
         return usuarios;
+    }
+
+    public static void excluirUsuario(int id) {
+        String sql = "DELETE FROM usuario WHERE id = ?";
+        try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            if (stmt.execute()) {
+                System.out.println("Usuario deletado");
+            } else {
+                System.out.println("Usuario não encontrado");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
