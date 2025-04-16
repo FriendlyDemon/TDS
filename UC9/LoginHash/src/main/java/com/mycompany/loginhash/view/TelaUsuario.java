@@ -16,6 +16,7 @@ public class TelaUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaUsuario
+     * @param usuario
      */
     public TelaUsuario(Usuario usuario) {
         initComponents();
