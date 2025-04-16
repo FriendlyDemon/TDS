@@ -15,7 +15,7 @@ public class LoginHash {
 
     public static void main(String[] args) {
         ConexaoSQL.conectar();
-        Usuario meuUsuario = new Usuario("usuario@email.com", "112234");
+        Usuario meuUsuario = new Usuario("usuario@email.com", "112233");
 //        if (UsuarioDAO.registrarUsuario(meuUsuario)) {
 //            System.out.println("usuario registrado com sucesso");
 //        }
