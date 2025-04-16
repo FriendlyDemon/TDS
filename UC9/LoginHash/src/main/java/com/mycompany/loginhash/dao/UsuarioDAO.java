@@ -95,13 +95,13 @@ public class UsuarioDAO {
 
     public List<Usuario> listarUsuarios() {
         List<Usuario> usuarios = new ArrayList<>();
-        String sql = "SELECT usuario FROM usuarios";
+        String sql = "SELECT usuario, id FROM usuarios";
 
         try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                Usuario usuario = new Usuario(rs.getString("usuario"), ""); // senha não exibida
+                Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("usuario"), "");
                 usuarios.add(usuario);
             }
         } catch (SQLException e) {
