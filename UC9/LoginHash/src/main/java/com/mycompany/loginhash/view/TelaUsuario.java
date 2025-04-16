@@ -119,7 +119,7 @@ public class TelaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void uptadeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uptadeBtnActionPerformed
-        if ("".equals(emailField.getText().trim()) && senhaField.getPassword().length != 0) {
+        if (!"".equals(emailField.getText().trim()) && senhaField.getPassword().length != 0) {
             if (UsuarioController.validarLogin(emailField.getText(), senhaField.getPassword()) != null) {
                 //próxima tela
             } else {
@@ -131,7 +131,7 @@ public class TelaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_uptadeBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
-        if ("".equals(emailField.getText().trim()) && senhaField.getPassword().length != 0) {
+        if (!"".equals(emailField.getText().trim()) && senhaField.getPassword().length != 0) {
             UsuarioController.registrarUsuario(emailField.getText(), senhaField.getPassword());
         } else {
             JOptionPane.showMessageDialog(this, "email e/ou senha vazios");
