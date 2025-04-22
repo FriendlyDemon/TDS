@@ -4,6 +4,10 @@
  */
 package com.mycompany.loginhash.view;
 
+import com.mycompany.loginhash.dao.UsuarioDAO;
+import com.mycompany.loginhash.model.Usuario;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author HENRIQUEMICHEL
@@ -13,9 +17,31 @@ public class TelaListar extends javax.swing.JFrame {
     /**
      * Creates new form TelaListar
      */
+    private final DefaultTableModel modelo = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
+
+    private void startTable() {
+        modelo.addColumn("Title");
+        tabelaUsuarios.setModel(modelo);
+    }
+
     public TelaListar() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        startTable();
+    }
+
+    public TelaListar(String pesquisa) {
+        initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        buscar(pesquisa);
+        startTable();
     }
 
     /**
@@ -39,6 +65,11 @@ public class TelaListar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         buscaBtn.setText("Buscar");
+        buscaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscaBtnActionPerformed(evt);
+            }
+        });
 
         buscaLabel.setText("Busca");
 
@@ -120,10 +151,19 @@ public class TelaListar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buscar(String pesquisa) {
+        Usuario usuario = UsuarioDAO.buscarUsuarioPorEmail(pesquisa);
+        modelo.addRow(new Object[]{usuario.getEmail()});
+    }
     private void voltarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtnActionPerformed
         new TelaLogin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarBtnActionPerformed
+
+    private void buscaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaBtnActionPerformed
+        buscar(buscaField.getText());
+
+    }//GEN-LAST:event_buscaBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

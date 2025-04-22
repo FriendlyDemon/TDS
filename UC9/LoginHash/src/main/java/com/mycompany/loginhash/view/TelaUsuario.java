@@ -16,11 +16,13 @@ public class TelaUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaUsuario
+     *
      * @param usuario
      */
     public TelaUsuario(Usuario usuario) {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
         emailField.setText(usuario.getEmail());
     }
 
@@ -63,6 +65,11 @@ public class TelaUsuario extends javax.swing.JFrame {
         });
 
         sairBtn.setText("Sair");
+        sairBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -138,6 +145,11 @@ public class TelaUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "email e/ou senha vazios");
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void sairBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairBtnActionPerformed
+        new TelaLogin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_sairBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deleteBtn;
