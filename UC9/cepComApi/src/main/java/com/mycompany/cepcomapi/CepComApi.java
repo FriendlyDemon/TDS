@@ -1,8 +1,9 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.cepcomapi;
+
+import com.mycompany.cepcomapi.view.NewJFrame;
 
 /**
  *
@@ -11,6 +12,6 @@ package com.mycompany.cepcomapi;
 public class CepComApi {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new NewJFrame().setVisible(true);
     }
 }
