@@ -4,7 +4,7 @@
 package com.mycompany.cadastrocomcep;
 
 import com.mycompany.cadastrocomcep.database.ConexaoSQL;
-import com.mycompany.cadastrocomcep.view.Login;
+//import com.mycompany.cadastrocomcep.view.Login;
 
 /**
  *
