@@ -4,6 +4,8 @@
  */
 package com.mycompany.cadastrocomcep.view;
 
+import com.mycompany.cadastrocomcep.controller.EnderecoController;
+import com.mycompany.cadastrocomcep.model.Endereco;
 import com.mycompany.cadastrocomcep.model.Usuario;
 
 /**
@@ -12,9 +14,21 @@ import com.mycompany.cadastrocomcep.model.Usuario;
  */
 public class TelaUsuario extends javax.swing.JFrame {
 
+    private void fillFields(Usuario usuario) {
+        Endereco endereco = EnderecoController.buscarEnderecoPorCep(usuario.getCep());
+        ruaFie.setText(endereco.getRua());
+        baiFie.setText(endereco.getBairro());
+        cidFie.setText(endereco.getCidade());
+        estFie.setText(endereco.getEstadoExtenso());
+        numFie.setText(usuario.getNumero());
+    }
+
     public TelaUsuario(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null);
         welcome.setText("Olá " + usuario.getNome());
+        fillFields(usuario);
+
     }
 
     /**
@@ -29,6 +43,11 @@ public class TelaUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         welcome = new javax.swing.JLabel();
         saiBtn = new javax.swing.JButton();
+        ruaFie = new javax.swing.JTextField();
+        baiFie = new javax.swing.JTextField();
+        cidFie = new javax.swing.JTextField();
+        estFie = new javax.swing.JTextField();
+        numFie = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,6 +55,21 @@ public class TelaUsuario extends javax.swing.JFrame {
         welcome.setText("Olá anon!");
 
         saiBtn.setText("Sair");
+        saiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saiBtnActionPerformed(evt);
+            }
+        });
+
+        ruaFie.setEnabled(false);
+
+        baiFie.setEnabled(false);
+
+        cidFie.setEnabled(false);
+
+        estFie.setEnabled(false);
+
+        numFie.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,7 +81,16 @@ public class TelaUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(287, 287, 287)
                 .addComponent(welcome)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(170, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ruaFie)
+                    .addComponent(baiFie)
+                    .addComponent(cidFie)
+                    .addComponent(estFie)
+                    .addComponent(numFie, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(159, 159, 159))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -55,7 +98,17 @@ public class TelaUsuario extends javax.swing.JFrame {
                 .addComponent(saiBtn)
                 .addGap(80, 80, 80)
                 .addComponent(welcome)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addGap(116, 116, 116)
+                .addComponent(ruaFie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(baiFie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cidFie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(estFie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(numFie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -72,9 +125,19 @@ public class TelaUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void saiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saiBtnActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_saiBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField baiFie;
+    private javax.swing.JTextField cidFie;
+    private javax.swing.JTextField estFie;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField numFie;
+    private javax.swing.JTextField ruaFie;
     private javax.swing.JButton saiBtn;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables

@@ -22,13 +22,14 @@ public class UsuarioController {
 
         String senhaS = new String(senha);
         Usuario usuario = new Usuario(nome, email, senhaS, cep, numero);
+        EnderecoController.registrarEndereco(cep);
         return UsuarioDAO.registrarUsuario(usuario);
     }
 
     public static Usuario validarLogin(String email, char[] senha) {
 
         String senhaS = new String(senha);
-        Usuario usuario = new Usuario(email, "", senhaS, "", "");
+        Usuario usuario = new Usuario(email, senhaS);
 
         if (UsuarioDAO.validarLogin(usuario)) {
             usuario = UsuarioDAO.buscarUsuarioPorEmail(email);

@@ -65,7 +65,7 @@ public class UsuarioDAO {
     }
 
     public static Usuario buscarUsuarioPorEmail(String email) {
-        String sql = "SELECT * FROM usuarios WHERE email = ?";
+        String sql = "SELECT id, nome, email, cep, numero FROM usuarios WHERE email = ?";
 
         try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -73,7 +73,7 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("email"), rs.getString("senha"), rs.getString("cep"), rs.getString("numero"));
+                Usuario usuario = new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("email"), "", rs.getString("cep"), rs.getString("numero"));
                 return usuario;
             }
         } catch (SQLException e) {

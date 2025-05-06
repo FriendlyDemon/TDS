@@ -4,7 +4,7 @@
 package com.mycompany.cadastrocomcep;
 
 import com.mycompany.cadastrocomcep.database.ConexaoSQL;
-//import com.mycompany.cadastrocomcep.view.Login;
+import com.mycompany.cadastrocomcep.view.Login;
 
 /**
  *
@@ -14,6 +14,6 @@ public class CadastroComCep {
 
     public static void main(String[] args) {
         ConexaoSQL.conectar();
-        //new Login().setVisible(true);
+        new Login().setVisible(true);
     }
 }

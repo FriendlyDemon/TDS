@@ -81,4 +81,10 @@ public class Usuario {
         this.cep = cep;
         this.numero = numero;
     }
+
+    public Usuario(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
 }

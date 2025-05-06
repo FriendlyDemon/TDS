@@ -44,7 +44,8 @@ public class ConexaoSQL {
                 + "nome VARCHAR(255) NOT NULL, "
                 + "email VARCHAR(255) NOT NULL UNIQUE, "
                 + "senha VARCHAR(255) NOT NULL, "
-                + "cep INT NOT NULL)";
+                + "cep INT NOT NULL, "
+                + "numero INT NOT NULL)";
         try (Statement stmt = connection.createStatement()) {
             stmt.execute(sql);
         } catch (SQLException e) {

@@ -56,6 +56,40 @@ public class Endereco {
         this.estado = estado;
     }
 
+    public String getEstadoExtenso() {
+        String ref = "";
+        switch (estado) {
+            case "AC" -> ref = "Acre";
+            case "AL" -> ref = "Alagoas";
+            case "AP" -> ref = "Amapá";
+            case "AM" -> ref = "Amazonas";
+            case "BA" -> ref = "Bahia";
+            case "CE" -> ref = "Ceará";
+            case "ES" -> ref = "Espirito Santo";
+            case "DF" -> ref = "Destrito Federal";
+            case "GO" -> ref = "Goiás";
+            case "MA" -> ref = "Maranhão";
+            case "MT" -> ref = "Mato Grosso";
+            case "MS" -> ref = "Mato Grosso do Sul";
+            case "MG" -> ref = "Minas Gerais";
+            case "PA" -> ref = "Pará";
+            case "PB" -> ref = "Paraíba";
+            case "PR" -> ref = "Paraná";
+            case "PE" -> ref = "Pernambuco";
+            case "PI" -> ref = "Piauí";
+            case "RJ" -> ref = "Rio de Janeiro";
+            case "RN" -> ref = "Rio Grande do Norte";
+            case "RS" -> ref = "Rio Grande do Sul";
+            case "RO" -> ref = "Rondônia";
+            case "RR" -> ref = "Roraima";
+            case "SC" -> ref = "Santa Catarina";
+            case "SP" -> ref = "São Paulo";
+            case "SE" -> ref = "Sergipe";
+            case "TO" -> ref = "Tocantins";
+        }
+        return ref;
+    }
+
     public Endereco(String cep, String rua, String bairro, String cidade, String estado) {
         this.cep = cep;
         this.rua = rua;
