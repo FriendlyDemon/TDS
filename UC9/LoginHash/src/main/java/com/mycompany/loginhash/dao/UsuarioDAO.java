@@ -115,7 +115,7 @@ public class UsuarioDAO {
         String sql = "DELETE FROM usuario WHERE id = ?";
         try (Connection conn = ConexaoSQL.conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, id);
-            if (stmt.execute()) {
+            if (stmt.executeUpdate() > 0) {
                 System.out.println("Usuario deletado");
             } else {
                 System.out.println("Usuario não encontrado");
