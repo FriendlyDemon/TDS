@@ -1,0 +1,51 @@
+:root {
+    --cor: grey;
+}
+
+body {
+    background-color: var(--cor);
+    color: white;
+}
+
+#btn1 {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn2 {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn1:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.choco {
+    color: white;
+    gap: 1px;
+}
+
+p {
+    font-size: 15px;
+}
+
+.contPrin {
+    background-image: url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW9sbnZrejNoMHJ5ZWR4cTQ0Y3V5bjk4czBmdTF0MmhvNWRub2s1OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHIRLHtNwxpjIFqPdV/giphy.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
