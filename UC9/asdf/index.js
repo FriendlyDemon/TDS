@@ -17,13 +17,14 @@ function mudaImagem() {
   }
 }
 function mudaCor() {
-  if (choco[0].style.color === "rgb(255, 255, 255)") {
+  if (choco[0].style.color == "black") {
     for (let i = 0; i < choco.length; i++) {
-      choco[i].style.color = "rgb(0, 0, 0)";
+      choco[i].style.color = "white";
     }
+
   } else {
     for (let i = 0; i < choco.length; i++) {
-      choco[i].style.color = "rgb(255, 255, 255)";
+      choco[i].style.color = "black";
     }
   }
 }
