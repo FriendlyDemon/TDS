@@ -75,7 +75,7 @@ public class Flags {
     }
 
     public String toString() {
-        String string = "nsfw: " + nsfw + " religious: " + religious + " political: " + political + " racist: " + racist + " sexist: " + sexist + " explicit: " + explicit;
+        String string = "nsfw: " + nsfw + "; religious: " + religious + "; political: " + political + "; racist: " + racist + "; sexist: " + sexist + "; explicit: " + explicit + ";";
         return string;
     }
 
