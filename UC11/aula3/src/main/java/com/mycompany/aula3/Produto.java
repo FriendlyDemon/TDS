@@ -15,7 +15,7 @@ public class Produto {
 
     /**
      *
-     * @return o nome do Produto.
+     * @return O nome do Produto.
      */
     public String getNome() {
         return nome;
@@ -23,7 +23,7 @@ public class Produto {
 
     /**
      *
-     * @param nome novo nome do Produto.
+     * @param nome Novo nome do Produto. Nome final sempre será em caixa baixa.
      */
     public void setNome(String nome) {
         this.nome = nome.toLowerCase();
@@ -31,7 +31,7 @@ public class Produto {
 
     /**
      *
-     * @return quantidade atual do Produto.
+     * @return Quantidade atual do Produto.
      */
     public int getQuantidade() {
         return quantidade;
@@ -39,7 +39,7 @@ public class Produto {
 
     /**
      *
-     * @param quantidade valor novo a ser aplicado a quantidade do Produto.
+     * @param quantidade Valor novo a ser aplicado a quantidade do Produto.
      */
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
@@ -49,20 +49,26 @@ public class Produto {
      * Addiciona {@code quantidade} ao Produto.
      *
      * @param quantidade Valor a ser adicionado a quantidade.
-     * @return Quantidade final do Produto.
+     * @return Quantidade final do Produto. Se {@code quantidade} for negativa ,
+     * retorna -1.
      */
     public int adicionarQuantidade(int quantidade) {
-        this.quantidade += quantidade;
+        if (quantidade >= 0) {
+            this.quantidade += quantidade;
+            return this.quantidade;
+        } else {
+            System.out.println("erro: valor negativo");
+            return -1;
+        }
 
-        return this.quantidade;
     }
 
     /**
      * {@code quantidade} deve ser menor ou igual a quantidade atual do Produto.
      *
      * @param quantidade Valor a ser subtraido da quantidade do Produto.
-     * @return Retorna a quantidade final do Produto. Se {@code quantidade} for
-     * maior que a quantidade atual, retorna -1.
+     * @return Quantidade final do Produto. Se {@code quantidade} for maior que
+     * a quantidade atual, retorna -1.
      */
     public int removerQuantidade(int quantidade) {
         if (this.quantidade >= quantidade) {
@@ -75,7 +81,7 @@ public class Produto {
     }
 
     /**
-     * Cria um novo Produto. Nome deve ser todo em caixa baixa.
+     * Cria um novo Produto. Nome final sempre será em caixa baixa.
      *
      * @param nome Nome do Produto.
      * @param quantidade Quantidade do Produto
