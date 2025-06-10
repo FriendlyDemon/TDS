@@ -17,14 +17,12 @@ public class SnakeDraw extends JPanel {
 
     private final SnakeGame snakeGame;
 
-    @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g, Tile food) {
         super.paintComponent(g);
-        draw(g);
+        draw(g, food);
     }
 
-    public void draw(Graphics g) {
-
+    public void draw(Graphics g, Tile food) {
         for (int i = 0; i < snakeGame.boardWidth / snakeGame.tileSize; i++) {
             g.drawLine(i * snakeGame.tileSize, 0, i * snakeGame.tileSize, snakeGame.boardHeight);
             g.drawLine(0, i * snakeGame.tileSize, snakeGame.boardWidth, i * snakeGame.tileSize);
@@ -58,9 +56,9 @@ public class SnakeDraw extends JPanel {
 
         if (snakeGame.gameOver) {
             g.setColor(Color.red);
-            g.drawString("Game Over: " + String.valueOf(snakeGame.snakeBody.size()), snakeGame.tileSize - 16, snakeGame.tileSize);
+            g.drawString("Game Over: " + String.valueOf(snakeGame.snakeBody.size()) + " food at: " + food.x + "x" + food.y, snakeGame.tileSize - 16, snakeGame.tileSize);
         } else {
-            g.drawString("Score: " + String.valueOf(snakeGame.snakeBody.size()), snakeGame.tileSize - 16, snakeGame.tileSize);
+            g.drawString("Score: " + String.valueOf(snakeGame.snakeBody.size()) + " food at: " + food.x + "x" + food.y, snakeGame.tileSize - 16, snakeGame.tileSize);
         }
     }
 

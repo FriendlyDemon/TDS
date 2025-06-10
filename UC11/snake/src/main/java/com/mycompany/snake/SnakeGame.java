@@ -19,35 +19,37 @@ import javax.swing.*;
  *
  * @author HENRIQUEMICHEL
  */
-public class SnakeGame extends JPanel implements ActionListener, KeyListener {
+public final class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
-    int boardWidth;
-    int boardHeight;
-    int tileSize = 25;
+    public int boardWidth;
+    public int boardHeight;
+    public int tileSize = 25;
 
-    Tile snakeHead;
-    ArrayList<Tile> snakeBody;
-    Tile food;
-    Random random;
+    public Tile snakeHead;
+    public ArrayList<Tile> snakeBody;
+    public Tile food;
+    public Random random;
 
-    int velocityX;
-    int velocityY;
-    Timer gameLoop;
-    boolean gameOver = false;
-    MovementAndCollision movementAndCollision;
-    SnakeDraw snakeDraw;
+    public int velocityX;
+    public int velocityY;
+    public Timer gameLoop;
+    public boolean gameOver = false;
+    public MovementAndCollision movementAndCollision;
+    public SnakeDraw snakeDraw;
 
     public void placeFood() {
-        int posX = random.nextInt(boardWidth / tileSize);
-        while (posX == 10) {
-            posX = random.nextInt(boardWidth / tileSize);
-        }
+        int posX = random.nextInt(boardWidth / tileSize - 1);
+
         food.x = posX;
-        int posY = random.nextInt(boardHeight / tileSize);
-        while (posY == 10) {
-            posY = random.nextInt(boardHeight / tileSize);
-        }
+
+        int posY = random.nextInt(boardHeight / tileSize - 1);
+
         food.y = posY;
+    }
+
+    public void placeFood(int x, int y) {
+        food.x = x;
+        food.y = y;
     }
 
     public void move() {
@@ -75,7 +77,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        snakeDraw.paintComponent(g);
+        snakeDraw.paintComponent(g, this.food);
     }
 
     @Override
@@ -98,9 +100,9 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         setFocusable(true);
 
-        snakeHead = new Tile(5, 5);
+        snakeHead = new Tile((boardWidth / tileSize) / 2, (boardHeight / tileSize) / 2);
         snakeBody = new ArrayList<>();
-        food = new Tile(10, 10);
+        food = new Tile(0, 0);
         random = new Random();
 
         placeFood();
@@ -109,10 +111,10 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         velocityY = 0;
 
         movementAndCollision = new MovementAndCollision(this);
+        snakeBody.add(new Tile(snakeHead.x - 1, snakeHead.y));
         snakeDraw = new SnakeDraw(this);
 
-        gameLoop = new Timer(100, this);
+        gameLoop = new Timer(150, this);
         gameLoop.start();
-
     }
 }
