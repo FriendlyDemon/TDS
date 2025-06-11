@@ -16,26 +16,44 @@ public class MovementAndCollision implements KeyListener {
     private final SnakeGame snakeGame;
 
     public void move() {
+
+        //sair da tela
+        if ((snakeGame.snakeHead.x + snakeGame.velocityX) * snakeGame.tileSize < 0
+                || (snakeGame.snakeHead.x + snakeGame.velocityX) * snakeGame.tileSize > snakeGame.boardWidth - snakeGame.tileSize
+                || (snakeGame.snakeHead.y + snakeGame.velocityY) * snakeGame.tileSize < 0
+                || (snakeGame.snakeHead.y + snakeGame.velocityY) * snakeGame.tileSize > snakeGame.boardHeight - snakeGame.tileSize) {
+            System.out.println((snakeGame.snakeHead.x + snakeGame.velocityX) + "\n" + (snakeGame.snakeHead.y + snakeGame.velocityY));
+            snakeGame.gameOver = true;
+        }
+        //comer
         if (snakeGame.collision(snakeGame.snakeHead, snakeGame.food)) {
             snakeGame.snakeBody.add(new Tile(snakeGame.food.x, snakeGame.food.y));
             snakeGame.placeFood();
         }
-        for (int i = snakeGame.snakeBody.size() - 1; i >= 0; i--) {
-            Tile snakePart = snakeGame.snakeBody.get(i);
-            if (i == 0) {
-                snakePart.x = snakeGame.snakeHead.x;
-                snakePart.y = snakeGame.snakeHead.y;
-            } else {
-                Tile prevSnakePart = snakeGame.snakeBody.get(i - 1);
 
-                snakePart.x = prevSnakePart.x;
-                snakePart.y = prevSnakePart.y;
+        //crescer
+        if (!snakeGame.gameOver) {
+            for (int i = snakeGame.snakeBody.size() - 1; i >= 0; i--) {
+                Tile snakePart = snakeGame.snakeBody.get(i);
+                if (i == 0) {
+                    snakePart.x = snakeGame.snakeHead.x;
+                    snakePart.y = snakeGame.snakeHead.y;
+                } else {
+                    Tile prevSnakePart = snakeGame.snakeBody.get(i - 1);
+
+                    snakePart.x = prevSnakePart.x;
+                    snakePart.y = prevSnakePart.y;
+                }
             }
         }
 
-        snakeGame.snakeHead.x += snakeGame.velocityX;
-        snakeGame.snakeHead.y += snakeGame.velocityY;
+        //mover
+        if (!snakeGame.gameOver) {
+            snakeGame.snakeHead.x += snakeGame.velocityX;
+            snakeGame.snakeHead.y += snakeGame.velocityY;
+        }
 
+        //bater no corpo
         for (int i = 0; i < snakeGame.snakeBody.size(); i++) {
             Tile snakePart = snakeGame.snakeBody.get(i);
             if (snakeGame.collision(snakeGame.snakeHead, snakePart)) {
@@ -43,12 +61,6 @@ public class MovementAndCollision implements KeyListener {
             }
         }
 
-        if (snakeGame.snakeHead.x * snakeGame.tileSize < 0
-                || snakeGame.snakeHead.x * snakeGame.tileSize >= snakeGame.boardWidth
-                || snakeGame.snakeHead.y * snakeGame.tileSize < 0
-                || snakeGame.snakeHead.y * snakeGame.tileSize >= snakeGame.boardHeight) {
-            snakeGame.gameOver = true;
-        }
     }
 
     public boolean collision(Tile tile1, Tile tile2) {

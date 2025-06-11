@@ -49,16 +49,17 @@ public class SnakeDraw extends JPanel {
             g.fillRect(
                     snakePart.x * snakeGame.tileSize,
                     snakePart.y * snakeGame.tileSize,
-                    snakeGame.tileSize,
-                    snakeGame.tileSize);
+                    (snakeGame.tileSize - 1),
+                    (snakeGame.tileSize - 1));
         }
-        g.setFont(new Font("Arial", Font.PLAIN, 16));
 
+        g.setFont(new Font("Arial", Font.PLAIN, 16));
         if (snakeGame.gameOver) {
             g.setColor(Color.red);
-            g.drawString("Game Over: " + String.valueOf(snakeGame.snakeBody.size()) + " food at: " + food.x + "x" + food.y, snakeGame.tileSize - 16, snakeGame.tileSize);
+            g.drawString("Game Over: " + String.valueOf(snakeGame.snakeBody.size()), snakeGame.tileSize - 16, snakeGame.tileSize);
         } else {
-            g.drawString("Score: " + String.valueOf(snakeGame.snakeBody.size()) + " food at: " + food.x + "x" + food.y, snakeGame.tileSize - 16, snakeGame.tileSize);
+            g.setColor(Color.white);
+            g.drawString("Score: " + String.valueOf(snakeGame.snakeBody.size()), snakeGame.tileSize - 16, snakeGame.tileSize);
         }
     }
 

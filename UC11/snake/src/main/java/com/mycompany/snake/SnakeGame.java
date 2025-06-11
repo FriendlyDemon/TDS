@@ -37,14 +37,33 @@ public final class SnakeGame extends JPanel implements ActionListener, KeyListen
     public MovementAndCollision movementAndCollision;
     public SnakeDraw snakeDraw;
 
+    public ArrayList<Tile> getAvailableTiles() {
+        ArrayList<Tile> availableTiles = new ArrayList<>();
+        for (int x = 0; x < boardWidth / tileSize; x++) {
+            for (int y = 0; y < boardHeight / tileSize; y++) {
+                Tile tile = new Tile(x, y);
+                boolean isOccupied = false;
+                for (Tile bodyPart : snakeBody) {
+                    if (collision(tile, bodyPart)) {
+                        isOccupied = true;
+                        break;
+                    }
+                }
+                if (collision(tile, snakeHead)) {
+                    isOccupied = true;
+                }
+                if (!isOccupied) {
+                    availableTiles.add(tile);
+                }
+            }
+        }
+        return availableTiles;
+    }
+
     public void placeFood() {
-        int posX = random.nextInt(boardWidth / tileSize - 1);
-
-        food.x = posX;
-
-        int posY = random.nextInt(boardHeight / tileSize - 1);
-
-        food.y = posY;
+        ArrayList<Tile> livre = getAvailableTiles();
+        int pos = random.nextInt(livre.size());
+        food = livre.get(pos);
     }
 
     public void placeFood(int x, int y) {
@@ -105,13 +124,13 @@ public final class SnakeGame extends JPanel implements ActionListener, KeyListen
         food = new Tile(0, 0);
         random = new Random();
 
-        placeFood();
-
         velocityX = 1;
         velocityY = 0;
 
         movementAndCollision = new MovementAndCollision(this);
         snakeBody.add(new Tile(snakeHead.x - 1, snakeHead.y));
+        placeFood();
+
         snakeDraw = new SnakeDraw(this);
 
         gameLoop = new Timer(150, this);
