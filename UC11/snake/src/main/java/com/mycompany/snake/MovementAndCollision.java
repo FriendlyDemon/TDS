@@ -25,6 +25,7 @@ public class MovementAndCollision implements KeyListener {
             System.out.println((snakeGame.snakeHead.x + snakeGame.velocityX) + "\n" + (snakeGame.snakeHead.y + snakeGame.velocityY));
             snakeGame.gameOver = true;
         }
+
         //comer
         if (snakeGame.collision(snakeGame.snakeHead, snakeGame.food)) {
             snakeGame.snakeBody.add(new Tile(snakeGame.food.x, snakeGame.food.y));
@@ -138,8 +139,6 @@ public class MovementAndCollision implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e
-    ) {
-
+    public void keyReleased(KeyEvent e) {
     }
 }

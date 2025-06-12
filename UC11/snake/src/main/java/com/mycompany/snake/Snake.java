@@ -25,6 +25,5 @@ public class Snake {
         frame.add(snakeGame);
         frame.pack();
         snakeGame.requestFocus();
-
     }
 }
