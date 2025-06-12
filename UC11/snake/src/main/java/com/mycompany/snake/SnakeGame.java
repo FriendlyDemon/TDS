@@ -62,7 +62,7 @@ public final class SnakeGame extends JPanel implements ActionListener, KeyListen
 
     public void placeFood() {
         ArrayList<Tile> livre = getAvailableTiles();
-        int pos = random.nextInt(livre.size());
+        int pos = random.nextInt(livre.size() - 1);
         food = livre.get(pos);
     }
 
