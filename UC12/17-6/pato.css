@@ -1,0 +1,14 @@
+#fundo {
+  height: 500px;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pato {
+  display: flex;
+  background-color: chocolate;
+  padding: 20px;
+  align-items: center;
+  flex-direction: column;
+}

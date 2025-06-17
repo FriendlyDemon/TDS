@@ -1,0 +1,32 @@
+#container_pai {
+  height: 500px;
+  display: flex;
+  background-color: black;
+  padding: 25px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.container_filho {
+  padding: 7px;
+  flex-grow: 1;
+}
+
+#t1 {
+  background-color: red;
+  flex-grow: 2;
+}
+#t2 {
+  background-color: green;
+  align-self: center;
+}
+#t3 {
+  background-color: blue;
+  align-self: flex-end;
+}
+.fonte {
+  color: white;
+}

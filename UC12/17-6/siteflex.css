@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+div {
+  display: flex;
+  gap: 25px;
+}
+#header {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+#colunas {
+  border: 15px solid white;
+}
+#colunas a {
+  flex-direction: column;
+  gap: 25px;
+  background-color: silver;
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  text-align: center;
+}
+#caixas {
+  border: 15px solid white;
+}
+#caixas a {
+  flex-direction: column;
+  gap: 25px;
+  background-color: gold;
+  padding: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  text-align: center;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 10px;
+}
