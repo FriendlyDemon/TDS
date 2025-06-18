@@ -1,0 +1,21 @@
+.container_pai{
+    display: flex;
+    height: auto;
+    background-color: brown;
+    padding: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container_pai div{
+    padding: 25px;
+}
+#container_filho1{
+    background-color: green;
+}
+#container_filho2{
+    background-color: blue;
+}
+#container_filho3{
+    background-color: yellow;
+}
