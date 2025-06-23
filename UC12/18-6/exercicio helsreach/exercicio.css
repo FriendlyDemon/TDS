@@ -12,9 +12,13 @@ header {
   text-align: center;
   justify-content: space-between;
 }
+header p {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+}
 header nav {
   display: flex;
-  flex-direction: column;
 }
 header a {
   color: white;
@@ -25,6 +29,7 @@ header a {
 #banner {
   display: flex;
   background-image: url(Grimaldus.webp);
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +59,7 @@ header a {
   gap: 1px;
 }
 #commanders p {
-  background-color: white;
+  background-color: silver;
   color: black;
   width: fit-content;
   height: fit-content;
@@ -77,8 +82,13 @@ header a {
   display: flex;
   flex-direction: row;
   flex-direction: column;
-  background-color: white;
+  background-color: silver;
   color: black;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   padding: 7px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
