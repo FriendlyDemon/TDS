@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  /*color: white;*/
+  font-family: "Times New Roman", Times, serif;
+}
+
+#form-container {
+  background-color: black;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form-container form {
+  background-color: white;
+  width: 500px;
+  padding: 50px;
+  gap: 2px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 5px;
+}
+option{
+    text-shadow: 1px 1px 2px black;
+    background-color: #ccc;
+}
+option:checked {
+  background-color: #aaa;
+}
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #aaa;
+}
