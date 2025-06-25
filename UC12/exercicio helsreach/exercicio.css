@@ -149,15 +149,16 @@ button {
   padding: 15px;
 }
 table {
-  border-collapse: collapse;
   width: 50%;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }
+table,
 th,
 td {
   border: 1px solid white;
+  border-collapse: collapse;
   padding: 8px;
   text-align: left;
 }

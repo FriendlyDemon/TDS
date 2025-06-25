@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p style="position: static; background: #eee; padding: 10px">
+      Parágrafo com position: static (padrão)
+    </p>
+
+    <div style="position: relative; width: 40px">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/107/107831.png"
+        width="40"
+      />
+      <span
+        style="
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background: red;
+          color: white;
+          border-radius: 50%;
+          font-size: 12px;
+          padding: 2px 5px;
+        "
+      >
+        3
+      </span>
+    </div>
+    <button
+      class="btntop"
+      style="
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+      "
+    >
+      &uarr;
+    </button>
+    <div style="height: 250px; overflow-y: scroll; border: 1px solid gray">
+      <div style="position: sticky; top: 0; background: #ffd54f; padding: 10px">
+        Cabeçalho fixo com sticky
+      </div>
+      <div style="height: 600px">Muito conteúdo rolável...</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- altera o tamanho da fonte para 5% da largura da tela, com limite mínimo de 150% e máximo de 300% do tamanho da fonte do html-->
+    <h1 style="font-size: clamp(1.5rem, 5vw, 3rem)">Título</h1>
+
+    <!-- cria uma caixa verde de 200x100 píxels, com texto centralizado -->
+    <div
+      style="
+        width: 200px;
+        height: 100px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      caixa com px
+    </div>
+
+    <!-- cria uma caixa amarela de 300 píxel de largura-->
+    <div style="width: 300px; background-color: yellow">
+      <!-- cria uma caixa azul com largura igual a metade da caixa pai-->
+      <div style="width: 50%; background-color: blue">
+        50% da largunra do container
+      </div>
+    </div>
+
+    <!-- altera o tamanho da fonte para 20 píxels -->
+    <div style="font-size: 20px">
+      <!-- texto com tamanho 2x o tamanho do pai -->
+      <p style="font-size: 2em">texto 1</p>
+
+      <!-- texto com tamanho 2x o tamanho do html-->
+      <p style="font-size: 2rem">texto 2</p>
+    </div>
+
+    <!-- cria uma caixa laranja com largura igual a largura da tela e altura igual a 30% da altura da tela -->
+    <div style="width: 100vw; height: 30vh; background-color: orange">
+      Esta área ocupa toda a largura da tela e 30% da altura
+    </div>
+  </body>
+</html>
