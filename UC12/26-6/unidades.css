@@ -1,0 +1,45 @@
+:root {
+  --cor1: blue;
+  --cor2: red;
+  --cor3: green;
+}
+html,
+* {
+  margin: 0;
+  padding: 0;
+}
+#test {
+  overflow: auto;
+}
+
+#box1 {
+  background-color: var(--cor1);
+  width: 100px;
+  height: 100px;
+}
+#box2 {
+  background-color: var(--cor2);
+  width: 200vw;
+  height: 200vh;
+}
+header {
+  display: flex;
+  background-color: var(--cor3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  justify-content: space-between;
+  font-size: 2vh;
+}
+header a {
+  color: black;
+  text-decoration: none;
+  margin: 0 1vw;
+}
+header li {
+  list-style: none;
+}
+header a:hover {
+  color: silver;
+}
