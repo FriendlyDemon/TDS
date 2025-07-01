@@ -7,6 +7,7 @@ body {
   background-color: black;
 }
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,14 +24,28 @@ header nav {
   display: flex;
   gap: 2vw;
 }
+header a {
+  text-decoration: none;
+}
 #user {
+  position: relative;
+}
+#user-image {
   border-radius: 50%;
   height: 70px;
   border: gold 3px solid;
   margin-right: 1vw;
 }
-a {
-  text-decoration: none;
+#msg {
+  position: absolute;
+  top: 1em;
+  right: 2.5em;
+  background: gold;
+  color: black;
+  border: 10px gold;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 1px 5px;
 }
 #container-banner {
   background-image: url(iron-warriors-by-serdjek.webp);

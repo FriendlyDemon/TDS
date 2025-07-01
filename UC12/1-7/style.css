@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "kingthings";
+  src: url("fonts/Kingthings\ Petrock.ttf") format("truetype");
+}
+@font-face {
+  font-family: "kingthings light";
+  src: url("fonts/Kingthings\ Petrock\ light.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: green;
+  text-align: justify;
+}
+.banner-principal {
+  background-image: url(iron-warriors-by-serdjek.webp);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: contain;
+  background-position: top;
+  background-attachment: fixed;
+  height: 80vh;
+}
+.banner-secundario {
+  height: 80vh;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #191919,
+    #191919 20px,
+    gold 20px,
+    gold 40px
+  );
+}
+
+h1 {
+  font-family: "kingthings", Times, serif;
+  font-weight: bold;
+  font-style: italic;
+}
+h2 {
+  font: bold italic 64px "kingthings", Times, serif;
+}
+h3 {
+  font: bold italic 48px "bitcount grid double", Times, serif;
+}
