@@ -1,7 +1,8 @@
-pexels
-flaticon
-iconarchive
+https://www.pexels.com/
+https://favicon.io/
+https://www.iconarchive.com/
 https://color.adobe.com/create/color-wheel
 https://www.photopea.com/
 https://www.dafont.com/
 https://fonts.google.com/
+https://fonts.google.com/icons
