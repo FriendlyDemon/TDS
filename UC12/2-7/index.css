@@ -2,10 +2,6 @@
   margin: 0;
   padding: 0;
 }
-header hr {
-  width: 80vw;
-  text-align: left;
-}
 body {
   font-family: Arial, sans-serif;
 }
@@ -21,6 +17,18 @@ header {
 header a {
   color: white;
   text-decoration: none;
+}
+.showNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.show {
+  padding: 5px;
+}
+.pressed {
+  background-color: #333;
+  border-radius: 50%;
 }
 
 @media (max-width: 600px) {
