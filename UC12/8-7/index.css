@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+  transition: transform 0.5s;
+}
+
+header a:hover {
+  transform: scale(1.3);
+}
+.show {
+  padding: 5px;
+  border-radius: 50%;
+  border-color: black;
+  transition: all 0.3s ease-in-out;
+}
+.pressed {
+  background-color: #333;
+}
+#banner {
+  height: 80vh;
+  background-image: url("https://picsum.photos/800/600");
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card {
+  width: 20vh;
+  gap: 10px;
+  padding: 50px, 0px, 50px, 0px;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+.card img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  nav.ativo {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 601px) {
+  .show {
+    display: none;
+  }
+  header hr {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in {
+  animation: slide-in 0.5s ease-in-out;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
