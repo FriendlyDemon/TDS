@@ -1,0 +1,104 @@
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 1000;
+}
+header h1{
+  user-select: none;
+}
+#show {
+  display: none;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+header a {
+  text-decoration: none;
+  padding: 5px;
+}
+#gap {
+  height: 50px;
+}
+
+.hero {
+  padding: 15px;
+  padding-left: 10vw;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero img {
+  height: clamp(100px, 10vw, 10vw);
+}
+
+#introduction {
+  display: flex;
+  flex-direction: column;
+}
+
+.projetos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 27vw;
+  height: fit-content;
+  align-items: center;
+  max-height: fit-content;
+}
+#D1,
+#D2,
+#D3 {
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+.projetos img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.projetos button {
+  padding: 5px;
+  border-radius: 10px;
+  width: 6.5em;
+}
+.projetos button:hover {
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+nav a,
+footer a {
+  transition: transform 0.3s ease-in-out;
+}
+nav a:hover,
+footer a:hover {
+  transform: scale(1.3);
+}
