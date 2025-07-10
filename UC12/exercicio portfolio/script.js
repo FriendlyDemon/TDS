@@ -44,6 +44,5 @@ t3.addEventListener("click", () => {
 });
 
 menu.addEventListener("click", () => {
-  menu.classList.toggle("pressed");
   nav.classList.toggle("ativo");
 });
