@@ -1,3 +1,11 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
 header {
   display: flex;
   position: fixed;
@@ -7,7 +15,7 @@ header {
   padding: 10px;
   z-index: 1000;
 }
-header h1{
+header h1 {
   user-select: none;
 }
 #show {
