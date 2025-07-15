@@ -1,0 +1,8 @@
+.btn{
+    background-color: blueviolet;
+    color: white;
+}
+.btn:hover{
+    background-color: darkviolet;
+    border: 3px solid blueviolet;
+}
