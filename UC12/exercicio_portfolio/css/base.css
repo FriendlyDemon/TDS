@@ -14,7 +14,7 @@ header a {
   background-color: rgba(192, 192, 192, 0.75);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.projetos button {
+.card-btn {
   background-color: black;
   color: white;
   transition: all 0.3s ease;

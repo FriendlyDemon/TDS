@@ -69,26 +69,31 @@ header a {
   align-items: center;
   max-height: fit-content;
 }
-#D1,
-#D2,
-#D3 {
-  transition: max-height 0.5s ease-in-out;
-  max-height: 0;
-  overflow: hidden;
-}
-.projetos img {
+.card img {
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
-.projetos button {
+.info {
+  display: flex;
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+.info p{
+  text-align: justify;
+  width: 90%;
+}
+.card-btn {
   padding: 5px;
   border-radius: 10px;
   width: 6.5em;
 }
-.projetos button:hover {
+.card-btn:hover {
   cursor: pointer;
-}
+} 
 
 footer {
   display: flex;
