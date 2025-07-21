@@ -1,0 +1,18 @@
+header {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav {
+  display: flex;
+}
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+.botoes {
+  display: flex;
+  gap: 1rem;
+}
