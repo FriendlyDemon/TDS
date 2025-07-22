@@ -1,5 +1,5 @@
 .botao-laranja {
-  background-color: #ff8c00; /* Laranja */
+  background-color: #FF7526; /* Laranja */
   color: white;
   border: none;
   border-radius: 7px;
@@ -13,5 +13,5 @@
   transition: background-color 0.3s ease;
 }
 .botao-laranja:hover {
-  background-color: #e07b00; /* Laranja mais escuro */
+  background-color: #E45400; /* Laranja mais escuro */
 }

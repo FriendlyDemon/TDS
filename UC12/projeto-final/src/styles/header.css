@@ -4,14 +4,17 @@ header {
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
-}
-header nav {
-  display: flex;
+  height: 6.5vh;
 }
 header nav {
   display: flex;
   gap: 1rem;
 }
+header img{
+  width: 7rem;
+  height: auto;
+}
+
 .botoes {
   display: flex;
   gap: 1rem;

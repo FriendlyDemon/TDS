@@ -11,10 +11,15 @@ function Header() {
         <a href="#">Packages</a>
         <a href="#">Destination</a>
       </nav>
-      <h1>Nomad</h1>
+        <img
+          src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/nomad-logo.png"
+          alt=""
+          width={200}
+          height={60}
+        />
       <section className="botoes">
-        <Botao texto="botao1" />
-        <Botao texto="botao2" />
+        <Botao texto="Blog" />
+        <Botao texto="Contact" />
       </section>
     </header>
   );
