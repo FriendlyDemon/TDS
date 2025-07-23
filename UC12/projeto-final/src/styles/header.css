@@ -8,11 +8,44 @@ header {
 }
 header nav {
   display: flex;
-  gap: 1rem;
 }
-header img{
+header nav a {
+  border: 1rem solid transparent;
+}
+#home {
+  color: #ff7526;
+}
+#pages {
+  position: relative;
+}
+.pages_list {
+  background-color: #f4f4f4;
+  border: 10px solid #f4f4f4;
+  border-radius: 0px 0px 10px 10px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.show_list {
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(20px);
+}
+#pages_list a:hover {
+  color: #ff7526;
+}
+header img {
   width: 7rem;
   height: auto;
+}
+header img:hover {
+  cursor: pointer;
 }
 
 .botoes {

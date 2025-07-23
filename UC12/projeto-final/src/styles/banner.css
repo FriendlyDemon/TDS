@@ -54,7 +54,15 @@
   border-radius: 20px;
   z-index: 1;
 }
-.card2 img {
+.card2 .vid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/shifaaz-shamoon-_STLYdogRF4.webp);
+  background-position: center;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
   margin: 10px;
   border-radius: 15px;
 }
@@ -87,13 +95,13 @@
   border-radius: 50%;
   font-size: 35px;
 }
-.users img + img{
-  margin-left: -15px;
+.users img + img {
+  margin-left: -10px;
 }
-.users button{
-  margin-left: -15px;
+.users button {
+  margin-left: -10px;
 }
-.users button:hover{
+.users button:hover {
   cursor: pointer;
 }
 .shadow {
@@ -105,4 +113,24 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   z-index: -1;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: pulse 1.7s infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 0px 0px;
+  }
+  to {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 0px 20px;
+  }
 }

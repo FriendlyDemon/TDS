@@ -1,5 +1,5 @@
 .botao-laranja {
-  background-color: #FF7526; /* Laranja */
+  background-color: #ff7526;
   color: white;
   border: none;
   border-radius: 7px;
@@ -12,6 +12,26 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.botao-laranja:hover {
-  background-color: #E45400; /* Laranja mais escuro */
+.botao-branco {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.botao-laranja:hover{
+  background-color: #e45400;
+}
+.botao-branco:hover {
+  background-color: #e45400;
+  border: 1px solid rgba(0, 0, 0, 0);
+  color: white;
 }

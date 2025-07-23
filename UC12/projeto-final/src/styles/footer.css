@@ -1,0 +1,46 @@
+footer {
+  display: flex;
+  background-color: #1b1917;
+  justify-content: space-between;
+  width: stretch;
+  height: 45vh;
+  margin: 1vw;
+  border-radius: 20px;
+}
+footer nav {
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+footer nav section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  color: #6c6c6c;
+  width: 10%;
+  margin: 25px;
+  text-align: left;
+}
+footer nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  text-align: left;
+}
+#follow {
+  color: #6c6c6c;
+  margin: 25px;
+  justify-self: end;
+  text-align: right;
+}
+#follow div {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  
+}
+footer a {
+  color: white;
+}

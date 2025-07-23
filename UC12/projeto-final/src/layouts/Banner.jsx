@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/banner.css";
+import { FaPlay } from "react-icons/fa6";
 
 function Banner() {
   return (
@@ -10,19 +11,27 @@ function Banner() {
         <div className="card1 box">
           <div className="card2">
             <div className="shadow"></div>
-            <img
-              src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/shifaaz-shamoon-_STLYdogRF4.webp"
-              alt=""
-              width={150}
-              height={150}
-            />
+            <div className="vid">
+              <div className="icon">
+                <FaPlay color="white" />
+              </div>
+            </div>
             <div className="users">
               <div className="imgs">
-                <img src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/avatar2-1.png" alt="" />
-                <img src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/avatar3-1.png" alt="" />
-                <img src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/oliver-ragfelt-khV4fTy6-D8-unsplash-1.png" alt="" />
+                <img
+                  src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/avatar2-1.png"
+                  alt=""
+                />
+                <img
+                  src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/avatar3-1.png"
+                  alt=""
+                />
+                <img
+                  src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/oliver-ragfelt-khV4fTy6-D8-unsplash-1.png"
+                  alt=""
+                />
                 <button>+</button>
-                </div>
+              </div>
               <div>
                 <p>12K+ Membership </p>
                 <p>enjoy our facility</p>
