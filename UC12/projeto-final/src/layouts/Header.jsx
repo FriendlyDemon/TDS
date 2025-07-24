@@ -10,20 +10,20 @@ function Header() {
         <a href="#" id="home">
           Home
         </a>
-        <a
-          href="#"
+        <div
           id="pages"
-          onMouseEnter={() =>
-            document.querySelector(".pages_list").classList.add("show_list")
-          }
-          onMouseLeave={() =>
-            document.querySelector(".pages_list").classList.remove("show_list")
-          }
+          onMouseEnter={() => {
+            document.querySelector(".pages_list").classList.add("show_list");
+            document.getElementById("pagelink").style.color = "#ff7526";
+          }}
+          onMouseLeave={() => {
+            document.querySelector(".pages_list").classList.remove("show_list");
+            document.getElementById("pagelink").style.color = "black";
+          }}
         >
-          Pages{" "}
-          <span>
-            <IoChevronDownSharp />
-          </span>
+          <a href="#" id="pagelink">
+            Pages <IoChevronDownSharp />
+          </a>
           <div className="pages_list">
             <a href="#">About</a>
             <a href="#">Services</a>
@@ -33,7 +33,7 @@ function Header() {
             <a href="#">Blog</a>
             <a href="#">Post</a>
           </div>
-        </a>
+        </div>
         <a href="#">Packages</a>
         <a href="#">Destination</a>
       </nav>

@@ -1,46 +1,132 @@
+#footerbg {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(180deg, white -1%, #00000040 35%),
+    url(https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/denys-nevozhai-guNIjIuUcgY.webp);
+  width: 100%;
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#travel {
+  user-select: none;
+  text-align: center;
+  line-height: 18vw;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 26vw;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  font-family: "Manrope", sans-serif;
+}
+
 footer {
   display: flex;
+  flex-direction: column;
   background-color: #1b1917;
+  border: 20px solid #1b1917;
   justify-content: space-between;
+  align-items: center;
   width: stretch;
+  font-weight: 500;
   height: 45vh;
-  margin: 1vw;
+  margin: 1rem;
   border-radius: 20px;
+  gap: 2rem;
 }
-footer nav {
+footer p {
+  letter-spacing: 0.1em;
+}
+footer a {
+  color: white;
+  font-size: 16px;
+}
+
+#links {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+#links nav {
   display: flex;
   align-items: start;
   width: 100%;
 }
-footer nav section {
+#links nav section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   color: #6c6c6c;
-  width: 10%;
+  min-width: 10%;
+  max-width: 20%;
   margin: 25px;
   text-align: left;
 }
-footer nav div {
+#links nav div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   text-align: left;
+  line-height: 1.6em;
 }
+
 #follow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   color: #6c6c6c;
-  margin: 25px;
+  margin: 2rem;
+  gap: 2rem;
   justify-self: end;
   text-align: right;
+  align-items: flex-end;
 }
 #follow div {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  
 }
-footer a {
+#follow a {
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #6c6c6c;
+  margin: 0.5rem;
+  font-size: large;
+}
+
+#line {
+  width: 95%;
+  height: -0.5px;
+  border-block-start: 1px solid #6c6c6c;
+}
+
+#base {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+}
+#base div {
+  margin: 25px;
+}
+#tc {
+  display: flex;
+  gap: 1rem;
+}
+#tc span{
+  border-block-start: 1px solid #6c6c6c;
+  writing-mode: vertical-rl;
 }

@@ -1,10 +1,11 @@
 header {
-  width: 100%;
   display: flex;
-  gap: 1rem;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+  gap: 1rem;
   height: 6.5vh;
+  z-index: 1000;
 }
 header nav {
   display: flex;
@@ -16,6 +17,9 @@ header nav a {
   color: #ff7526;
 }
 #pages {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: relative;
 }
 .pages_list {
