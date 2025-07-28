@@ -1,17 +1,44 @@
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   gap: 1rem;
   height: 6.5vh;
   z-index: 1000;
 }
+#head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  gap: 1rem;
+  height: 6.5vh;
+  z-index: 1000;
+}
 header nav {
   display: flex;
+  z-index: 999;
+}
+header nav,
+header section {
+  width: 33%;
 }
 header nav a {
   border: 1rem solid transparent;
+  z-index: 999;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 }
 #home {
   color: #ff7526;
@@ -21,6 +48,7 @@ header nav a {
   justify-content: space-around;
   align-items: center;
   position: relative;
+  z-index: 999;
 }
 .pages_list {
   background-color: #f4f4f4;

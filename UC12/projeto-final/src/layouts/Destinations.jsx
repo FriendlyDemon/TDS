@@ -1,14 +1,13 @@
 import React from "react";
 import { BotaoBranco } from "../components/botao";
-import { FaRegCalendarAlt, FaUmbrellaBeach } from "react-icons/fa";
-import { CiStar } from "react-icons/ci";
+import { FaRegCalendarAlt, FaUmbrellaBeach, FaRegStar } from "react-icons/fa";
 import "../styles/destinations.css";
 
 function Destinations() {
   return (
     <div id="destinations">
       <div className="topo">
-        <h1>Recomended Destination</h1>
+        <h2>Recomended Destination</h2>
         <BotaoBranco texto="View More" />
       </div>
       <section id="cards">
@@ -17,33 +16,133 @@ function Destinations() {
             <div className="pais">
               <img
                 src="https://s.w.org/images/core/emoji/16.0.1/svg/1f1f0-1f1ff.svg"
-                alt="bandeira do pais"
+                alt="bandeira do Cazaquistão"
               />
               <p>Kazakhstan</p>
             </div>
           </div>
           <div className="textolocal">
-            <h2>Caspian Sea Beach, Aktau</h2>
-            <h3>A Unique Seaside Escape in Central Asia</h3>
+            <h3>Caspian Sea Beach, Aktau</h3>
+            <p>A Unique Seaside Escape in Central Asia</p>
           </div>
           <div className="infolocal">
             <div className="data">
-              <FaRegCalendarAlt />
+              <span className="localico">
+                <FaRegCalendarAlt />
+              </span>
               <p>12 jun - 20 jun</p>
             </div>
             <div className="estrelas">
-              <CiStar />
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaRegStar />
+              </span>
               <p>5.0 Rating</p>
             </div>
             <div className="tipo">
-              <FaUmbrellaBeach />
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaUmbrellaBeach />
+              </span>
               <p>Beach</p>
             </div>
           </div>
+          <span className="divider"></span>
           <div className="comprar">
             <div className="preco">
-              <h3>$1,580</h3>
+              <h4>$1,580</h4>
               <p>9 day package</p>
+            </div>
+            <BotaoBranco texto="Book Now" />
+          </div>
+        </div>
+        <div id="komodoisland" className="card">
+          <div className="imagemlocal">
+            <div className="pais">
+              <img
+                src="https://s.w.org/images/core/emoji/16.0.1/svg/1f1ee-1f1e9.svg"
+                alt="bandeira da indonesia"
+              />
+              <p>Indonesia</p>
+            </div>
+          </div>
+          <div className="textolocal">
+            <h3>Pink Beach, Komodo Island</h3>
+            <p>A Rare Natural Wonder with Blush-Toned Sand</p>
+          </div>
+          <div className="infolocal">
+            <div className="data">
+              <span className="localico">
+                <FaRegCalendarAlt />
+              </span>
+              <p>12 jun - 20 jun</p>
+            </div>
+            <div className="estrelas">
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaRegStar />
+              </span>
+              <p>5.0 Rating</p>
+            </div>
+            <div className="tipo">
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaUmbrellaBeach />
+              </span>
+              <p>Beach</p>
+            </div>
+          </div>
+          <span className="divider"></span>
+          <div className="comprar">
+            <div className="preco">
+              <h4>$2,550</h4>
+              <p>7 day package</p>
+            </div>
+            <BotaoBranco texto="Book Now" />
+          </div>
+        </div>
+
+        <div id="southsolawesi" className="card">
+          <div className="imagemlocal">
+            <div className="pais">
+              <img
+                src="https://s.w.org/images/core/emoji/16.0.1/svg/1f1ee-1f1e9.svg"
+                alt="bandeira da indonesia"
+              />
+              <p>Indonesia</p>
+            </div>
+          </div>
+          <div className="textolocal">
+            <h3>Tanjung Bira, South Sulawesi</h3>
+            <p>White Sands and Turquoise Waters Away from the Crowds</p>
+          </div>
+          <div className="infolocal">
+            <div className="data">
+              <span className="localico">
+                <FaRegCalendarAlt />
+              </span>
+              <p>12 jun - 20 jun</p>
+            </div>
+            <div className="estrelas">
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaRegStar />
+              </span>
+              <p>5.0 Rating</p>
+            </div>
+            <div className="tipo">
+              <span className="dividerh"></span>
+              <span className="localico">
+                <FaUmbrellaBeach />
+              </span>
+              <p>Beach</p>
+            </div>
+          </div>
+          <span className="divider"></span>
+          <div className="comprar">
+            <div className="preco">
+              <h4>$3,750</h4>
+              <p>5 day package</p>
             </div>
             <BotaoBranco texto="Book Now" />
           </div>
