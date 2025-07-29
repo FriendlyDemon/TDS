@@ -1,5 +1,5 @@
 import React from "react";
-import { BotaoBranco } from "../components/botao";
+import { BotaoBranco } from "../components/Botao";
 import { FaRegCalendarAlt, FaUmbrellaBeach, FaRegStar } from "react-icons/fa";
 import "../styles/destinations.css";
 

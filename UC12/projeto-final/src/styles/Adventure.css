@@ -4,9 +4,10 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: var(--background-color);
+  gap: 50px;
 }
-#adventure .head {
+#adventure > .head {
   width: 100%;
   max-width: 1280px;
   display: flex;
@@ -16,9 +17,75 @@
 #adventure h2 {
   width: 40%;
 }
-#adventure .head p {
+#adventure > .head p {
   width: 25%;
+  color: #6c6c6c;
+  font-size: 18px;
+  font-weight: 500;
 }
-#adventure .ico{
-  color: #FF7526;
+#adventureinfo {
+  display: flex;
+  border-block-start: 1px solid #dfdfdf;
+  width: 100%;
+  max-width: 1280px;
+  padding: 60px 0;
+  gap: 40px;
+}
+#utilities {
+  display: flex;
+  flex-wrap: wrap;
+  width: 55%;
+  gap: 25px;
+}
+#utilities .card {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 20px;
+  gap: 30px;
+  border: 1px solid #dfdfdf80;
+  border-radius: 25px;
+  background-color: #f6f6f6;
+}
+#utilities .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#utilities .head p {
+  font-weight: 500;
+  font-size: 18px;
+}
+#utilities .ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff7526;
+  width: 68px;
+  height: 68px;
+  border: 1px solid #dfdfdf80;
+  border-radius: 50%;
+}
+#utilities .text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  height: fit-content;
+}
+#utilities .text h3 {
+  font-size: 23px;
+  font-weight: 600;
+}
+#utilities .text p {
+  color: #6c6c6c;
+}
+#adventurepicture {
+  width: 45%;
+}
+#adventurepicture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
 }

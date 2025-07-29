@@ -7,7 +7,6 @@ function Banner() {
     <section id="banner">
       <section>
         <div className="box"></div>
-
         <div className="card1 box">
           <div className="card2">
             <div className="shadow"></div>

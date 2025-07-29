@@ -20,7 +20,7 @@
   width: 100%;
   height: fit-content;
 }
-.card {
+#cards .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

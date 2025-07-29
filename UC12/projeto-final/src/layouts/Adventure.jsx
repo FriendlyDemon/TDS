@@ -12,13 +12,16 @@ function Adventure() {
           to your preferences, needs, and desires
         </p>
       </div>
-      <div>
-        <div>
-          <div>
-            <div>
-              <FaSun className="ico" /> <p>01</p>
+      <div id="adventureinfo">
+        <div id="utilities">
+          <div className="card">
+            <div className="head">
+              <div className="ico">
+                <FaSun />
+              </div>
+              <p>01</p>
             </div>
-            <div>
+            <div className="text">
               <h3>Diving and Snorkeling</h3>
               <p>
                 The travel package includes lending services for diving and
@@ -26,11 +29,14 @@ function Adventure() {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <FaUser className="ico" /> <p>02</p>
+          <div className="card">
+            <div className="head">
+              <div className="ico">
+                <FaUser />
+              </div>
+              <p>02</p>
             </div>
-            <div>
+            <div className="text">
               <h3>Professional Tour Guide</h3>
               <p>
                 A professional tour guide is someone who can make your travel
@@ -38,11 +44,14 @@ function Adventure() {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <FaCamera className="ico" /> <p>03</p>
+          <div className="card">
+            <div className="head">
+              <div className="ico">
+                <FaCamera />
+              </div>
+              <p>03</p>
             </div>
-            <div>
+            <div className="text">
               <h3>Memorable</h3>
               <p>
                 Every moment of yours is captured by professional photography
@@ -50,11 +59,14 @@ function Adventure() {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <FaStar className="ico" /> <p>04</p>
+          <div className="card">
+            <div className="head">
+              <div className="ico">
+                <FaStar />
+              </div>
+              <p>04</p>
             </div>
-            <div>
+            <div className="text">
               <h3>Easy and Comfort</h3>
               <p>
                 Travel agency provides complete and reliable travel packages
@@ -63,7 +75,7 @@ function Adventure() {
             </div>
           </div>
         </div>
-        <div>
+        <div id="adventurepicture">
           <img
             src="https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/exotic-tropical-seascape-with-palm-tree-jetty-pie-2024-10-18-08-01-58-utc.webp"
             alt="praia"

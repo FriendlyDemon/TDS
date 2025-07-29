@@ -1,0 +1,35 @@
+/* Container principal do carrossel */
+.carousel-container {
+  width: 200px; /* O carrossel ocupa 90% da largura da tela */
+  max-width: 1200px; /* Mas não ultrapassa 1200px */
+  margin: 40px auto; /* Espaço de 40px acima e abaixo, e centraliza horizontalmente */
+}
+
+/* Estilo da imagem dentro de cada slide */
+.carousel-image {
+  width: fit-content; /* A imagem ocupa toda a largura disponível do slide */
+  max-width: 100%; /* Mas não ultrapassa a largura do slide */
+  height: 250px; /* Altura fixa de 250px */
+  object-fit: contain; /* Garante que a imagem cubra toda a área sem distorcer */
+  border-radius: 15px; /* Arredonda os cantos da imagem */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+}
+/* Centraliza a paginação (bolinhas) abaixo do carrossel */
+.swiper-pagination {
+  position: static; /* Usa a posição padrão do elemento (necessário para não ficar sobreposto) */
+  margin-top: 15px; /* Espaçamento acima da paginação */
+  text-align: center; /* Centraliza as bolinhas horizontalmente */
+}
+
+/* Estilo padrão das bolinhas da paginação */
+.swiper-pagination-bullet {
+  background: #888; /* Cor cinza das bolinhas inativas */
+  opacity: 0.7; /* Transparência leve para bolinhas inativas */
+  transition: all 0.3s; /* Anima suavemente qualquer mudança de estilo */
+}
+
+/* Estilo da bolinha ativa (slide atual) */
+.swiper-pagination-bullet-active {
+  background: #007bff; /* Cor azul para indicar qual slide está ativo */
+  opacity: 1; /* Totalmente visível (sem transparência) */
+}

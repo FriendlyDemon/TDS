@@ -1,0 +1,22 @@
+#banner2 {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#ffffff00 60%, #ffffff 100%),
+    url("https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/ibrahim-shabil-stJ3k3dj55A-1.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 62px;
+}
+#banner2 h2 {
+  color: white;
+  width: 50%;
+  text-align: center;
+}
+#banner2 .botao {
+  padding: 16px 64px;
+}

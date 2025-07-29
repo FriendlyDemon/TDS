@@ -1,5 +1,5 @@
 import React from "react";
-import { BotaoLaranja, BotaoBranco } from "../components/botao.jsx";
+import { BotaoLaranja, BotaoBranco } from "../components/Botao.jsx";
 import { IoChevronDownSharp } from "react-icons/io5";
 import "../styles/header.css";
 
