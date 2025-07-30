@@ -8,7 +8,7 @@
   margin: 10vh auto;
   gap: 50px;
 }
-.topo {
+#destinations .topo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

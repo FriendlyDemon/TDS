@@ -7,6 +7,7 @@ import Footer from "./layouts/Footer.jsx";
 import Destinations from "./layouts/Destinations.jsx";
 import Adventure from "./layouts/Adventure.jsx";
 import Banner2 from "./layouts/Banner2.jsx";
+import Destinations2 from "./layouts/Destinations2.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")).render(
     <Destinations />
     <Adventure />
     <Banner2 />
+    <Destinations2 />
     <Footer />
   </StrictMode>
 );

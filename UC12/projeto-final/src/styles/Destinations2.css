@@ -1,0 +1,68 @@
+#destinations2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  gap: 40px;
+}
+#destinations2 .topo {
+  width: 45%;
+  text-align: center;
+}
+#destinations2info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  height: fit-content;
+  padding: 20px;
+  gap: 20px;
+}
+#face {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/shaain-ibrahim-3B-P16CKbtw.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: stretch;
+  width: 50%;
+  border-radius: 25px;
+  padding: 30px;
+}
+#face h2 {
+  color: white;
+  width: 80%;
+  font-size: 44px;
+}
+#face .botao{
+    width: 50%;
+}
+
+#cards2 {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+#cards2 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 49%;
+  height: 100%;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  padding: 20px;
+  gap: 10px;
+}
+#aktau .imagemlocal {
+  background-image: url(https://live.sociolib.com/nomad/wp-content/uploads/sites/15/2025/07/colin-watts-M1ObxvsWVhY.webp);
+}

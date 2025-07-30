@@ -8,7 +8,9 @@ function Banner2() {
     <div id="banner2">
       <h2>Where Comfort Meets Convenience — Our Top Stay Picks For You</h2>
       <Botao texto="Book Now" />
-      <Carousel />
+      <div>
+        <Carousel />
+      </div>
     </div>
   );
 }
