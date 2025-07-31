@@ -1,0 +1,4 @@
+npm create vite@latest "nome do projeto"
+npm i tailwindcss @tailwindcss/vite
+cd "nome do projeto"
+npm install
