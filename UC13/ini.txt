@@ -1,2 +1,19 @@
 npm i -g nodemon
 npm install --save-dev nodemon
+npm run dev
+//
+npm i -g typescript
+npm init
+    "scripts": {
+    "start":"npx tsc index.ts && node index.js"
+    }
+
+//
+Exemplo	                        Função
+app.get(...)	                Define rotas GET
+app.post(...)	                Define rotas POST
+app.use(...)	                Aplica middlewares
+app.listen(...)	                Inicia o servidor
+app.use('/api', router)	        Encaixar rotas externas
+app.set(...) / app.get(...)	    Configurações internas
+//

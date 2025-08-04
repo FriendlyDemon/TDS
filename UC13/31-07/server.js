@@ -2,11 +2,9 @@
 const express = require("express");
 //Biblioteca para manipular o banco de dados MySQL
 const mysql = require("mysql2");
-//Biblioteca para manipular o JSON
-const bodyParser = require("body-parser");
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 const connection = mysql.createConnection({
   host: "localhost",
