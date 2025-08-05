@@ -1,11 +1,30 @@
-npm i -g nodemon
-npm install --save-dev nodemon
-npm run dev
-//
-npm i -g typescript
-npm init
+mkdir /?/; cd /?/;
+
+npm init -y;
+npx tsc --init;
+npm i typescript express mysql2;
+npm i @types/express -D
+'package.json'
+    /...
     "scripts": {
-    "start":"npx tsc index.ts && node index.js"
+        "build": "tsc",
+        "start": "tsc && node dist/index.js",
+        "dev": "npx ts-node-dev src/server.ts"
+    }
+    .../
+
+'tsconfig.json'
+    {
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
     }
 
 //
