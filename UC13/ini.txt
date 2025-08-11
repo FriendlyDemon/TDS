@@ -3,8 +3,8 @@ mkdir /?/; cd /?/;
 npm init -y;
 npx tsc --init;
 npm i typescript express mysql2;
-npm i @types/express -D
-mkdir src;touch ./src/server.ts;
+npm i @types/express -D;
+mkdir src src/models src/controllers src/routes;touch ./src/server.ts;
 'package.json'
     /...
   "scripts": {

@@ -1,7 +1,7 @@
 export class User {
-  public id: number;
-  public nome: string;
-  public email: string;
+  id: number;
+  nome: string;
+  email: string;
 
   constructor(id: number, nome: string, email: string) {
     this.id = id;
@@ -9,5 +9,4 @@ export class User {
     this.email = email;
   }
 }
-
-export let usuarios: User[] = []; // Simulando o banco de dados com uma lista
+export let usuarios: User[] = [];
