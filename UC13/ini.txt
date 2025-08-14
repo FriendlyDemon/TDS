@@ -1,21 +1,11 @@
 mkdir /?/; cd /?/;
 
 npm init -y;
-npx tsc --init;
-npm i typescript express mysql2;
-npm i @types/express -D;
-mkdir src src/models src/controllers src/routes;touch ./src/server.ts;
-'package.json'
-    /...
-  "scripts": {
-    "build": "tsc",
-    "start": "tsc && node dist/index.js",
-    "dev": "npx ts-node-dev src/server.ts"
-  }
-    .../
-
-'tsconfig.json'
-{
+npm i express typeorm reflect-metadata mysql2 dotenv;
+npm i -D @types/express @types/node typescript ts-node-dev;
+mkdir src src/config src/controllers src/models src/routes ;
+touch ./src/server.ts .env;
+echo '{
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
@@ -26,7 +16,20 @@ mkdir src src/models src/controllers src/routes;touch ./src/server.ts;
   },
   "include": ["src"],
   "exclude": ["node_modules"]
-}
+}' > tsconfig.json
+
+/*
+'package.json'
+    /...
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "npx ts-node-dev src/server.ts"
+  }
+    .../
+*/
+
+//npx tsc --init;
 
 //
 Exemplo	                        Função
