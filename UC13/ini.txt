@@ -30,9 +30,9 @@ mkdir src src/models src/controllers src/routes;touch ./src/server.ts;
 
 //
 Exemplo	                        Função
-app.get(...)	                Define rotas GET
-app.post(...)	                Define rotas POST
-app.use(...)	                Aplica middlewares
+app.get(...)	                  Define rotas GET
+app.post(...)	                  Define rotas POST
+app.use(...)	                  Aplica middlewares
 app.listen(...)	                Inicia o servidor
 app.use('/api', router)	        Encaixar rotas externas
 app.set(...) / app.get(...)	    Configurações internas
