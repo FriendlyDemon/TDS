@@ -1,14 +1,20 @@
-import express, { Application, Request, Response } from "express";
+import "reflect-metadata";
+import express, { Application } from "express";
+import router from "./routes";
+import { AppDataSource } from "./config/data-source";
 
 const app: Application = express();
-const PORT: number = Number(process.env.PORT) || 3000;
+const PORTA: number = 3000;
 
 app.use(express.json());
 
-app.use((req: Request, res: Response) => {
-  res.status(404).json({ message: "Rota não encontrada" });
-});
+AppDataSource.initialize()
+    .then(() => {
+        console.log("📦 Banco conectado com sucesso");
+        app.use(router);
 
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-});
+        app.listen(PORTA, () => {
+            console.log(`🚀 Servidor rodando na porta ${PORTA}`);
+        });
+    })
+    .catch((err) => console.error("❌ Erro ao conectar no banco:", err));
