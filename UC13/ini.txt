@@ -1,9 +1,9 @@
 mkdir /?/; cd /?/;
 
 npm init -y;
-npm i express typeorm reflect-metadata mysql2 dotenv;
-npm i -D @types/express @types/node typescript ts-node-dev;
-mkdir src src/config src/controllers src/models src/routes ;
+npm i express typeorm reflect-metadata mysql2 dotenv bcrypt cors;
+npm i -D typescript ts-node-dev @types/express @types/node @types/bcrypt;
+mkdir src src/config src/controllers src/models src/routes src/middlewares src/entities src/services;
 touch ./src/server.ts .env;
 echo '{
   "compilerOptions": {
@@ -28,7 +28,7 @@ echo '{
     "build": "tsc",
     "start": "tsc && node dist/index.js",
     "dev": "npx ts-node-dev src/server.ts"
-  }
+  },
     .../
 */
 
