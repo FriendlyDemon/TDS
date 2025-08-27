@@ -30,12 +30,35 @@ async function fetchUserProfile() {
 }
 window.addEventListener("DOMContentLoaded", fetchUserProfile);
 // Seleciona o formulário e adiciona um "ouvinte" para o evento de submit
+class User {
+  name;
+  email;
+  password;
+  constructor(name, email, password) {
+    if (name.length > 0) {
+      this.name = name;
+    }
+    if (email.length > 0) {
+      this.email = email;
+    }
+    if (password.length > 0) {
+      this.password = password;
+    }
+  }
+}
 document.getElementById("update").addEventListener("click", async function () {
   // Captura os valores do formulário
-  const name = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
+  const name = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
   const password = document.getElementById("senha").value;
 
+  if (!name && !email && !password) {
+    document.getElementById("mensagem").textContent =
+      "❌ Erro: Pelo menos um campo deve ser preenchido para atualizar.";
+    document.getElementById("mensagem").style.color = "red";
+    return;
+  }
+  
   try {
     // Faz a requisição para a API
     const resposta = await fetch("http://localhost:3000/users/me", {
@@ -44,7 +67,7 @@ document.getElementById("update").addEventListener("click", async function () {
         "Content-Type": "application/json", // Informa que está enviando JSON
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({ name, email, password }), // Converte os dados em JSON
+      body: JSON.stringify(new User(name, email, password)), // Converte os dados em JSON
     });
 
     // Se a resposta não for bem-sucedida, lança um erro
