@@ -58,7 +58,7 @@ document.getElementById("update").addEventListener("click", async function () {
     document.getElementById("mensagem").style.color = "red";
     return;
   }
-  
+
   try {
     // Faz a requisição para a API
     const resposta = await fetch("http://localhost:3000/users/me", {
@@ -86,7 +86,7 @@ document.getElementById("update").addEventListener("click", async function () {
   } catch (erro) {
     // Mostra mensagem de erro
     document.getElementById("mensagem").textContent =
-      "❌ Erro: " + erro.message;
+      "❌ Erro: " + JSON.parse(erro.message).message;
     document.getElementById("mensagem").style.color = "red";
   }
 });
@@ -120,7 +120,7 @@ document.getElementById("delete").addEventListener("click", async function () {
   } catch (erro) {
     // Mostra mensagem de erro
     document.getElementById("mensagem").textContent =
-      "❌ Erro: " + erro.message;
+      "❌ Erro: " + JSON.parse(erro.message).message;
     document.getElementById("mensagem").style.color = "red";
   }
 });

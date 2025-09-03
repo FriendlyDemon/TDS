@@ -39,7 +39,7 @@ document
     } catch (erro) {
       // Mostra mensagem de erro
       document.getElementById("mensagem").textContent =
-        "❌ Erro: " + erro.message;
+        "❌ Erro: " + JSON.parse(erro.message).message;
       document.getElementById("mensagem").style.color = "red";
     }
   });
