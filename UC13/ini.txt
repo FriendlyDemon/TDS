@@ -1,7 +1,7 @@
 mkdir /?/; cd /?/;
 
 npm init -y;
-npm i express typeorm reflect-metadata mysql2 dotenv bcrypt cors jsonwebtoken;
+npm i express typeorm reflect-metadata mysql2 dotenv bcrypt cors jsonwebtoken class-validator class-transformer zod;
 npm i -D typescript ts-node-dev @types/express @types/node @types/bcrypt @types/cors @types/jsonwebtoken;
 mkdir src src/config src/controllers src/models src/routes src/middlewares src/entities src/services;
 touch ./src/server.ts .env;

@@ -27,7 +27,7 @@ function createTsProject(): void {
 
   // Instala dependências de runtime
   execSync(
-    "npm install express cors dotenv bcrypt jsonwebtoken typeorm reflect-metadata",
+    "npm install express cors dotenv bcrypt jsonwebtoken typeorm reflect-metadata class-validator class-transformer zod",
     { stdio: "inherit" }
   );
 
