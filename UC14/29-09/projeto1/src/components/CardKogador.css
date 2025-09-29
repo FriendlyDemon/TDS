@@ -1,0 +1,47 @@
+.card-jogador {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-jogador:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #00000059;
+}
+
+.cj-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.cj-imagem {
+  width: 90px;
+  height: 90px;
+  border: 3px solid #243045;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cj-info .cj-nome {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.cj-etiqueta {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  background: #3b82f626;
+  color: aliceblue;
+  border: 1px solid #22314a;
+}
+.cj-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 14px;
+}
