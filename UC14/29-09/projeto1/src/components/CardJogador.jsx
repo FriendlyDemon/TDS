@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./CardJogador.css";
 export default function CardJogador({
   nome,
   posicao,
