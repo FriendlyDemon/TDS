@@ -1,7 +1,10 @@
-import React from "react";
 import "./App.css";
 import Titulo from "./components/Titulo";
 import CardJogador from "./components/CardJogador";
+import allejo from "./assets/Allejo.jpg";
+import gomez from "./assets/Gomez.jpg";
+import souza from "./assets/Souza.jpg";
+import fallen from "./assets/fallen.jpg";
 
 export default function App() {
   // Array de objetos respresentando os jogadores
@@ -13,8 +16,7 @@ export default function App() {
       posicao: "IGL",
       time: "Fúria",
       avaliacao: 10,
-      imagem:
-        "https://i.pinimg.com/564x/08/7d/19/087d19d9de45761a27f0986d63178722.jpg",
+      imagem: fallen,
     },
     {
       id: 2,
@@ -24,6 +26,30 @@ export default function App() {
       avaliacao: 2,
       imagem:
         "https://i.pinimg.com/564x/08/7d/19/087d19d9de45761a27f0986d63178722.jpg",
+    },
+    {
+      id: 3,
+      nome: "Allejo",
+      posicao: "jogador",
+      time: "Brazil",
+      avaliacao: 8,
+      imagem: allejo,
+    },
+    {
+      id: 4,
+      nome: "Gomez",
+      posicao: "de pé",
+      time: "Brazil",
+      avaliacao: 11,
+      imagem: gomez,
+    },
+    {
+      id: 5,
+      nome: "Souza",
+      posicao: "de joelho",
+      time: "Brazil",
+      avaliacao: 9,
+      imagem: souza,
     },
   ];
   return (

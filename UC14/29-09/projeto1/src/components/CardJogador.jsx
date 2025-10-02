@@ -1,4 +1,3 @@
-import React from "react";
 import "./CardJogador.css";
 export default function CardJogador({
   nome,
@@ -18,11 +17,11 @@ export default function CardJogador({
       </div>
       <div className="cj-meta">
         <span>
-          <strong> Time:</strong>
+          <strong> Time: </strong>
           {time}
         </span>
         <span>
-          <strong> Avaliação:</strong>
+          <strong> Avaliação: </strong>
           {avaliacao}
         </span>
       </div>
