@@ -5,7 +5,7 @@ import ApodCard from "./components/ApodCard";
 import { getApodByDate } from "./api/nadaApi";
 
 export default function App() {
-  const [date, setDate] = useState("2024-10-01");
+  const [date, setDate] = useState("2025-10-01");
   const [apodDate, setApodData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +20,15 @@ export default function App() {
     fetchData();
   }, [date]);
   return (
-    <div style={{ fontFamily: "Arial", padding: "20px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        fontFamily: "Arial",
+        padding: "20px",
+      }}
+    >
       <Header />
       <CalendarPicker date={date} onDateChange={setDate} />
       <ApodCard data={apodDate} />

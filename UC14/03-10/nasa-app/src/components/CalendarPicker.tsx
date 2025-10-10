@@ -11,6 +11,7 @@ export default function CalendarPicker({
       <input
         type="date"
         value={date}
+        name="date"
         min="1995-06-16"
         max={new Date().toISOString().split("T")[0]}
         onChange={(e) => onDateChange(e.target.value)}
