@@ -7,17 +7,15 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Anon from "./assets/anon";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Bem-vindo! </Text>
       <Image
-        source={require("./assets/Anonymous_emblem.svg")}
+        source={require("./assets/Anonymous_emblem.png")}
         style={styles.img}
       ></Image>
-      <Anon></Anon>
       <View style={styles.form}>
         <Text style={styles.text}>Nome</Text>
         <TextInput style={styles.input} placeholder="Digite seu nome" />
