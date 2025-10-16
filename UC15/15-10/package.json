@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "expo-cli": "^6.3.12",
-    "react-dom": "18.2.0",
-    "react-native-web": "~0.19.6"
-  }
-}
