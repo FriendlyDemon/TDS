@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "writer": "Hello",
+    "title": "Primeiro post",
+    "text": "Olá Mundo"
+  },
+  {
+    "id": 2,
+    "writer": "Teste",
+    "title": "Testando posts",
+    "text": "Teste, teste"
+  },
+  {
+    "id": 3,
+    "writer": "Henrique",
+    "title": "Agora vai",
+    "text": "Fala meu consagrado!"
+  },
+  {
+    "id": 4,
+    "writer": "Pritty Boy",
+    "title": "XoXo",
+    "text": "I heard you do wierd things to your ships"
+  },
+  {
+    "id": 5,
+    "writer": "The Khan",
+    "title": "Answer to purple idiot",
+    "text": "I heard you do wierd thing to your men"
+  },
+  {
+    "id": 6,
+    "writer": "Peter Turbo",
+    "title": "Hey Fulgrin",
+    "text": "come look at this model I painted"
+  }
+]

@@ -26,12 +26,12 @@ export default function App() {
           placeholder="Digite seu email"
           keyboardType="email-address"
         />
+
         <Text style={styles.text}>Senha</Text>
         <TextInput
           style={styles.input}
-          placeholder="******"
+          placeholder="Digite sua senha"
           secureTextEntry={true}
-          keyboardType="visible-password"
         />
         <TouchableOpacity
           onPress={() => {
@@ -42,7 +42,7 @@ export default function App() {
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableOpacity>
       </View>
-      <StatusBar style="auto" />
+      <StatusBar hidden style="auto" />
     </View>
   );
 }
