@@ -9,13 +9,21 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <Header img={require("./assets/peter turbo.webp")} name="Perturabo" />
+        
+        <Header
+          img={require("./assets/peter turbo.webp")}
+          name="Perter Turbo"
+        />
         <FlatList
           style={{ width: "100%" }}
           data={posts}
-          renderItem={({ item }) => <Posts post={item} />}
+          renderItem={({ item }) => (
+            <Posts post={item} img={require(item.img)} />
+          )}
         ></FlatList>
 
+
+          
         <StatusBar style="auto" />
       </SafeAreaView>
     </SafeAreaProvider>
@@ -25,7 +33,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#202030",//"#c0d0ff",
+    backgroundColor: "#202030", //"#c0d0ff",
     alignItems: "center",
     justifyContent: "flex-start",
   },

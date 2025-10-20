@@ -1,13 +1,25 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 
 export default function Posts(props: {
   post: { writer: string; title: string; text: string };
+  img: any;
 }) {
   return (
     <View style={styles.view1}>
       <View style={styles.view2}>
-        <Text style={styles.writer}>{props.post.writer}</Text>
+        <View style={styles.view3}>
+          <Image style={styles.img} source={props.img} />
+          <Text style={styles.writer}>{props.post.writer}</Text>
+        </View>
         <Text style={styles.title}>{props.post.title}</Text>
       </View>
       <View style={styles.viewPost}>
@@ -37,7 +49,17 @@ const styles = StyleSheet.create({
     padding: 5,
     backgroundColor: "#505080",
   },
-  view2: {},
+  view2: { gap: 7 },
+  view3: { flexDirection: "row", alignItems: "center", gap: 7 },
+  img: {
+    width: 40,
+    height: 40,
+    borderRadius: "50%",
+    borderColor: "black",
+    borderStyle: "solid",
+    borderWidth: 1,
+    backgroundColor: "white",
+  },
   writer: { paddingVertical: 5 },
   title: { paddingHorizontal: 5, fontWeight: "bold" },
   viewPost: {},
@@ -47,7 +69,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     margin: 5,
     padding: 3,
-    backgroundColor: "white",
+    backgroundColor: "#c3dafB",
   },
   viewBtn: {
     flexDirection: "row",

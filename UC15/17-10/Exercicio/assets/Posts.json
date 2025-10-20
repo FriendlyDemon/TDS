@@ -1,38 +1,51 @@
 [
   {
     "id": 1,
+    "img": "./assets/icon.png",
     "writer": "Hello",
     "title": "Primeiro post",
     "text": "Olá Mundo"
   },
   {
     "id": 2,
+    "img": "./assets/icon.png",
     "writer": "Teste",
     "title": "Testando posts",
     "text": "Teste, teste"
   },
   {
     "id": 3,
+    "img": "./assets/icon.png",
     "writer": "Henrique",
     "title": "Agora vai",
     "text": "Fala meu consagrado!"
   },
   {
     "id": 4,
+    "img": "./assets/icon.png",
     "writer": "Pritty Boy",
     "title": "XoXo",
     "text": "I heard you do wierd things to your ships"
   },
   {
     "id": 5,
+    "img": "./assets/icon.png",
     "writer": "The Khan",
     "title": "Answer to purple idiot",
     "text": "I heard you do wierd thing to your men"
   },
   {
     "id": 6,
+    "img": "./assets/icon.png",
     "writer": "Peter Turbo",
     "title": "Hey Fulgrin",
-    "text": "come look at this model I painted"
+    "text": "Come look at this model I painted"
+  },
+  {
+    "id": 7,
+    "img": "./assets/icon.png",
+    "writer": "Dominus Reditus",
+    "title": "The Blessed Machine",
+    "text": "From the moment I understood the weakness of my flesh, it disgusted me.\nI craved the strength and certainty of steel.\nI aspired to the purity of the Blessed Machine.\nYour kind cling to your flesh, as though it will not decay and fail you.\nOne day the crude biomass you call the temple will wither, and you will beg my kind to save you.\nBut I am already saved, for the Machine is immortal…\nEven in death I serve the Omnissiah."
   }
 ]
