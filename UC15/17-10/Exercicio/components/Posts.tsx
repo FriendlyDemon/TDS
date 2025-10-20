@@ -1,5 +1,14 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
+
+const borderRadiusValue = Platform.OS === "android" ? 999 : "50%";
 
 export default function Posts(props: {
   post: { writer: string; title: string; text: string };
@@ -46,7 +55,7 @@ const styles = StyleSheet.create({
   img: {
     width: 40,
     height: 40,
-    borderRadius: "50%",
+    borderRadius: borderRadiusValue,
     borderColor: "black",
     borderStyle: "solid",
     borderWidth: 1,

@@ -29,7 +29,7 @@ export default function App() {
             <Posts post={item} img={images[item.img]} />
           )}
         ></FlatList>
-        <StatusBar style="auto" />
+        <StatusBar hidden style="auto" />
       </SafeAreaView>
     </SafeAreaProvider>
   );

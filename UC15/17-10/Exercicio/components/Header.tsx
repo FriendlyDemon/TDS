@@ -1,11 +1,14 @@
 import {
   Image,
   ImageSourcePropType,
+  Platform,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import React from "react";
+
+const borderRadiusValue = Platform.OS === "android" ? 999 : "50%";
 
 export default function Header(props: {
   img: ImageSourcePropType;
@@ -34,7 +37,7 @@ const styles = StyleSheet.create({
   img: {
     width: 60,
     height: 60,
-    borderRadius: "50%",
+    borderRadius: borderRadiusValue,
     borderColor: "black",
     borderStyle: "solid",
     borderWidth: 1,
