@@ -12,14 +12,14 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
-      <Exemplo6 />
+      <Exemplo5 />
 
       {/*
       <Exemplo1 />
       <Exemplo2 />
       <Exemplo3 />
       <Exemplo4 />
-      <Exemplo5 />
+      <Exemplo6 />
       */}
     </View>
   );
