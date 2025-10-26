@@ -4,15 +4,7 @@ import Tarefa from "./Tarefa";
 
 export default function Lista() {
   const [tarefa, setTarefa] = useState<any[]>([]);
-
-  function comparaTarefa(a: any, b: any) {
-    return a.id == b.id && a.title == b.title && a.completed == b.completed;
-  }
-
-  function comparaLista(a: any[], b: any[]) {
-    if (a.length != b.length) return false;
-    return a.every((item, i) => comparaTarefa(item, b[i]));
-  }
+  let listaAnterior: string = "[]";
 
   useEffect(() => {
     const buscarTarefas = async () => {
@@ -23,12 +15,16 @@ export default function Lista() {
         );
 
         const lista: any[] = await resposta.json();
-        const listaFiltrada = lista.filter((tarefa) => {
+
+        const listaFiltrada: any[] = lista.filter((tarefa) => {
           return !tarefa.completed;
         });
 
-        if (!comparaLista(listaFiltrada, tarefa)) {
+        let listaString = JSON.stringify(listaFiltrada);
+
+        if (listaString != listaAnterior) {
           setTarefa(listaFiltrada);
+          listaAnterior = listaString;
           console.log("Atualizando tarefas");
         }
       } catch (e) {
