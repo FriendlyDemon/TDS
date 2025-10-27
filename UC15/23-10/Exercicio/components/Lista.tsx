@@ -12,6 +12,12 @@ import Tarefa from "./Tarefa";
 export default function Lista() {
   const [tarefa, setTarefa] = useState<any[]>([]);
   const [mostrar, setMostrar] = useState(true);
+  interface Tarefa {
+    id: number;
+    userId: number;
+    title: string;
+    completed: boolean;
+  }
 
   useEffect(() => {
     let listaAnterior: string = "[]";
@@ -23,9 +29,9 @@ export default function Lista() {
             "https://jsonplaceholder.typicode.com/todos"
           );
 
-          const lista: any[] = await resposta.json();
+          const lista: Tarefa[] = await resposta.json();
 
-          const listaFiltrada: any[] = lista.filter((tarefa) => {
+          const listaFiltrada: Tarefa[] = lista.filter((tarefa) => {
             return !tarefa.completed;
           });
 
