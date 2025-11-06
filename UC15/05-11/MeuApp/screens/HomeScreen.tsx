@@ -1,18 +1,21 @@
-import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { StyleSheet, Text } from "react-native";
+import { Button as ButtonNav } from "@react-navigation/elements";
 import { HomeScreenProps } from "../interfaces/NavigationInterfaces";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen({ route, navigation }: HomeScreenProps) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>{route.name}Screen</Text>
-      <Button
-        title="Profile"
+      <ButtonNav
         onPress={() => {
-          navigation.navigate("Profile", { userId: 0 });
+          navigation.navigate("About");
         }}
-      />
-    </View>
+      >
+        About
+      </ButtonNav>
+    </SafeAreaView>
   );
 }
 
