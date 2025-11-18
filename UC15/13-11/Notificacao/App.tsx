@@ -8,6 +8,7 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Notifications from "expo-notifications";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as functions from "./components/notification";
@@ -21,7 +22,7 @@ if (!notificationListenerRegistered) {
 
 interface Lembrete {
   corpo: string;
-  intervalo: Date;
+  intervalo: number;
 }
 export default function App() {
   const [lembretes, setLembretes] = useState<Lembrete[]>([]);
@@ -42,6 +43,15 @@ export default function App() {
     });
   }
   useEffect(() => {
+    async function loadUser() {
+      try {
+        const storageLembrete = await AsyncStorage.getItem("@lembretes");
+        if (storageLembrete) setLembretes(JSON.parse(storageLembrete));
+      } catch (e: any) {
+        console.log("erro ao carregar lembretes", e);
+      }
+    }
+    loadUser();
     functions.pedirPermissao();
 
     const subscription: Notifications.EventSubscription =
@@ -75,9 +85,19 @@ export default function App() {
       ...prev,
       {
         corpo: lembrete,
-        intervalo: new Date(Date.now() + Number(intervalo) * 1000),
+        intervalo: Date.now() + Number(intervalo) * 1000,
       },
     ]);
+    AsyncStorage.setItem(
+      "@lembretes",
+      JSON.stringify([
+        ...lembretes,
+        {
+          corpo: lembrete,
+          intervalo: new Date(Date.now() + Number(intervalo) * 1000),
+        },
+      ])
+    );
     setLembrete("");
     setIntervalo("");
   }
@@ -104,17 +124,15 @@ export default function App() {
           onPress={async () => {
             await Notifications.cancelAllScheduledNotificationsAsync();
             setLembretes([]);
+            AsyncStorage.setItem("@lembretes", "[]");
             Alert.alert("Cancelado", "Todos os lembretes foram removidos.");
           }}
         />
         <View style={styles.container}>
           <FlatList
             data={lembretes}
-            keyExtractor={(item) => {
-              return item.intervalo.getTime().toString();
-            }}
             renderItem={({ item, index }) => {
-              if (item.intervalo.getTime() < Date.now()) {
+              if (item.intervalo < Date.now()) {
                 return <></>;
               }
               return (
@@ -123,7 +141,7 @@ export default function App() {
                   <Text>Texto:{item.corpo}</Text>
                   <Text>
                     Quando vai tocar: {"\n"}
-                    {item.intervalo.toUTCString()}
+                    {new Date(item.intervalo).toTimeString()}
                   </Text>
                 </View>
               );
